@@ -57,9 +57,9 @@ type ChatMessage = {
 };
 
 const GOOGLE_APP_KEY =
-  process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ??
-  process.env.NEXT_PUBLIC_KAKAO_MAP_KEY ??
-  "";
+  process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ||
+  process.env.NEXT_PUBLIC_KAKAO_MAP_KEY ||
+  "AIzaSyCaxvkuLux83l9waLqbX0_Mi3dqmZJhFxs";
 const ALL_REGIONS = ["전국", ...REGIONS] as const;
 const INITIAL_CHAT: ChatMessage[] = [
   {
