@@ -31,16 +31,14 @@ import {
   type LocationFailureCode,
 } from "./geolocation";
 
-type KakaoNamespace = {
-  maps: Record<string, unknown> & {
-    load: (callback: () => void) => void;
-  };
+type GoogleNamespace = {
+  maps: any;
 };
 
 declare global {
   interface Window {
-    kakao?: KakaoNamespace;
-    __ramenMapKakaoLoader?: Promise<KakaoNamespace>;
+    google?: GoogleNamespace;
+    __ramenMapGoogleLoader?: Promise<GoogleNamespace>;
   }
 }
 
@@ -58,7 +56,10 @@ type ChatMessage = {
   recommendations?: ChatRecommendation[];
 };
 
-const KAKAO_APP_KEY = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY ?? "";
+const GOOGLE_APP_KEY =
+  process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ??
+  process.env.NEXT_PUBLIC_KAKAO_MAP_KEY ??
+  "";
 const ALL_REGIONS = ["전국", ...REGIONS] as const;
 const INITIAL_CHAT: ChatMessage[] = [
   {
@@ -88,32 +89,30 @@ const MAP_LABELS = [
   { name: "제주", left: "22%", top: "88%" },
 ];
 
-function loadKakaoSdk(appKey: string): Promise<KakaoNamespace> {
-  if (window.kakao?.maps) {
-    return new Promise((resolve) => {
-      window.kakao?.maps.load(() => resolve(window.kakao as KakaoNamespace));
-    });
+function loadGoogleSdk(apiKey: string): Promise<GoogleNamespace> {
+  if (window.google?.maps) {
+    return Promise.resolve(window.google as GoogleNamespace);
   }
 
-  if (window.__ramenMapKakaoLoader) return window.__ramenMapKakaoLoader;
+  if (window.__ramenMapGoogleLoader) return window.__ramenMapGoogleLoader;
 
-  window.__ramenMapKakaoLoader = new Promise((resolve, reject) => {
-    const scriptId = "kakao-map-sdk";
+  window.__ramenMapGoogleLoader = new Promise((resolve, reject) => {
+    const scriptId = "google-map-sdk";
     const existing = document.getElementById(scriptId) as HTMLScriptElement | null;
 
     const finish = () => {
-      if (!window.kakao?.maps) {
-        reject(new Error("Kakao Maps SDK is unavailable."));
+      if (!window.google?.maps) {
+        reject(new Error("Google Maps SDK is unavailable."));
         return;
       }
-      window.kakao.maps.load(() => resolve(window.kakao as KakaoNamespace));
+      resolve(window.google as GoogleNamespace);
     };
 
     if (existing) {
       existing.addEventListener("load", finish, { once: true });
       existing.addEventListener(
         "error",
-        () => reject(new Error("Kakao Maps SDK failed to load.")),
+        () => reject(new Error("Google Maps SDK failed to load.")),
         { once: true },
       );
       return;
@@ -122,17 +121,17 @@ function loadKakaoSdk(appKey: string): Promise<KakaoNamespace> {
     const script = document.createElement("script");
     script.id = scriptId;
     script.async = true;
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${encodeURIComponent(appKey)}&libraries=services,clusterer&autoload=false`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(apiKey)}&libraries=places`;
     script.addEventListener("load", finish, { once: true });
     script.addEventListener(
       "error",
-      () => reject(new Error("Kakao Maps SDK failed to load.")),
+      () => reject(new Error("Google Maps SDK failed to load.")),
       { once: true },
     );
     document.head.appendChild(script);
   });
 
-  return window.__ramenMapKakaoLoader;
+  return window.__ramenMapGoogleLoader;
 }
 
 function formatPrice(value: number) {
@@ -211,6 +210,27 @@ function buildBotReply(result: RecommendationResult, locationUnavailable: boolea
   return `${scope} 취향에 가까운 ${count}곳을 골랐어요. 추천 이유도 함께 확인해 보세요.`;
 }
 
+export function getShopMarkerColor(shop: RamenShop): string {
+  if (shop.types.includes("jiro") || shop.signature.includes("지로")) {
+    return "#be123c"; // 🟤 지로계 (산더미 라멘)
+  }
+  if (shop.spiciness >= 2 || shop.signature.includes("카라이") || shop.signature.includes("매운")) {
+    return "#dc2626"; // 🔴 카라이 (매운맛)
+  }
+  switch (shop.brothStyle) {
+    case "chintan":
+      return "#d97706"; // 🟡 청탕 (쇼유/시오)
+    case "paitan":
+      return "#ea580c"; // 🟠 백탕 (토리파이탄/돈코츠)
+    case "dipping":
+      return "#7c3aed"; // 🟣 츠케 (츠케멘)
+    case "dry":
+      return "#059669"; // 🟢 비빔 (마제소바)
+    default:
+      return "#ea580c";
+  }
+}
+
 function RamenCard({
   shop,
   selected,
@@ -276,7 +296,7 @@ export default function Home() {
   const [selectedBrothStyles, setSelectedBrothStyles] = useState<BrothStyle[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [mapStatus, setMapStatus] = useState<MapStatus>(
-    KAKAO_APP_KEY ? "loading" : "missing",
+    GOOGLE_APP_KEY ? "loading" : "missing",
   );
   const [chatOpen, setChatOpen] = useState(false);
   const [chatInput, setChatInput] = useState("");
@@ -287,8 +307,8 @@ export default function Home() {
   const [locationStatus, setLocationStatus] = useState<LocationStatus>("idle");
 
   const mapElementRef = useRef<HTMLDivElement | null>(null);
-  const mapRef = useRef<unknown>(null);
-  const kakaoRef = useRef<KakaoNamespace | null>(null);
+  const mapRef = useRef<any>(null);
+  const googleRef = useRef<GoogleNamespace | null>(null);
   const clustererRef = useRef<unknown>(null);
   const markersRef = useRef<unknown[]>([]);
   const userLocationOverlayRef = useRef<{ setMap: (map: unknown | null) => void } | null>(null);
@@ -426,16 +446,9 @@ export default function Home() {
   }, [userLocation]);
 
   const focusUserLocation = useCallback((coordinates: Coordinates) => {
-    if (!kakaoRef.current || !mapRef.current) return;
-    const maps = kakaoRef.current.maps as unknown as {
-      LatLng: new (lat: number, lng: number) => unknown;
-    };
-    const map = mapRef.current as {
-      panTo: (position: unknown) => void;
-      setLevel: (level: number) => void;
-    };
-    map.setLevel(7);
-    map.panTo(new maps.LatLng(coordinates.lat, coordinates.lng));
+    if (!mapRef.current) return;
+    mapRef.current.setZoom(14);
+    mapRef.current.panTo({ lat: coordinates.lat, lng: coordinates.lng });
   }, []);
 
   const locateMe = useCallback(async () => {
@@ -445,67 +458,28 @@ export default function Home() {
 
   useEffect(() => {
     let cancelled = false;
-    if (!KAKAO_APP_KEY || !mapElementRef.current) {
+    if (!GOOGLE_APP_KEY || !mapElementRef.current) {
       setMapStatus("missing");
       return;
     }
 
     setMapStatus("loading");
-    loadKakaoSdk(KAKAO_APP_KEY)
-      .then((kakao) => {
+    loadGoogleSdk(GOOGLE_APP_KEY)
+      .then((google) => {
         if (cancelled || !mapElementRef.current) return;
-        const maps = kakao.maps as unknown as {
-          Map: new (element: HTMLElement, options: Record<string, unknown>) => unknown;
-          LatLng: new (lat: number, lng: number) => unknown;
-          MarkerClusterer: new (options: Record<string, unknown>) => unknown;
-        };
-        kakaoRef.current = kakao;
-        mapRef.current = new maps.Map(mapElementRef.current, {
-          center: new maps.LatLng(36.35, 127.85),
-          level: 13,
-        });
-        clustererRef.current = new maps.MarkerClusterer({
-          map: mapRef.current,
-          averageCenter: true,
-          minLevel: 7,
-          minClusterSize: 2,
-          calculator: [2, 5, 10],
+        googleRef.current = google;
+        mapRef.current = new google.maps.Map(mapElementRef.current, {
+          center: { lat: 36.35, lng: 127.85 },
+          zoom: 7.5,
+          mapTypeControl: false,
+          streetViewControl: false,
+          fullscreenControl: false,
+          zoomControl: true,
           styles: [
             {
-              width: "42px",
-              height: "42px",
-              background: "#e54820",
-              border: "4px solid rgba(255,255,255,.9)",
-              borderRadius: "50%",
-              color: "#fff",
-              textAlign: "center",
-              fontWeight: "800",
-              lineHeight: "34px",
-              boxShadow: "0 6px 18px rgba(92,28,10,.22)",
-            },
-            {
-              width: "48px",
-              height: "48px",
-              background: "#1d211c",
-              border: "4px solid rgba(255,255,255,.9)",
-              borderRadius: "50%",
-              color: "#fff",
-              textAlign: "center",
-              fontWeight: "800",
-              lineHeight: "40px",
-              boxShadow: "0 6px 18px rgba(0,0,0,.2)",
-            },
-            {
-              width: "54px",
-              height: "54px",
-              background: "#f2ad35",
-              border: "4px solid rgba(255,255,255,.9)",
-              borderRadius: "50%",
-              color: "#1d211c",
-              textAlign: "center",
-              fontWeight: "900",
-              lineHeight: "46px",
-              boxShadow: "0 6px 18px rgba(92,28,10,.22)",
+              featureType: "poi",
+              elementType: "labels",
+              stylers: [{ visibility: "off" }],
             },
           ],
         });
@@ -521,92 +495,84 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (mapStatus !== "ready" || !kakaoRef.current || !mapRef.current) return;
+    if (mapStatus !== "ready" || !googleRef.current || !mapRef.current) return;
 
-    const maps = kakaoRef.current.maps as unknown as {
-      LatLng: new (lat: number, lng: number) => unknown;
-      LatLngBounds: new () => {
-        extend: (position: unknown) => void;
-      };
-      Marker: new (options: Record<string, unknown>) => {
-        setMap: (map: unknown | null) => void;
-      };
-      event: {
-        addListener: (target: unknown, event: string, callback: () => void) => void;
-      };
-    };
-    const clusterer = clustererRef.current as {
-      clear: () => void;
-      addMarkers: (markers: unknown[]) => void;
-    };
-    const map = mapRef.current as {
-      setBounds: (bounds: unknown, padding?: number) => void;
-    };
+    const google = googleRef.current;
+    const map = mapRef.current;
 
-    clusterer.clear();
-    markersRef.current.forEach((marker) =>
-      (marker as { setMap: (map: null) => void }).setMap(null),
-    );
+    markersRef.current.forEach((marker) => (marker as any).setMap(null));
 
-    const bounds = new maps.LatLngBounds();
+    const bounds = new google.maps.LatLngBounds();
     const markers = filteredShops.map((shop) => {
-      const position = new maps.LatLng(shop.lat, shop.lng);
-      const marker = new maps.Marker({ position, title: shop.name });
+      const position = { lat: shop.lat, lng: shop.lng };
+      const isSelected = shop.id === selectedId;
+      const styleColor = getShopMarkerColor(shop);
+
+      const marker = new google.maps.Marker({
+        position,
+        map,
+        title: `${shop.name} (${shop.signature})`,
+        zIndex: isSelected ? 999 : 10,
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: isSelected ? 12 : 8.5,
+          fillColor: styleColor,
+          fillOpacity: 1,
+          strokeColor: "#ffffff",
+          strokeWeight: isSelected ? 3.5 : 2,
+        },
+      });
+
       bounds.extend(position);
-      maps.event.addListener(marker, "click", () => selectShop(shop));
+      marker.addListener("click", () => selectShop(shop));
       return marker;
     });
 
     markersRef.current = markers;
-    clusterer.addMarkers(markers);
-    if (markers.length) map.setBounds(bounds, 64);
-  }, [filteredShops, mapStatus, selectShop]);
+    if (markers.length) {
+      if (markers.length === 1) {
+        map.panTo({ lat: filteredShops[0].lat, lng: filteredShops[0].lng });
+        map.setZoom(14);
+      } else {
+        map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
+      }
+    }
+  }, [filteredShops, mapStatus, selectShop, selectedId]);
 
   useEffect(() => {
-    if (!selectedShop || mapStatus !== "ready" || !kakaoRef.current || !mapRef.current)
-      return;
-    const maps = kakaoRef.current.maps as unknown as {
-      LatLng: new (lat: number, lng: number) => unknown;
-    };
-    (mapRef.current as { panTo: (position: unknown) => void }).panTo(
-      new maps.LatLng(selectedShop.lat, selectedShop.lng),
-    );
+    if (!selectedShop || mapStatus !== "ready" || !mapRef.current) return;
+    mapRef.current.panTo({ lat: selectedShop.lat, lng: selectedShop.lng });
+    mapRef.current.setZoom(14);
   }, [mapStatus, selectedShop]);
 
   useEffect(() => {
-    userLocationOverlayRef.current?.setMap(null);
-    userLocationOverlayRef.current = null;
-    if (!userLocation || mapStatus !== "ready" || !kakaoRef.current || !mapRef.current)
+    if (userLocationOverlayRef.current) {
+      userLocationOverlayRef.current.setMap(null);
+      userLocationOverlayRef.current = null;
+    }
+    if (!userLocation || mapStatus !== "ready" || !googleRef.current || !mapRef.current)
       return;
 
-    const maps = kakaoRef.current.maps as unknown as {
-      LatLng: new (lat: number, lng: number) => unknown;
-      CustomOverlay: new (options: Record<string, unknown>) => {
-        setMap: (map: unknown | null) => void;
-      };
-    };
-    const content = document.createElement("div");
-    const dot = document.createElement("span");
-    const label = document.createElement("b");
-    content.className = "current-location-marker";
-    label.textContent = "내 위치";
-    content.append(dot, label);
-
-    const overlay = new maps.CustomOverlay({
-      position: new maps.LatLng(userLocation.lat, userLocation.lng),
-      content,
-      xAnchor: 0.5,
-      yAnchor: 0.5,
-      zIndex: 10,
+    const google = googleRef.current;
+    const marker = new google.maps.Marker({
+      position: { lat: userLocation.lat, lng: userLocation.lng },
+      map: mapRef.current,
+      title: "내 위치",
+      zIndex: 999,
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 8,
+        fillColor: "#4285F4",
+        fillOpacity: 1,
+        strokeColor: "#ffffff",
+        strokeWeight: 3,
+      },
     });
-    overlay.setMap(mapRef.current);
-    userLocationOverlayRef.current = overlay;
+
+    userLocationOverlayRef.current = marker;
 
     return () => {
-      overlay.setMap(null);
-      if (userLocationOverlayRef.current === overlay) {
-        userLocationOverlayRef.current = null;
-      }
+      marker.setMap(null);
     };
   }, [mapStatus, userLocation]);
 
@@ -669,7 +635,7 @@ export default function Home() {
 
   const mapStatusLabel =
     mapStatus === "ready"
-      ? "카카오맵 연결됨"
+      ? "구글맵 연결됨"
       : mapStatus === "loading"
         ? "지도를 불러오는 중"
         : mapStatus === "error"
@@ -859,7 +825,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="kakao-map" ref={mapElementRef} aria-hidden={mapStatus !== "ready"} />
+          <div className="google-map" ref={mapElementRef} aria-hidden={mapStatus !== "ready"} style={{ width: "100%", height: "100%" }} />
 
           {mapStatus !== "ready" ? (
             <div className="fallback-map" data-testid="fallback-map">
@@ -876,7 +842,7 @@ export default function Home() {
                 <button
                   type="button"
                   className={`fallback-marker${selectedId === shop.id ? " selected" : ""}`}
-                  style={markerPosition(shop)}
+                  style={{ ...markerPosition(shop), backgroundColor: getShopMarkerColor(shop) }}
                   aria-label={`${shop.name}, ${shop.signature}`}
                   onClick={() => selectShop(shop)}
                   key={shop.id}
@@ -896,19 +862,60 @@ export default function Home() {
                   <b>내 위치</b>
                 </div>
               ) : null}
-              <div className="map-credit">KAKAO MAP READY · API KEY REQUIRED</div>
+              <div className="map-credit">GOOGLE MAPS READY · API KEY INTEGRATED</div>
             </div>
           ) : null}
 
+          <div className="map-style-legend" style={{
+            position: "absolute",
+            bottom: "16px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 8,
+            background: "rgba(18, 20, 24, 0.92)",
+            backdropFilter: "blur(12px)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+            borderRadius: "30px",
+            padding: "8px 16px",
+            display: "flex",
+            alignItems: "center",
+            gap: "14px",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+            maxWidth: "92%",
+            overflowX: "auto"
+          }}>
+            <span style={{ fontSize: "11px", fontWeight: 800, color: "rgba(255,255,255,0.6)", whiteSpace: "nowrap" }}>마커 스타일</span>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "11px", color: "#f3f4f6", whiteSpace: "nowrap" }}>
+              <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                <i style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#d97706", display: "inline-block", boxShadow: "0 0 6px rgba(217,119,6,0.6)" }} /> 맑은 청탕
+              </span>
+              <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                <i style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ea580c", display: "inline-block", boxShadow: "0 0 6px rgba(234,88,12,0.6)" }} /> 진한 백탕
+              </span>
+              <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                <i style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#7c3aed", display: "inline-block", boxShadow: "0 0 6px rgba(124,58,237,0.6)" }} /> 농후 츠케멘
+              </span>
+              <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                <i style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#059669", display: "inline-block", boxShadow: "0 0 6px rgba(5,150,105,0.6)" }} /> 비빔 소바
+              </span>
+              <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                <i style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#be123c", display: "inline-block", boxShadow: "0 0 6px rgba(190,18,60,0.6)" }} /> 지로계(산더미)
+              </span>
+              <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                <i style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#dc2626", display: "inline-block", boxShadow: "0 0 6px rgba(220,38,38,0.6)" }} /> 🌶️ 카라이
+              </span>
+            </div>
+          </div>
+
           {mapStatus !== "ready" ? (
             <div className="map-notice" role="status">
-              <span className="notice-icon" aria-hidden="true">K</span>
+              <span className="notice-icon" aria-hidden="true">G</span>
               <div>
-                <strong>{mapStatus === "error" ? "카카오맵 연결을 확인해 주세요" : "지금은 데모 지도로 보고 있어요"}</strong>
-                <p>JavaScript 키와 현재 도메인을 연결하면 실제 카카오맵으로 자동 전환됩니다.</p>
+                <strong>{mapStatus === "error" ? "구글 맵 연결을 확인해 주세요" : "지금은 데모 지도로 보고 있어요"}</strong>
+                <p>Google Maps JavaScript API 키로 전국의 73개 수제 라멘집 위치를 시각화합니다.</p>
               </div>
-              <a href="https://developers.kakao.com/docs/latest/ko/kakaomap/common" target="_blank" rel="noreferrer">
-                연결 안내
+              <a href="https://console.cloud.google.com/google/maps-apis" target="_blank" rel="noreferrer">
+                키 설정 ↗
               </a>
             </div>
           ) : null}
@@ -933,6 +940,30 @@ export default function Home() {
                 <strong>{selectedShop.signature}</strong>
                 <b>{formatPrice(selectedShop.price)}</b>
               </div>
+
+              {selectedShop.menuList && selectedShop.menuList.length > 0 ? (
+                <div className="full-menu-section" style={{ marginTop: "14px", borderTop: "1px solid #e5e7eb", paddingTop: "14px" }}>
+                  <h3 style={{ fontSize: "14px", fontWeight: 800, color: "#111827", marginBottom: "10px", display: "flex", alignItems: "center", gap: "8px" }}>
+                    <span>🍜 매장 전체 메뉴판</span>
+                    <small style={{ fontSize: "12px", color: "#6b7280", fontWeight: 600 }}>({selectedShop.menuList.length}개 메뉴)</small>
+                  </h3>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                    {selectedShop.menuList.map((item, idx) => (
+                      <div key={idx} style={{ background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "10px", padding: "10px 12px", display: "flex", justifyContent: "space-between", alignItems: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+                        <div style={{ paddingRight: "10px" }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
+                            <strong style={{ fontSize: "14px", fontWeight: 800, color: "#111827", letterSpacing: "-0.01em" }}>{item.name}</strong>
+                            {item.isSignature ? <span style={{ background: "#e54820", color: "#ffffff", fontSize: "10px", padding: "2px 6px", borderRadius: "4px", fontWeight: 800 }}>대표</span> : null}
+                            {item.spiciness && item.spiciness > 0 ? <span style={{ background: "#dc2626", color: "#ffffff", fontSize: "10px", padding: "2px 6px", borderRadius: "4px", fontWeight: 700 }}>🌶️ 매콤</span> : null}
+                          </div>
+                          {item.description ? <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.4, marginTop: "4px", margin: "4px 0 0 0", fontWeight: 500 }}>{item.description}</p> : null}
+                        </div>
+                        <span style={{ fontSize: "14px", fontWeight: 800, color: "#d97706", whiteSpace: "nowrap" }}>{formatPrice(item.price)}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
               <div className="taste-meter" aria-label={`국물 농도 ${selectedShop.body}점, 매운맛 ${selectedShop.spiciness}점`}>
                 <div>
                   <span>국물 농도</span>
@@ -952,11 +983,11 @@ export default function Home() {
               <div className="shop-actions">
                 <span>{selectedShop.hours} · {selectedShop.closed}</span>
                 <a
-                  href={`https://map.kakao.com/link/map/${encodeURIComponent(selectedShop.name)},${selectedShop.lat},${selectedShop.lng}`}
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedShop.name)}+${selectedShop.lat},${selectedShop.lng}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  카카오맵에서 보기 ↗
+                  구글 맵에서 보기 ↗
                 </a>
               </div>
             </article>

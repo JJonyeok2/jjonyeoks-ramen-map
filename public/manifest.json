@@ -1,0 +1,17 @@
+{
+  "name": "RAMEN MAP | 전국 한 그릇 지도",
+  "short_name": "라멘지도",
+  "description": "전국 라멘을 메뉴와 지역으로 탐색하고, 취향 추천봇에게 오늘의 한 그릇을 추천받아 보세요.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#e54820",
+  "icons": [
+    {
+      "src": "/og.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

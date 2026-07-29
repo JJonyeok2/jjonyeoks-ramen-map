@@ -631,15 +631,16 @@ select:focus-visible {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  color: #5e6058;
-  font-size: 12px;
-  font-weight: 650;
+  color: #1f231d;
+  font-size: 13px;
+  font-weight: 750;
 }
 
 .ramen-card-menu strong {
   flex: 0 0 auto;
-  color: #343730;
-  font-size: 11px;
+  color: #b45309;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .ramen-card-meta {
@@ -647,8 +648,9 @@ select:focus-visible {
   align-items: center;
   gap: 7px;
   overflow: hidden;
-  color: #949189;
-  font-size: 10px;
+  color: #4b5563;
+  font-size: 11px;
+  font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
 }

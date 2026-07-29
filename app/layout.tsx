@@ -32,6 +32,12 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: "RAMEN MAP",
       images: [{ url: socialImage, width: 1730, height: 909, alt: "RAMEN MAP 전국 한 그릇 지도" }],
     },
+    manifest: "/manifest.json",
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: "black-translucent",
+      title: "RAMEN MAP",
+    },
     twitter: {
       card: "summary_large_image",
       title,
