@@ -21,6 +21,7 @@ import {
   analyzeRecommendationIntent,
   distanceBetweenKm,
   formatDistance,
+  formatDistanceText,
   recommendShops,
   type Coordinates,
   type RecommendationResult,
@@ -65,19 +66,20 @@ const INITIAL_CHAT: ChatMessage[] = [
   {
     id: 1,
     role: "bot",
-    text: "반가워요! 오늘 기분과 당기는 맛을 알려주세요. 위치를 허용하면 가까운 곳부터 골라드릴게요.",
+    text: "안녕하세요! 저는 당신의 감정, 위치, 취향을 읽는 AI '라멘 사마(Ramen-sama)'예요 🍜\n오늘 기분이 어떠신가요? '스트레스 받아', '속이 안 좋아', '어제 과음했어' 등 마음껏 말씀해 주세요!",
   },
 ];
 
 const QUICK_REPLIES = [
-  { label: "내 주변", prompt: "내 위치에서 가까운 라멘 추천해줘", useLocation: true },
-  { label: "스트레스 날리기", prompt: "오늘 화가 나는데 스트레스 풀고 싶어" },
-  { label: "느끼하지 않게", prompt: "느끼한 건 싫어. 시원하고 깔끔한 국물로 추천해줘" },
-  { label: "맑고 담백하게", prompt: "맑고 담백한 국물 추천해줘" },
-  { label: "진하고 묵직하게", prompt: "진하고 묵직한 라멘 추천해줘" },
-  { label: "찍어 먹는 면", prompt: "츠케멘 추천해줘" },
-  { label: "비벼 먹는 면", prompt: "마제소바 추천해줘" },
-  { label: "얼큰하게", prompt: "매콤한 라멘 추천해줘" },
+  { label: "스트레스 받아 😫", prompt: "스트레스 받아, 라멘 추천 좀. 매운 거, 느끼한 건 싫어" },
+  { label: "속이 안 좋아 🤢", prompt: "속이 안 좋은데 깔끔하고 안 느끼한 국물 추천해줘" },
+  { label: "해장이 필요해 🍺", prompt: "어제 과음했어, 시원하고 얼큰한 해장 라멘 추천해줘" },
+  { label: "데이트 가는 중 💕", prompt: "데이트하기에 분위기 깔끔하고 맛있는 라멘집 추천해줘" },
+  { label: "지금 당장 근처 🗺️", prompt: "내 위치에서 제일 가까운 맛집 추천해줘", useLocation: true },
+  { label: "맑고 담백하게 🍃", prompt: "맑고 담백한 청탕 추천해줘" },
+  { label: "매운 거 싫어 ❌🌶️", prompt: "안 매운 순한 라멘 추천해줘" },
+  { label: "찍어 먹는 면 🍜", prompt: "츠케멘 추천해줘" },
+  { label: "비벼 먹는 면 🥢", prompt: "마제소바 추천해줘" },
 ];
 
 const MAP_LABELS = [
@@ -659,8 +661,8 @@ export default function Home() {
         <div className="header-actions">
           <a className="verify-link" href="/verify">실데이터 검증</a>
           <button className="recommend-header" type="button" onClick={() => setChatOpen(true)}>
-            <span aria-hidden="true">✦</span>
-            취향으로 추천받기
+            <span aria-hidden="true">🍜</span>
+            라멘 사마 AI 챗봇
           </button>
         </div>
       </header>
@@ -1004,19 +1006,19 @@ export default function Home() {
       </div>
 
       {chatOpen ? (
-        <section className="chat-panel" aria-label="라멘 취향 추천봇" data-testid="chat-panel">
+        <section className="chat-panel" aria-label="라멘 사마 AI 챗봇" data-testid="chat-panel">
           <header>
-            <div className="bot-avatar" aria-hidden="true">ら</div>
+            <div className="bot-avatar" aria-hidden="true">🍜</div>
             <div>
-              <strong>한그릇 추천봇</strong>
-              <span><i /> {chatBusy ? "추천을 고르는 중" : "기분·취향 분석 준비"}</span>
+              <strong>라멘 사마 (Ramen-sama)</strong>
+              <span><i /> {chatBusy ? "감정 & 취향 분석 중..." : "감정 · 위치 · 취향 맞춤 AI"}</span>
             </div>
             <button type="button" onClick={() => setChatOpen(false)} aria-label="추천봇 닫기">×</button>
           </header>
           <div className="chat-body" aria-live="polite">
             {chatMessages.map((message) => (
               <div className={`chat-message ${message.role}`} key={message.id}>
-                <p>{message.text}</p>
+                <p style={{ whiteSpace: "pre-line" }}>{message.text}</p>
                 {message.recommendations?.map((recommendation) => {
                   const shop = shops.find((item) => item.id === recommendation.shopId);
                   if (!shop) return null;
@@ -1027,18 +1029,30 @@ export default function Home() {
                       key={shop.id}
                       onClick={() => showRecommendedShop(shop)}
                       data-testid={`chat-recommendation-${shop.id}`}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "flex-start",
+                        gap: "6px",
+                        textAlign: "left",
+                        width: "100%",
+                      }}
                     >
-                      <span>
-                        <small>
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
+                        <span style={{ fontSize: "11px", color: "var(--red)", fontWeight: 800 }}>
                           {shop.region} · {BROTH_STYLE_LABELS[shop.brothStyle]} · {RAMEN_TYPE_LABELS[shop.types[0]]}
-                          {recommendation.distanceKm !== null
-                            ? ` · 직선 ${formatDistance(recommendation.distanceKm)}`
-                            : ""}
-                        </small>
-                        <strong>{shop.name}</strong>
-                        <em>{recommendation.reason}</em>
-                      </span>
-                      <b>보기</b>
+                        </span>
+                        {recommendation.distanceKm !== null ? (
+                          <span style={{ fontSize: "11px", color: "#2563eb", fontWeight: 700, background: "#eff6ff", padding: "2px 6px", borderRadius: "4px" }}>
+                            ⌖ {formatDistanceText(recommendation.distanceKm)}
+                          </span>
+                        ) : null}
+                      </div>
+                      <strong style={{ fontSize: "14px", fontWeight: 900, color: "#111827" }}>{shop.name}</strong>
+                      <em style={{ fontSize: "12px", color: "#4b5563", fontStyle: "normal", fontWeight: 600 }}>{recommendation.reason}</em>
+                      <div style={{ marginTop: "4px", width: "100%", display: "flex", justifyContent: "flex-end" }}>
+                        <b style={{ fontSize: "12px", color: "#1d4ed8", background: "#dbeafe", padding: "4px 10px", borderRadius: "6px" }}>📍 지도에서 이동 & 마커 보기 ↗</b>
+                      </div>
                     </button>
                   );
                 })}

@@ -198,3 +198,17 @@ test("dry and dipping requests suppress descriptive broth inference", () => {
   assert.equal(dry.preferredBrothStyle, null);
   assert.equal(dipping.preferredBrothStyle, null);
 });
+
+test("correctly parses emotion, avoids spicy and rich, and recommends clean chintan for stress prompt", () => {
+  const result = recommendShops(
+    "스트레스 받아, 라멘 추천 좀. 매운 거, 느끼한 건 싫어",
+    "전국",
+  );
+
+  assert.equal(result.intent.stressRelief, true);
+  assert.equal(result.intent.avoidSpicy, true);
+  assert.equal(result.intent.avoidRich, true);
+  assert.equal(result.intent.detectedEmotion, "stress");
+  assert.ok(result.recommendations.every(({ shop }) => shop.spiciness <= 1 && !shop.types.includes("jiro")));
+  assert.ok(result.recommendations.some(({ shop }) => shop.brothStyle === "chintan"));
+});

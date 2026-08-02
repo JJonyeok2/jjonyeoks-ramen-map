@@ -212,11 +212,87 @@ const ALL_CRAFT_SHOPS = [
   { id: "gyeonggi-gwangmyeong-001", name: "광명 멘야세븐 철산점", region: "경기", district: "광명시", address: "경기도 광명시 철산로 30", lat: 37.4762, lng: 126.8689, types: ["mazesoba"], brothStyle: "dry", signature: "마제소바", price: 10500, body: 4, spiciness: 1, bases: ["돼지"], tags: ["철산역맛집", "광명핫플"], rating: 4.7, hours: "11:30-21:00", closed: "월요일", vegetarian: false, containsPork: true }
 ];
 
+function generateAiProfile(s) {
+  const isJiro = s.types.includes("jiro");
+  const isKarai = s.spiciness >= 2 || s.signature.includes("카라이") || s.tags.some((t) => t.includes("카라이"));
+  const isChintan = s.brothStyle === "chintan" || s.body <= 2;
+  const isPaitan = s.brothStyle === "paitan" || s.body >= 4;
+  const isTsukemen = s.types.includes("tsukemen");
+  const isMazesoba = s.types.includes("mazesoba");
+  const isShoyuOrShio = s.types.includes("shoyu") || s.types.includes("shio");
+
+  let stress_relief = 0.5;
+  if (isJiro) stress_relief = 0.95;
+  else if (isKarai) stress_relief = 0.9;
+  else if (isTsukemen || isMazesoba) stress_relief = 0.8;
+  else if (isPaitan) stress_relief = 0.7;
+
+  let hangover_cure = 0.4;
+  if (isKarai) hangover_cure = 0.9;
+  else if (isChintan) hangover_cure = 0.85;
+  else if (isPaitan) hangover_cure = 0.75;
+
+  let cleanse_palate = 0.3;
+  if (isChintan || (isShoyuOrShio && s.body <= 3)) cleanse_palate = 0.95;
+  else if (isShoyuOrShio) cleanse_palate = 0.8;
+  else if (s.body <= 2) cleanse_palate = 0.85;
+
+  let spicy_challenge = isKarai ? Math.min(1.0, 0.4 + s.spiciness * 0.2) : 0.0;
+  let solo_friendly = 0.9;
+  let date_spot = isShoyuOrShio || isTsukemen ? 0.85 : 0.7;
+
+  return {
+    stress_relief: Number(stress_relief.toFixed(2)),
+    hangover_cure: Number(hangover_cure.toFixed(2)),
+    cleanse_palate: Number(cleanse_palate.toFixed(2)),
+    spicy_challenge: Number(spicy_challenge.toFixed(2)),
+    solo_friendly: Number(solo_friendly.toFixed(2)),
+    date_spot: Number(date_spot.toFixed(2)),
+  };
+}
+
+function generateDetailedTags(s) {
+  const isJiro = s.types.includes("jiro");
+  const isKarai = s.spiciness >= 2 || s.signature.includes("카라이");
+  const isChintan = s.brothStyle === "chintan" || s.body <= 2;
+
+  const richness = isChintan ? "light" : isJiro || s.body >= 5 ? "heavy" : "medium";
+  const oil_level = isChintan ? "low" : isJiro || s.body >= 5 ? "high" : "medium";
+  const price_range = `${s.price - 1000}-${s.price + 2000}`;
+
+  const recommend_for = [];
+  if (isKarai || isJiro) recommend_for.push("스트레스");
+  if (isKarai || isChintan) recommend_for.push("숙취");
+  if (isChintan || s.body <= 3) recommend_for.push("깔끔");
+  if (s.types.includes("shoyu") || s.types.includes("shio")) recommend_for.push("데이트");
+  recommend_for.push("혼밥");
+
+  const mood = ["혼밥"];
+  if (s.price <= 10000) mood.push("가성비");
+  if (s.types.includes("shoyu") || s.types.includes("shio") || s.types.includes("tsukemen")) mood.push("감성");
+  if (s.rating >= 4.7) mood.push("줄서먹는맛집");
+
+  return {
+    broth: s.bases,
+    richness,
+    oil_level,
+    spiciness: s.spiciness,
+    noodle_type: isJiro ? "극후면" : s.types.includes("tsukemen") ? "극태면" : s.types.includes("shoyu") ? "자가제면 직면" : "세면",
+    topping_special: s.containsPork ? ["차슈", "아지타마고", "멘마"] : ["수비드 닭차슈", "아지타마고"],
+    price_range,
+    waiting: s.rating >= 4.7 ? "long" : "medium",
+    mood,
+    recommend_for,
+  };
+}
+
 const formattedShops = ALL_CRAFT_SHOPS.map((s) => ({
   ...s,
   menuList: generateMenuList(s),
+  detailedTags: generateDetailedTags(s),
+  aiProfile: generateAiProfile(s),
   dataStatus: "verified",
-  verifiedAt: "2026-07"
+  verifiedAt: "2026-07",
 }));
 
 const fileContent = `/**
@@ -279,6 +355,28 @@ export interface MenuItem {
   description?: string;
 }
 
+export interface AiProfile {
+  stress_relief: number;
+  hangover_cure: number;
+  cleanse_palate: number;
+  spicy_challenge: number;
+  solo_friendly: number;
+  date_spot: number;
+}
+
+export interface DetailedTags {
+  broth?: BrothBase[];
+  richness?: "light" | "medium" | "heavy";
+  oil_level?: "low" | "medium" | "high";
+  spiciness?: SpicinessLevel;
+  noodle_type?: string;
+  topping_special?: string[];
+  price_range?: string;
+  waiting?: "short" | "medium" | "long";
+  mood?: string[];
+  recommend_for?: string[];
+}
+
 export interface RamenShop {
   id: string;
   name: string;
@@ -292,6 +390,8 @@ export interface RamenShop {
   signature: string;
   price: number;
   menuList?: MenuItem[];
+  detailedTags?: DetailedTags;
+  aiProfile?: AiProfile;
   body: BodyLevel;
   spiciness: SpicinessLevel;
   bases: BrothBase[];
@@ -311,3 +411,4 @@ export const RAMEN_SHOPS: RamenShop[] = ${JSON.stringify(formattedShops, null, 2
 
 fs.writeFileSync(path.join(process.cwd(), "app", "ramen-data.ts"), fileContent, "utf8");
 console.log(`Successfully updated app/ramen-data.ts with ${formattedShops.length} real independent craft ramen shops.`);
+

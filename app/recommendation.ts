@@ -11,8 +11,14 @@ export type Coordinates = {
   lng: number;
 };
 
+export type EmotionType = "stress" | "hangover" | "cleanse" | "date" | "solo" | "general";
+
 export type RecommendationIntent = {
   stressRelief: boolean;
+  hangoverCure: boolean;
+  cleansePalate: boolean;
+  dateSpot: boolean;
+  soloFriendly: boolean;
   spicy: boolean;
   wantsKarai: boolean;
   avoidSpicy: boolean;
@@ -20,6 +26,7 @@ export type RecommendationIntent = {
   preferredBrothStyle: BrothStyle | null;
   nearby: boolean;
   mentionedRegion: Region | null;
+  detectedEmotion: EmotionType;
 };
 
 export type RecommendationStrategy = "karai" | "spicy" | "taste";
@@ -28,6 +35,9 @@ export type RankedRecommendation = {
   shop: RamenShop;
   reason: string;
   distanceKm: number | null;
+  distanceText?: string;
+  oneLiner?: string;
+  emotionTag?: string;
 };
 
 export type RecommendationResult = {
@@ -41,9 +51,14 @@ export type RecommendationResult = {
 
 const STRESS_RELIEF_PATTERN =
   /스트레스(?:를|가)?\s*(?:받|쌓|풀|날리|해소)|화가\s*(?:나|났)|열\s*받|열받|짜증|울화|답답(?:해|해서)|분노|기분\s*전환|땀\s*(?:빼|내)/;
+const HANGOVER_PATTERN = /해장|숙취|술|과음|어제\s*술|속풀이|알코올/;
+const CLEANSE_PATTERN = /속이\s*안\s*좋|속\s*더러|입맛\s*없|더부룩|깔끔|소화/;
+const DATE_PATTERN = /데이트|여친|남친|연인|분위기\s*좋|오붓/;
+const SOLO_PATTERN = /혼밥|혼자|퇴근길/;
+
 const EXPLICIT_SPICY_PATTERN = /카라이|매콤|매운|얼큰|화끈/;
 const AVOID_SPICY_PATTERN =
-  /안\s*매운|맵지\s*않|매운\s*(?:건|거|것|맛)?\s*(?:싫|못|빼|제외|없이)|맵찔|순한\s*(?:맛|걸|거)|매운맛\s*(?:빼|제외|없이)/;
+  /안\s*매운|맵지\s*않|매운\s*(?:건|거|것|맛)?[\s,].{0,10}(?:싫|못|별로|부담|빼|제외|없이)|매운\s*(?:건|거|것|맛)?\s*(?:싫|못|별로|부담|빼|제외|없이)|맵찔|순한\s*(?:맛|걸|거)|매운맛\s*(?:빼|제외|없이)/;
 const NEARBY_PATTERN = /근처|주변|가까운|내\s*위치|현재\s*위치|동네/;
 const AVOID_PORK_PATTERN = /돼지.*(?:빼|제외|없이)|돈육.*(?:빼|제외|없이)/;
 const AVOID_RICH_PATTERN =
@@ -74,6 +89,18 @@ export function analyzeRecommendationIntent(prompt: string): RecommendationInten
   const avoidRich =
     AVOID_RICH_PATTERN.test(input) && !RICH_ALLOWED_PATTERN.test(input);
   const stressRelief = STRESS_RELIEF_PATTERN.test(input);
+  const hangoverCure = HANGOVER_PATTERN.test(input);
+  const cleansePalate = CLEANSE_PATTERN.test(input) || (avoidRich && !stressRelief);
+  const dateSpot = DATE_PATTERN.test(input);
+  const soloFriendly = SOLO_PATTERN.test(input);
+
+  let detectedEmotion: EmotionType = "general";
+  if (stressRelief) detectedEmotion = "stress";
+  else if (hangoverCure) detectedEmotion = "hangover";
+  else if (cleansePalate) detectedEmotion = "cleanse";
+  else if (dateSpot) detectedEmotion = "date";
+  else if (soloFriendly) detectedEmotion = "solo";
+
   const explicitKarai = input.includes("카라이");
   const spicy = !avoidSpicy && (stressRelief || EXPLICIT_SPICY_PATTERN.test(input));
   const explicitChintan = CHINTAN_TERM_PATTERN.test(input);
@@ -105,6 +132,10 @@ export function analyzeRecommendationIntent(prompt: string): RecommendationInten
 
   return {
     stressRelief,
+    hangoverCure,
+    cleansePalate,
+    dateSpot,
+    soloFriendly,
     spicy,
     wantsKarai: spicy && (stressRelief || explicitKarai),
     avoidSpicy,
@@ -113,6 +144,7 @@ export function analyzeRecommendationIntent(prompt: string): RecommendationInten
     nearby: NEARBY_PATTERN.test(input),
     mentionedRegion:
       REGIONS.find((region) => input.includes(normalizeText(region))) ?? null,
+    detectedEmotion,
   };
 }
 
@@ -145,12 +177,29 @@ export function formatDistance(distanceKm: number) {
   return `${Math.round(distanceKm).toLocaleString("ko-KR")}km`;
 }
 
+export function formatDistanceText(distanceKm: number): string {
+  if (distanceKm < 1.5) {
+    const walkMinutes = Math.max(1, Math.round((distanceKm * 1000) / 80));
+    return `도보 ${walkMinutes}분 (${formatDistance(distanceKm)})`;
+  }
+  const transitMinutes = Math.max(5, Math.round(distanceKm * 3));
+  return `대중교통 ${transitMinutes}분 (${formatDistance(distanceKm)})`;
+}
+
 function preferenceScore(
   shop: RamenShop,
   input: string,
   intent: RecommendationIntent,
 ) {
-  let score = shop.rating;
+  let score = shop.rating * 10;
+  if (shop.aiProfile) {
+    if (intent.stressRelief) score += shop.aiProfile.stress_relief * 25;
+    if (intent.hangoverCure) score += shop.aiProfile.hangover_cure * 25;
+    if (intent.cleansePalate) score += shop.aiProfile.cleanse_palate * 25;
+    if (intent.dateSpot) score += shop.aiProfile.date_spot * 20;
+    if (intent.soloFriendly) score += shop.aiProfile.solo_friendly * 15;
+  }
+
   if (intent.avoidRich) score += (6 - shop.body) * 8;
   if (/맑|담백|깔끔|시오|소금/.test(input)) {
     if (shop.body <= 3) score += 8;
@@ -213,6 +262,25 @@ export function getRecommendationReason(
     : shop.tags.slice(0, 2).join(" · ");
 }
 
+export function generateOneLiner(intent: RecommendationIntent, shop: RamenShop): string {
+  if (intent.stressRelief) {
+    if (intent.avoidSpicy || shop.brothStyle === "chintan") {
+      return "스트레스 받으셨군요. 차분하고 맑은 국물로 속과 마음을 어루만져 보세요 🍃";
+    }
+    return "오늘의 스트레스! 얼큰하고 화끈한 라멘 한 그릇으로 싹 날려버리세요 🔥";
+  }
+  if (intent.hangoverCure) {
+    return "어제 과음하셨나요? 개운하고 속 시원한 국물이 속풀이에 으뜸이에요 🥣";
+  }
+  if (intent.cleansePalate) {
+    return "느끼함 전혀 없는 깔끔한 국물로 입안을 시원하게 리셋해보세요 💚";
+  }
+  if (intent.dateSpot) {
+    return "소중한 사람과 함께하기 좋은 정갈하고 우아한 정통 라멘 공간이에요 ✨";
+  }
+  return "오늘 기분에 딱 맞는 정성 가득 수제 라멘 맛집이에요 🍜";
+}
+
 export function recommendShops(
   prompt: string,
   activeRegion: Region | "전국",
@@ -232,6 +300,9 @@ export function recommendShops(
   if (intent.avoidSpicy) {
     candidates = candidates.filter((shop) => shop.spiciness <= 1);
   }
+  if (intent.avoidRich) {
+    candidates = candidates.filter((shop) => !shop.types.includes("jiro") && shop.body <= 4);
+  }
   if (/채식|비건/.test(input)) {
     candidates = candidates.filter((shop) => shop.vegetarian);
   }
@@ -241,10 +312,11 @@ export function recommendShops(
 
   let brothMatch: BrothStyle | null = null;
   if (intent.preferredBrothStyle) {
-    candidates = candidates.filter(
-      (shop) => shop.brothStyle === intent.preferredBrothStyle,
-    );
-    if (candidates.length) brothMatch = intent.preferredBrothStyle;
+    const matched = candidates.filter((shop) => shop.brothStyle === intent.preferredBrothStyle);
+    if (matched.length > 0) {
+      candidates = matched;
+      brothMatch = intent.preferredBrothStyle;
+    }
   }
 
   let strategy: RecommendationStrategy = "taste";
@@ -267,13 +339,16 @@ export function recommendShops(
   }
 
   const ranked = candidates
-    .map((shop) => ({
-      shop,
-      score: preferenceScore(shop, input, intent),
-      distanceKm: userLocation
+    .map((shop) => {
+      const distanceKm = userLocation
         ? distanceBetweenKm(userLocation, { lat: shop.lat, lng: shop.lng })
-        : null,
-    }))
+        : null;
+      return {
+        shop,
+        score: preferenceScore(shop, input, intent),
+        distanceKm,
+      };
+    })
     .sort((left, right) => {
       if (left.distanceKm !== null && right.distanceKm !== null) {
         const distanceDifference = left.distanceKm - right.distanceKm;
@@ -288,7 +363,10 @@ export function recommendShops(
     .map(({ shop, distanceKm }) => ({
       shop,
       distanceKm,
+      distanceText: distanceKm !== null ? formatDistanceText(distanceKm) : undefined,
       reason: getRecommendationReason(shop, prompt, strategy),
+      oneLiner: generateOneLiner(intent, shop),
+      emotionTag: intent.detectedEmotion !== "general" ? intent.detectedEmotion : undefined,
     }));
 
   return {

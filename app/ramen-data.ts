@@ -58,6 +58,28 @@ export interface MenuItem {
   description?: string;
 }
 
+export interface AiProfile {
+  stress_relief: number;
+  hangover_cure: number;
+  cleanse_palate: number;
+  spicy_challenge: number;
+  solo_friendly: number;
+  date_spot: number;
+}
+
+export interface DetailedTags {
+  broth?: BrothBase[];
+  richness?: "light" | "medium" | "heavy";
+  oil_level?: "low" | "medium" | "high";
+  spiciness?: SpicinessLevel;
+  noodle_type?: string;
+  topping_special?: string[];
+  price_range?: string;
+  waiting?: "short" | "medium" | "long";
+  mood?: string[];
+  recommend_for?: string[];
+}
+
 export interface RamenShop {
   id: string;
   name: string;
@@ -71,6 +93,8 @@ export interface RamenShop {
   signature: string;
   price: number;
   menuList?: MenuItem[];
+  detailedTags?: DetailedTags;
+  aiProfile?: AiProfile;
   body: BodyLevel;
   spiciness: SpicinessLevel;
   bases: BrothBase[];
@@ -141,6 +165,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "수비드 닭차슈",
+        "아지타마고"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -199,6 +255,42 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -255,6 +347,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -312,6 +435,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "11000-14000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -368,6 +524,40 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "채소"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 2,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10500-13500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "숙취",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.9,
+      "hangover_cure": 0.9,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0.8,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -425,6 +615,41 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "닭"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성"
+      ],
+      "recommend_for": [
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -483,6 +708,42 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -539,6 +800,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "수비드 닭차슈",
+        "아지타마고"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -596,6 +889,42 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10500-13500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -651,6 +980,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 2,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "숙취",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.9,
+      "hangover_cure": 0.9,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0.8,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -708,6 +1069,41 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "닭"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -765,6 +1161,40 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "닭"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -820,6 +1250,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 3,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "숙취",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.9,
+      "hangover_cure": 0.9,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 1,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -877,6 +1340,42 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -933,6 +1432,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "11000-14000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -988,6 +1520,40 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "수비드 닭차슈",
+        "아지타마고"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1044,6 +1610,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1099,6 +1698,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1165,6 +1795,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "진한 일본식 카레 풍미가 우러난 류진 지로라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "극후면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.95,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1221,6 +1883,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1276,6 +1970,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1333,6 +2058,41 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 1,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "감성"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1389,6 +2149,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 2,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "숙취",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.9,
+      "hangover_cure": 0.9,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0.8,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1444,6 +2237,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 2,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "12500-15500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "숙취",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.9,
+      "hangover_cure": 0.9,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0.8,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1500,6 +2326,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "수비드 닭차슈",
+        "아지타마고"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1557,6 +2415,41 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "수비드 닭차슈",
+        "아지타마고"
+      ],
+      "price_range": "11500-14500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1613,6 +2506,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1669,6 +2595,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "감성"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1726,6 +2683,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10500-13500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1782,6 +2772,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "수비드 닭차슈",
+        "아지타마고"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1839,6 +2861,41 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "감성"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1894,6 +2951,36 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -1950,6 +3037,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 2,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "숙취",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.9,
+      "hangover_cure": 0.9,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0.8,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2006,6 +3125,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2061,6 +3213,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2116,6 +3300,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2172,6 +3387,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2228,6 +3476,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2283,6 +3563,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 2,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "숙취",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.9,
+      "hangover_cure": 0.9,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0.8,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2338,6 +3650,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 2,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "숙취",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.9,
+      "hangover_cure": 0.9,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0.8,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2393,6 +3738,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8000-11000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2448,6 +3824,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2504,6 +3911,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "감성"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2560,6 +3998,40 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 2,
+      "noodle_type": "세면",
+      "topping_special": [
+        "수비드 닭차슈",
+        "아지타마고"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "숙취",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.9,
+      "hangover_cure": 0.9,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0.8,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2617,6 +4089,42 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2672,6 +4180,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2727,6 +4266,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2783,6 +4353,40 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2838,6 +4442,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2894,6 +4529,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -2950,6 +4616,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3007,6 +4705,43 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3062,6 +4797,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8000-11000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3117,6 +4883,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3172,6 +4969,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 2,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "숙취",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.9,
+      "hangover_cure": 0.9,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0.8,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3228,6 +5058,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3284,6 +5147,39 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3341,6 +5237,42 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10500-13500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3396,6 +5328,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3451,6 +5415,36 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3506,6 +5500,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3561,6 +5587,36 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3617,6 +5673,41 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3683,6 +5774,42 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "진하고 고소하게 우려낸 한정 농후 파이탄"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3749,6 +5876,40 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "특제 소스와 고소한 차슈 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "닭"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3811,6 +5972,40 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "직화 수제 차슈와 밥의 조합 (공기밥 무료)"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3884,6 +6079,41 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "특제 미소 소스와 부드러운 직화 차슈 덮밥"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "해산물",
+        "닭"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "11000-14000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.4,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3939,6 +6169,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -3994,6 +6256,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -4049,6 +6342,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -4104,6 +6428,38 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -4159,6 +6515,36 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -4214,6 +6600,36 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -4270,6 +6686,41 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "자가제면과 정성으로 끓여낸 특선 청탕"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -4325,6 +6776,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   },
@@ -4380,6 +6862,37 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
       }
     ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
   }
