@@ -286,14 +286,87 @@ function generateDetailedTags(s) {
   };
 }
 
-const formattedShops = ALL_CRAFT_SHOPS.map((s) => ({
-  ...s,
-  menuList: generateMenuList(s),
-  detailedTags: generateDetailedTags(s),
-  aiProfile: generateAiProfile(s),
-  dataStatus: "verified",
-  verifiedAt: "2026-07",
-}));
+function buildComprehensiveSearchTags(s, menuList) {
+  const tagSet = new Set(s.tags);
+
+  const typeLabels = {
+    shoyu: "쇼유",
+    shio: "시오",
+    miso: "미소",
+    tonkotsu: "돈코츠",
+    tsukemen: "츠케멘",
+    mazesoba: "마제소바",
+    jiro: "지로계",
+  };
+
+  const styleLabels = {
+    chintan: "청탕",
+    paitan: "백탕",
+    dry: "비빔",
+    dipping: "츠케",
+  };
+
+  for (const type of s.types) {
+    if (typeLabels[type]) {
+      tagSet.add(typeLabels[type]);
+      tagSet.add(`${typeLabels[type]}라멘`);
+    }
+  }
+
+  if (styleLabels[s.brothStyle]) {
+    tagSet.add(styleLabels[s.brothStyle]);
+    if (s.brothStyle === "chintan") {
+      tagSet.add("맑은청탕");
+      tagSet.add("담백한국물");
+    } else if (s.brothStyle === "paitan") {
+      tagSet.add("진한백탕");
+      tagSet.add("뽀얀육수");
+    } else if (s.brothStyle === "dipping") {
+      tagSet.add("농후츠케멘");
+    } else if (s.brothStyle === "dry") {
+      tagSet.add("마제소바");
+    }
+  }
+
+  for (const base of s.bases) {
+    tagSet.add(`${base}육수`);
+    if (base === "돼지") tagSet.add("돈코츠");
+    if (base === "닭") tagSet.add("토리파이탄");
+    if (base === "해산물") tagSet.add("해물라멘");
+  }
+
+  if (s.spiciness >= 2 || s.signature.includes("카라이")) {
+    tagSet.add("카라이");
+    tagSet.add("매콤한라멘");
+  } else if (s.spiciness === 0) {
+    tagSet.add("안매운라멘");
+  }
+
+  if (menuList) {
+    for (const item of menuList) {
+      tagSet.add(item.name);
+    }
+  }
+
+  tagSet.add("수제라멘");
+  tagSet.add("자가제면");
+  tagSet.add("혼밥");
+
+  return Array.from(tagSet);
+}
+
+const formattedShops = ALL_CRAFT_SHOPS.map((s) => {
+  const menuList = generateMenuList(s);
+  return {
+    ...s,
+    menuList,
+    tags: buildComprehensiveSearchTags(s, menuList),
+    detailedTags: generateDetailedTags(s),
+    aiProfile: generateAiProfile(s),
+    dataStatus: "verified",
+    verifiedAt: "2026-07",
+  };
+});
 
 const fileContent = `/**
  * 서울 & 경기 주요 독창적/독립 라멘 매장 데이터베이스 (대확장판)

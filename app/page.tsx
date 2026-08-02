@@ -344,9 +344,14 @@ export default function Home() {
           shop.signature,
           shop.region,
           shop.district,
+          shop.address,
           BROTH_STYLE_LABELS[shop.brothStyle],
           shop.tags.join(" "),
+          shop.bases.join(" "),
           shop.types.map((type) => RAMEN_TYPE_LABELS[type]).join(" "),
+          shop.menuList?.map((item) => `${item.name} ${item.description || ""}`).join(" ") || "",
+          shop.detailedTags?.mood?.join(" ") || "",
+          shop.detailedTags?.recommend_for?.join(" ") || "",
         ].join(" "),
       );
       const matchesQuery = !query || haystack.includes(query);
