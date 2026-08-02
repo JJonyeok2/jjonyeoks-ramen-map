@@ -600,14 +600,40 @@ export default function Home() {
         locationUnavailable = !coordinates;
       }
 
-      const result = recommendShops(cleanPrompt, region, coordinates, shops);
+      let result = recommendShops(cleanPrompt, region, coordinates, shops);
+      let replyMessageText = buildBotReply(result, locationUnavailable);
+
+      try {
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            prompt: cleanPrompt,
+            userLocation: coordinates,
+            activeRegion: region,
+          }),
+        });
+        if (response.ok) {
+          const apiData = await response.json() as any;
+          if (apiData.result) {
+            if (apiData.result.recommendations) {
+              result = apiData.result;
+            } else if (apiData.result.reply_text) {
+              replyMessageText = apiData.result.reply_text;
+            }
+          }
+        }
+      } catch (err) {
+        console.warn("Client API call failed, using local engine output", err);
+      }
+
       const botId = messageIdRef.current++;
       setChatMessages((current) => [
         ...current,
         {
           id: botId,
           role: "bot",
-          text: buildBotReply(result, locationUnavailable),
+          text: replyMessageText,
           recommendations: result.recommendations.map((recommendation) => ({
             shopId: recommendation.shop.id,
             reason: recommendation.reason,
