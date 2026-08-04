@@ -6961,8 +6961,8 @@ export const RAMEN_SHOPS: RamenShop[] = [
     "region": "경기",
     "district": "안양시 동안구",
     "address": "경기도 안양시 동안구 관평로69번길 19 1층 101호",
-    "lat": 37.3972,
-    "lng": 126.9628,
+    "lat": 37.3832389881529,
+    "lng": 126.964036879545,
     "types": [
       "tsukemen",
       "shio",
