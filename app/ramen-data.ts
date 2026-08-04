@@ -6848,9 +6848,9 @@ export const RAMEN_SHOPS: RamenShop[] = [
     "name": "후타가와 라멘 (안양)",
     "region": "경기",
     "district": "안양시 동안구",
-    "address": "경기도 안양시 동안구 평촌대로223번길 16 2층",
-    "lat": 37.3912,
-    "lng": 126.9538,
+    "address": "경기도 안양시 동안구 호계동 1040",
+    "lat": 37.3909459663265,
+    "lng": 126.95183610544,
     "types": [
       "tonkotsu",
       "shoyu"
