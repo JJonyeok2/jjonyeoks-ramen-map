@@ -10676,5 +10676,4934 @@ export const RAMEN_SHOPS: RamenShop[] = [
     },
     "dataStatus": "verified",
     "verifiedAt": "2026-07"
+  },
+  {
+    "id": "busan-busanjin-001",
+    "name": "멘즈키 (전포 본점)",
+    "region": "부산",
+    "district": "부산진구",
+    "address": "부산광역시 부산진구 동성로25번길 29",
+    "lat": 35.1541,
+    "lng": 129.0658,
+    "types": [
+      "tsukemen",
+      "shoyu",
+      "miso"
+    ],
+    "brothStyle": "dipping",
+    "signature": "농후 쇼유 츠케멘",
+    "price": 10500,
+    "body": 4,
+    "spiciness": 1,
+    "bases": [
+      "돼지",
+      "해산물"
+    ],
+    "tags": [
+      "전포카페거리",
+      "부산츠케멘",
+      "멘즈키",
+      "서면맛집",
+      "츠케멘",
+      "츠케멘라멘",
+      "쇼유",
+      "쇼유라멘",
+      "미소",
+      "미소라멘",
+      "츠케",
+      "농후츠케멘",
+      "돼지육수",
+      "돈코츠",
+      "해산물육수",
+      "해물라멘",
+      "농후 쇼유 츠케멘",
+      "카라이 츠케멘",
+      "특제 차슈 츠케멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.8,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "농후 쇼유 츠케멘",
+        "price": 10500,
+        "isSignature": true,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (전포카페거리 · 부산츠케멘)"
+      },
+      {
+        "name": "카라이 츠케멘",
+        "price": 11000,
+        "brothStyle": "dipping",
+        "spiciness": 2,
+        "description": "매콤한 다대기가 가미된 농후 츠케즙과 굵은 면발"
+      },
+      {
+        "name": "특제 차슈 츠케멘",
+        "price": 13500,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "busan-busanjin-002",
+    "name": "나의피는라멘으로되어있어 (전포)",
+    "region": "부산",
+    "district": "부산진구",
+    "address": "부산광역시 부산진구 전포대로210번길 45",
+    "lat": 35.1562,
+    "lng": 129.0671,
+    "types": [
+      "jiro",
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "부산 지로라멘",
+    "price": 11000,
+    "body": 5,
+    "spiciness": 1,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "부산지로계",
+      "전포동라멘",
+      "나의피는라멘으로되어있어",
+      "지로계",
+      "지로계라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "부산 지로라멘",
+      "카라이 부산 지로 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.8,
+    "hours": "11:30-20:30",
+    "closed": "화요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "부산 지로라멘",
+        "price": 11000,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (부산지로계 · 전포동라멘)"
+      },
+      {
+        "name": "카라이 부산 지로 라멘",
+        "price": 11500,
+        "brothStyle": "paitan",
+        "spiciness": 3,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 13500,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "극후면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.95,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "busan-busanjin-003",
+    "name": "타카라멘 (서면)",
+    "region": "부산",
+    "district": "부산진구",
+    "address": "부산광역시 부산진구 가야대로784번길 53",
+    "lat": 35.1578,
+    "lng": 129.0568,
+    "types": [
+      "jiro",
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "타카 지로라멘",
+    "price": 10500,
+    "body": 5,
+    "spiciness": 1,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "서면롯데백화점",
+      "서면라멘",
+      "타카라멘",
+      "지로계",
+      "지로계라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "타카 지로라멘",
+      "카라이 타카 지로 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "타카 지로라멘",
+        "price": 10500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (서면롯데백화점 · 서면라멘)"
+      },
+      {
+        "name": "카라이 타카 지로 라멘",
+        "price": 11000,
+        "brothStyle": "paitan",
+        "spiciness": 3,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 13000,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "극후면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.95,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "busan-busanjin-004",
+    "name": "카네다 (전포/서면)",
+    "region": "부산",
+    "district": "부산진구",
+    "address": "부산광역시 부산진구 전포대로176번길 19",
+    "lat": 35.1528,
+    "lng": 129.0642,
+    "types": [
+      "shoyu",
+      "shio"
+    ],
+    "brothStyle": "chintan",
+    "signature": "특선 쇼유라멘",
+    "price": 11000,
+    "body": 3,
+    "spiciness": 0,
+    "bases": [
+      "닭",
+      "해산물"
+    ],
+    "tags": [
+      "전포동수제라멘",
+      "카네다",
+      "이벤트라멘",
+      "쇼유",
+      "쇼유라멘",
+      "시오",
+      "시오라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "해산물육수",
+      "해물라멘",
+      "안매운라멘",
+      "특선 쇼유라멘",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.8,
+    "hours": "11:30-21:00",
+    "closed": "수요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "특선 쇼유라멘",
+        "price": 11000,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (전포동수제라멘 · 카네다)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 11000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 13000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "busan-geumjeong-001",
+    "name": "키무엔라멘 (부산대)",
+    "region": "부산",
+    "district": "금정구",
+    "address": "부산광역시 금정구 금정로60번길 23",
+    "lat": 35.2312,
+    "lng": 129.0861,
+    "types": [
+      "shio",
+      "shoyu"
+    ],
+    "brothStyle": "chintan",
+    "signature": "키무엔 시오라멘",
+    "price": 9500,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭"
+    ],
+    "tags": [
+      "부산대맛집",
+      "키무엔라멘",
+      "부산대청탕",
+      "시오",
+      "시오라멘",
+      "쇼유",
+      "쇼유라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "안매운라멘",
+      "키무엔 시오라멘",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-20:30",
+    "closed": "일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "키무엔 시오라멘",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (부산대맛집 · 키무엔라멘)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 9500,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 11500,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "busan-busanjin-005",
+    "name": "가솔린앤로지스 (전포)",
+    "region": "부산",
+    "district": "부산진구",
+    "address": "부산광역시 부산진구 서전로38번길 43-8",
+    "lat": 35.1589,
+    "lng": 129.0652,
+    "types": [
+      "shoyu",
+      "jiro"
+    ],
+    "brothStyle": "paitan",
+    "signature": "가솔린 지로탄멘",
+    "price": 11000,
+    "body": 5,
+    "spiciness": 1,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "전포힙플",
+      "가솔린앤로지스",
+      "부산마니아라멘",
+      "쇼유",
+      "쇼유라멘",
+      "지로계",
+      "지로계라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "돈코츠",
+      "가솔린 지로탄멘",
+      "카라이 가솔린 지로탄멘 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.8,
+    "hours": "11:30-20:00",
+    "closed": "목요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "가솔린 지로탄멘",
+        "price": 11000,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (전포힙플 · 가솔린앤로지스)"
+      },
+      {
+        "name": "카라이 가솔린 지로탄멘 라멘",
+        "price": 11500,
+        "brothStyle": "paitan",
+        "spiciness": 3,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 13500,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "극후면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.95,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "busan-haeundae-001",
+    "name": "류센소 본점 (해운대)",
+    "region": "부산",
+    "district": "해운대구",
+    "address": "부산광역시 해운대구 구남로8번길 52",
+    "lat": 35.1631,
+    "lng": 129.1582,
+    "types": [
+      "tonkotsu",
+      "shio"
+    ],
+    "brothStyle": "paitan",
+    "signature": "류센소 돈코츠라멘",
+    "price": 10000,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지",
+      "해산물"
+    ],
+    "tags": [
+      "해운대맛집",
+      "류센소",
+      "굴시오라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "시오",
+      "시오라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "해산물육수",
+      "해물라멘",
+      "안매운라멘",
+      "류센소 돈코츠라멘",
+      "카라이 류센소 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:00-21:30",
+    "closed": "연중무휴",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "류센소 돈코츠라멘",
+        "price": 10000,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (해운대맛집 · 류센소)"
+      },
+      {
+        "name": "카라이 류센소 돈코츠 라멘",
+        "price": 10500,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12500,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-mapo-030",
+    "name": "멘야아마노 (서교)",
+    "region": "서울",
+    "district": "마포구",
+    "address": "서울특별시 마포구 월드컵북로4길 29",
+    "lat": 37.5571,
+    "lng": 126.9212,
+    "types": [
+      "shoyu",
+      "shio"
+    ],
+    "brothStyle": "chintan",
+    "signature": "특선 쇼유라멘",
+    "price": 11000,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭",
+      "해산물"
+    ],
+    "tags": [
+      "서교동맛집",
+      "멘야아마노",
+      "홍대청탕",
+      "쇼유",
+      "쇼유라멘",
+      "시오",
+      "시오라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "해산물육수",
+      "해물라멘",
+      "안매운라멘",
+      "특선 쇼유라멘",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.8,
+    "hours": "11:30-20:30",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "특선 쇼유라멘",
+        "price": 11000,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (서교동맛집 · 멘야아마노)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 11000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 13000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-mapo-031",
+    "name": "라멘미세스 (공덕)",
+    "region": "서울",
+    "district": "마포구",
+    "address": "서울특별시 마포구 백범로31길 8",
+    "lat": 37.5432,
+    "lng": 126.9512,
+    "types": [
+      "shoyu"
+    ],
+    "brothStyle": "chintan",
+    "signature": "미세스 쇼유라멘",
+    "price": 10000,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭"
+    ],
+    "tags": [
+      "공덕역맛집",
+      "공덕라멘",
+      "쇼유",
+      "쇼유라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "안매운라멘",
+      "미세스 쇼유라멘",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "미세스 쇼유라멘",
+        "price": 10000,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (공덕역맛집 · 공덕라멘)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 10000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 12000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-mapo-032",
+    "name": "마포 멘야우메",
+    "region": "서울",
+    "district": "마포구",
+    "address": "서울특별시 마포구 마포대로 53",
+    "lat": 37.5412,
+    "lng": 126.9451,
+    "types": [
+      "shoyu",
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "우메 파이탄",
+    "price": 10500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지",
+      "닭"
+    ],
+    "tags": [
+      "마포역맛집",
+      "농후파이탄",
+      "쇼유",
+      "쇼유라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "닭육수",
+      "토리파이탄",
+      "안매운라멘",
+      "우메 파이탄",
+      "카라이 우메 파이탄 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "토요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "우메 파이탄",
+        "price": 10500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (마포역맛집 · 농후파이탄)"
+      },
+      {
+        "name": "카라이 우메 파이탄 라멘",
+        "price": 11000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 13000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "닭"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-songpa-003",
+    "name": "삼전니쿠 (삼전동)",
+    "region": "서울",
+    "district": "송파구",
+    "address": "서울특별시 송파구 삼전로13길 19",
+    "lat": 37.5028,
+    "lng": 127.0861,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "삼전 돈코츠",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "삼전역맛집",
+      "송파돈코츠",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "삼전 돈코츠",
+      "카라이 삼전 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "삼전 돈코츠",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (삼전역맛집 · 송파돈코츠)"
+      },
+      {
+        "name": "카라이 삼전 돈코츠 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-songpa-004",
+    "name": "라멘 카도 (잠실)",
+    "region": "서울",
+    "district": "송파구",
+    "address": "서울특별시 송파구 백제고분로45길 12",
+    "lat": 37.5102,
+    "lng": 127.1084,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "카도 돈코츠라멘",
+    "price": 10000,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "송리단길",
+      "잠실라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "카도 돈코츠라멘",
+      "카라이 카도 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "카도 돈코츠라멘",
+        "price": 10000,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (송리단길 · 잠실라멘)"
+      },
+      {
+        "name": "카라이 카도 돈코츠 라멘",
+        "price": 10500,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12500,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-gangnam-009",
+    "name": "라멘쿠라토 (역삼)",
+    "region": "서울",
+    "district": "강남구",
+    "address": "서울특별시 강남구 테헤란로25길 42",
+    "lat": 37.5032,
+    "lng": 127.0361,
+    "types": [
+      "shoyu"
+    ],
+    "brothStyle": "chintan",
+    "signature": "쿠라토 쇼유",
+    "price": 10500,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭"
+    ],
+    "tags": [
+      "역삼역맛집",
+      "직장인혼밥",
+      "쇼유",
+      "쇼유라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "안매운라멘",
+      "쿠라토 쇼유",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:00-20:30",
+    "closed": "토요일, 일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "쿠라토 쇼유",
+        "price": 10500,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (역삼역맛집 · 직장인혼밥)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 10500,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 12500,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-yongsan-001",
+    "name": "멘야타쿠 (이태원)",
+    "region": "서울",
+    "district": "용산구",
+    "address": "서울특별시 용산구 이태원로26길 18",
+    "lat": 37.5342,
+    "lng": 126.9941,
+    "types": [
+      "jiro",
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "타쿠 지로라멘",
+    "price": 11500,
+    "body": 5,
+    "spiciness": 1,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "이태원라멘",
+      "용산지로계",
+      "지로계",
+      "지로계라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "타쿠 지로라멘",
+      "카라이 타쿠 지로 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.8,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "타쿠 지로라멘",
+        "price": 11500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (이태원라멘 · 용산지로계)"
+      },
+      {
+        "name": "카라이 타쿠 지로 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 3,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 14000,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "극후면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10500-13500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.95,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-yongsan-002",
+    "name": "라멘이찌방 (이태원)",
+    "region": "서울",
+    "district": "용산구",
+    "address": "서울특별시 용산구 보수나무로 12",
+    "lat": 37.5328,
+    "lng": 126.9912,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "이찌방 돈코츠",
+    "price": 10000,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "녹사평맛집",
+      "이태원맛집",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "이찌방 돈코츠",
+      "카라이 이찌방 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "연중무휴",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "이찌방 돈코츠",
+        "price": 10000,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (녹사평맛집 · 이태원맛집)"
+      },
+      {
+        "name": "카라이 이찌방 돈코츠 라멘",
+        "price": 10500,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12500,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-seodaemun-002",
+    "name": "라멘 무라 (신촌)",
+    "region": "서울",
+    "district": "서대문구",
+    "address": "서울특별시 서대문구 명물길 36",
+    "lat": 37.5589,
+    "lng": 126.9389,
+    "types": [
+      "miso",
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "무라 미소라멘",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 1,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "신촌맛집",
+      "신촌미소라멘",
+      "미소",
+      "미소라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "무라 미소라멘",
+      "카라이 무라 미소 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "무라 미소라멘",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (신촌맛집 · 신촌미소라멘)"
+      },
+      {
+        "name": "카라이 무라 미소 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 3,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-seodaemun-003",
+    "name": "멘야 카이 (신촌)",
+    "region": "서울",
+    "district": "서대문구",
+    "address": "서울특별시 서대문구 신촌로 87",
+    "lat": 37.5562,
+    "lng": 126.9341,
+    "types": [
+      "tsukemen"
+    ],
+    "brothStyle": "dipping",
+    "signature": "카이 츠케멘",
+    "price": 11000,
+    "body": 4,
+    "spiciness": 1,
+    "bases": [
+      "돼지",
+      "해산물"
+    ],
+    "tags": [
+      "신촌츠케멘",
+      "서대문맛집",
+      "츠케멘",
+      "츠케멘라멘",
+      "츠케",
+      "농후츠케멘",
+      "돼지육수",
+      "돈코츠",
+      "해산물육수",
+      "해물라멘",
+      "카이 츠케멘",
+      "카라이 츠케멘",
+      "특제 차슈 츠케멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "카이 츠케멘",
+        "price": 11000,
+        "isSignature": true,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (신촌츠케멘 · 서대문맛집)"
+      },
+      {
+        "name": "카라이 츠케멘",
+        "price": 11500,
+        "brothStyle": "dipping",
+        "spiciness": 2,
+        "description": "매콤한 다대기가 가미된 농후 츠케즙과 굵은 면발"
+      },
+      {
+        "name": "특제 차슈 츠케멘",
+        "price": 14000,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-gangnam-010",
+    "name": "멘야 신사 (신사동)",
+    "region": "서울",
+    "district": "강남구",
+    "address": "서울특별시 강남구 압구정로10길 14",
+    "lat": 37.5212,
+    "lng": 127.0221,
+    "types": [
+      "shoyu",
+      "shio"
+    ],
+    "brothStyle": "chintan",
+    "signature": "신사 수제 쇼유",
+    "price": 12000,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭"
+    ],
+    "tags": [
+      "가로수길맛집",
+      "신사동라멘",
+      "쇼유",
+      "쇼유라멘",
+      "시오",
+      "시오라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "안매운라멘",
+      "신사 수제 쇼유",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.8,
+    "hours": "11:30-21:00",
+    "closed": "일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "신사 수제 쇼유",
+        "price": 12000,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (가로수길맛집 · 신사동라멘)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 12000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 14000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "11000-14000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-gangnam-011",
+    "name": "라멘 겐 (대치동)",
+    "region": "서울",
+    "district": "강남구",
+    "address": "서울특별시 강남구 삼성로57길 24",
+    "lat": 37.4982,
+    "lng": 127.0612,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "겐 돈코츠라멘",
+    "price": 10500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "대치동맛집",
+      "한티역라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "겐 돈코츠라멘",
+      "카라이 겐 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "겐 돈코츠라멘",
+        "price": 10500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (대치동맛집 · 한티역라멘)"
+      },
+      {
+        "name": "카라이 겐 돈코츠 라멘",
+        "price": 11000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 13000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-seocho-003",
+    "name": "멘야 마코토 (양재)",
+    "region": "서울",
+    "district": "서초구",
+    "address": "서울특별시 서초구 남부순환로350길 19",
+    "lat": 37.4851,
+    "lng": 127.0341,
+    "types": [
+      "tsukemen"
+    ],
+    "brothStyle": "dipping",
+    "signature": "양재 츠케멘",
+    "price": 11500,
+    "body": 4,
+    "spiciness": 1,
+    "bases": [
+      "돼지",
+      "해산물"
+    ],
+    "tags": [
+      "양재역맛집",
+      "양재츠케멘",
+      "츠케멘",
+      "츠케멘라멘",
+      "츠케",
+      "농후츠케멘",
+      "돼지육수",
+      "돈코츠",
+      "해산물육수",
+      "해물라멘",
+      "양재 츠케멘",
+      "카라이 츠케멘",
+      "특제 차슈 츠케멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.8,
+    "hours": "11:30-21:00",
+    "closed": "일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "양재 츠케멘",
+        "price": 11500,
+        "isSignature": true,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (양재역맛집 · 양재츠케멘)"
+      },
+      {
+        "name": "카라이 츠케멘",
+        "price": 12000,
+        "brothStyle": "dipping",
+        "spiciness": 2,
+        "description": "매콤한 다대기가 가미된 농후 츠케즙과 굵은 면발"
+      },
+      {
+        "name": "특제 차슈 츠케멘",
+        "price": 14500,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10500-13500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-seocho-004",
+    "name": "라멘 세키 (방배)",
+    "region": "서울",
+    "district": "서초구",
+    "address": "서울특별시 서초구 방배천로4길 15",
+    "lat": 37.4789,
+    "lng": 126.9821,
+    "types": [
+      "shio",
+      "shoyu"
+    ],
+    "brothStyle": "chintan",
+    "signature": "방배 시오라멘",
+    "price": 10500,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭"
+    ],
+    "tags": [
+      "사당역맛집",
+      "방배동라멘",
+      "시오",
+      "시오라멘",
+      "쇼유",
+      "쇼유라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "안매운라멘",
+      "방배 시오라멘",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "방배 시오라멘",
+        "price": 10500,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (사당역맛집 · 방배동라멘)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 10500,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 12500,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-dongjak-002",
+    "name": "사당 멘야후지",
+    "region": "서울",
+    "district": "동작구",
+    "address": "서울특별시 동작구 동작대로7길 28",
+    "lat": 37.4752,
+    "lng": 126.9801,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "후지 돈코츠",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "사당동맛집",
+      "동작구돈코츠",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "후지 돈코츠",
+      "카라이 후지 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "후지 돈코츠",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (사당동맛집 · 동작구돈코츠)"
+      },
+      {
+        "name": "카라이 후지 돈코츠 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-guro-001",
+    "name": "구로 멘야케이 (구로디지털)",
+    "region": "서울",
+    "district": "구로구",
+    "address": "서울특별시 구로구 디지털로32길 97",
+    "lat": 37.4841,
+    "lng": 126.8982,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "케이 톤코츠",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "구디역맛집",
+      "구로직장인",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "케이 톤코츠",
+      "카라이 케이 톤코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "토요일, 일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "케이 톤코츠",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (구디역맛집 · 구로직장인)"
+      },
+      {
+        "name": "카라이 케이 톤코츠 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-geumcheon-001",
+    "name": "가산 멘야토모 (가산디지털)",
+    "region": "서울",
+    "district": "금천구",
+    "address": "서울특별시 금천구 가산디지털1로 168",
+    "lat": 37.4802,
+    "lng": 126.8821,
+    "types": [
+      "mazesoba"
+    ],
+    "brothStyle": "dry",
+    "signature": "가산 마제소바",
+    "price": 10000,
+    "body": 4,
+    "spiciness": 1,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "가디역맛집",
+      "가산라멘",
+      "마제소바",
+      "마제소바라멘",
+      "비빔",
+      "돼지육수",
+      "돈코츠",
+      "가산 마제소바",
+      "카라이 마제소바",
+      "돼지껍데기 / 차슈 추가 소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "토요일, 일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "가산 마제소바",
+        "price": 10000,
+        "isSignature": true,
+        "brothStyle": "dry",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (가디역맛집 · 가산라멘)"
+      },
+      {
+        "name": "카라이 마제소바",
+        "price": 10500,
+        "brothStyle": "dry",
+        "spiciness": 2,
+        "description": "특제 고추기름과 민찌 양념이 조화로운 비빔 소바"
+      },
+      {
+        "name": "돼지껍데기 / 차슈 추가 소바",
+        "price": 12500,
+        "brothStyle": "dry",
+        "spiciness": 1,
+        "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-yeongdeungpo-002",
+    "name": "영등포 멘야겐",
+    "region": "서울",
+    "district": "영등포구",
+    "address": "서울특별시 영등포구 영등포로50길 11",
+    "lat": 37.5182,
+    "lng": 126.9084,
+    "types": [
+      "shoyu"
+    ],
+    "brothStyle": "chintan",
+    "signature": "영등포 쇼유",
+    "price": 10000,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭"
+    ],
+    "tags": [
+      "영등포역맛집",
+      "영등포라멘",
+      "쇼유",
+      "쇼유라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "안매운라멘",
+      "영등포 쇼유",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "영등포 쇼유",
+        "price": 10000,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (영등포역맛집 · 영등포라멘)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 10000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 12000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-yeongdeungpo-003",
+    "name": "당산 라멘하우스",
+    "region": "서울",
+    "district": "영등포구",
+    "address": "서울특별시 영등포구 당산로47길 14",
+    "lat": 37.5348,
+    "lng": 126.9031,
+    "types": [
+      "shio",
+      "shoyu"
+    ],
+    "brothStyle": "chintan",
+    "signature": "당산 시오라멘",
+    "price": 10000,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭"
+    ],
+    "tags": [
+      "당산역맛집",
+      "당산라멘",
+      "시오",
+      "시오라멘",
+      "쇼유",
+      "쇼유라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "안매운라멘",
+      "당산 시오라멘",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "당산 시오라멘",
+        "price": 10000,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (당산역맛집 · 당산라멘)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 10000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 12000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "seoul-yangcheon-001",
+    "name": "목동 멘야유uki",
+    "region": "서울",
+    "district": "양천구",
+    "address": "서울특별시 양천구 목동동로 293",
+    "lat": 37.5289,
+    "lng": 126.8741,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "목동 돈코츠",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "목동맛집",
+      "오목교역라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "목동 돈코츠",
+      "카라이 목동 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "목동 돈코츠",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (목동맛집 · 오목교역라멘)"
+      },
+      {
+        "name": "카라이 목동 돈코츠 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "gyeonggi-bucheon-002",
+    "name": "부천 멘야다이 (부천 중동)",
+    "region": "경기",
+    "district": "부천시 원미구",
+    "address": "경기도 부천시 원미구 신흥로 170",
+    "lat": 37.5021,
+    "lng": 126.7761,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "중동 돈코츠",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "신중동역맛집",
+      "부천라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "중동 돈코츠",
+      "카라이 중동 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "중동 돈코츠",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (신중동역맛집 · 부천라멘)"
+      },
+      {
+        "name": "카라이 중동 돈코츠 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "gyeonggi-yongin-002",
+    "name": "용인 멘야소라 (용인 역북)",
+    "region": "경기",
+    "district": "용인시 처인구",
+    "address": "경기도 용인시 처인구 명지로60번길 8",
+    "lat": 37.2341,
+    "lng": 127.1892,
+    "types": [
+      "tsukemen"
+    ],
+    "brothStyle": "dipping",
+    "signature": "역북 츠케멘",
+    "price": 11000,
+    "body": 4,
+    "spiciness": 1,
+    "bases": [
+      "돼지",
+      "해산물"
+    ],
+    "tags": [
+      "명지대맛집",
+      "역북동라멘",
+      "츠케멘",
+      "츠케멘라멘",
+      "츠케",
+      "농후츠케멘",
+      "돼지육수",
+      "돈코츠",
+      "해산물육수",
+      "해물라멘",
+      "역북 츠케멘",
+      "카라이 츠케멘",
+      "특제 차슈 츠케멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "역북 츠케멘",
+        "price": 11000,
+        "isSignature": true,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (명지대맛집 · 역북동라멘)"
+      },
+      {
+        "name": "카라이 츠케멘",
+        "price": 11500,
+        "brothStyle": "dipping",
+        "spiciness": 2,
+        "description": "매콤한 다대기가 가미된 농후 츠케즙과 굵은 면발"
+      },
+      {
+        "name": "특제 차슈 츠케멘",
+        "price": 14000,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "gyeonggi-hanam-001",
+    "name": "하남 멘야마루 (하남 미사)",
+    "region": "경기",
+    "district": "하남시",
+    "address": "경기도 하남시 미사강변동로 84",
+    "lat": 37.5641,
+    "lng": 127.1912,
+    "types": [
+      "shoyu"
+    ],
+    "brothStyle": "chintan",
+    "signature": "미사 쇼유라멘",
+    "price": 10500,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭"
+    ],
+    "tags": [
+      "미사역맛집",
+      "하남라멘",
+      "쇼유",
+      "쇼유라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "안매운라멘",
+      "미사 쇼유라멘",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "화요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "미사 쇼유라멘",
+        "price": 10500,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (미사역맛집 · 하남라멘)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 10500,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 12500,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "gyeonggi-namyangju-002",
+    "name": "남양주 멘야후지 (별내)",
+    "region": "경기",
+    "district": "남양주시",
+    "address": "경기도 남양주시 별내5로 23",
+    "lat": 37.6489,
+    "lng": 127.1214,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "별내 돈코츠",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "별내맛집",
+      "남양주라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "별내 돈코츠",
+      "카라이 별내 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "별내 돈코츠",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (별내맛집 · 남양주라멘)"
+      },
+      {
+        "name": "카라이 별내 돈코츠 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "gyeonggi-guri-001",
+    "name": "구리 멘야짱 (구리 수택)",
+    "region": "경기",
+    "district": "구리시",
+    "address": "경기도 구리시 안골로103번길 15",
+    "lat": 37.5982,
+    "lng": 127.1412,
+    "types": [
+      "miso"
+    ],
+    "brothStyle": "paitan",
+    "signature": "수택 미소라멘",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 1,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "구리역맛집",
+      "수택동라멘",
+      "미소",
+      "미소라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "돈코츠",
+      "수택 미소라멘",
+      "카라이 수택 미소 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "수택 미소라멘",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (구리역맛집 · 수택동라멘)"
+      },
+      {
+        "name": "카라이 수택 미소 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 3,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "gyeonggi-uijeongbu-002",
+    "name": "의정부 멘야켄 (의정부 민락)",
+    "region": "경기",
+    "district": "의정부시",
+    "address": "경기도 의정부시 오목로225번길 34",
+    "lat": 37.7489,
+    "lng": 127.0912,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "민락 돈코츠",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "민락2지구",
+      "의정부맛집",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "민락 돈코츠",
+      "카라이 민락 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "민락 돈코츠",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (민락2지구 · 의정부맛집)"
+      },
+      {
+        "name": "카라이 민락 돈코츠 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "gyeonggi-paju-002",
+    "name": "파주 멘야토모 (파주 운정)",
+    "region": "경기",
+    "district": "파주시",
+    "address": "경기도 파주시 청암로17번길 33",
+    "lat": 37.7214,
+    "lng": 126.7512,
+    "types": [
+      "mazesoba"
+    ],
+    "brothStyle": "dry",
+    "signature": "운정 마제소바",
+    "price": 10500,
+    "body": 4,
+    "spiciness": 1,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "운정신도시",
+      "파주라멘",
+      "마제소바",
+      "마제소바라멘",
+      "비빔",
+      "돼지육수",
+      "돈코츠",
+      "운정 마제소바",
+      "카라이 마제소바",
+      "돼지껍데기 / 차슈 추가 소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "운정 마제소바",
+        "price": 10500,
+        "isSignature": true,
+        "brothStyle": "dry",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (운정신도시 · 파주라멘)"
+      },
+      {
+        "name": "카라이 마제소바",
+        "price": 11000,
+        "brothStyle": "dry",
+        "spiciness": 2,
+        "description": "특제 고추기름과 민찌 양념이 조화로운 비빔 소바"
+      },
+      {
+        "name": "돼지껍데기 / 차슈 추가 소바",
+        "price": 13000,
+        "brothStyle": "dry",
+        "spiciness": 1,
+        "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "gyeonggi-goyang-004",
+    "name": "고양 멘야세키 (고양 화정)",
+    "region": "경기",
+    "district": "고양시 덕양구",
+    "address": "경기도 고양시 덕양구 화신로272번길 48",
+    "lat": 37.6351,
+    "lng": 126.8341,
+    "types": [
+      "shoyu"
+    ],
+    "brothStyle": "chintan",
+    "signature": "화정 쇼유라멘",
+    "price": 10000,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭"
+    ],
+    "tags": [
+      "화정역맛집",
+      "일산화정라멘",
+      "쇼유",
+      "쇼유라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "안매운라멘",
+      "화정 쇼유라멘",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "화정 쇼유라멘",
+        "price": 10000,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (화정역맛집 · 일산화정라멘)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 10000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 12000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "gyeonggi-pyeongtaek-001",
+    "name": "평택 멘야마루 (평택 송탄)",
+    "region": "경기",
+    "district": "평택시",
+    "address": "경기도 평택시 탄현로 55",
+    "lat": 37.0782,
+    "lng": 127.0541,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "송탄 돈코츠",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "송탄역맛집",
+      "평택라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "송탄 돈코츠",
+      "카라이 송탄 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "송탄 돈코츠",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (송탄역맛집 · 평택라멘)"
+      },
+      {
+        "name": "카라이 송탄 돈코츠 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "busan-busanjin-006",
+    "name": "디젤앤카멜리아스 (전포)",
+    "region": "부산",
+    "district": "부산진구",
+    "address": "부산광역시 부산진구 서전로46번길 80",
+    "lat": 35.1592,
+    "lng": 129.0661,
+    "types": [
+      "jiro"
+    ],
+    "brothStyle": "dry",
+    "signature": "디젤 지로소바",
+    "price": 11000,
+    "body": 5,
+    "spiciness": 1,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "전포동지로계",
+      "디젤앤카멜리아스",
+      "지로계",
+      "지로계라멘",
+      "비빔",
+      "마제소바",
+      "돼지육수",
+      "돈코츠",
+      "디젤 지로소바",
+      "매콤 아부라소바",
+      "돼지껍데기 / 차슈 추가 소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.8,
+    "hours": "11:30-20:00",
+    "closed": "수요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "디젤 지로소바",
+        "price": 11000,
+        "isSignature": true,
+        "brothStyle": "dry",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (전포동지로계 · 디젤앤카멜리아스)"
+      },
+      {
+        "name": "매콤 아부라소바",
+        "price": 11500,
+        "brothStyle": "dry",
+        "spiciness": 2,
+        "description": "특제 고추기름과 민찌 양념이 조화로운 비빔 소바"
+      },
+      {
+        "name": "돼지껍데기 / 차슈 추가 소바",
+        "price": 13500,
+        "brothStyle": "dry",
+        "spiciness": 1,
+        "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "극후면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.95,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "daegu-jung-004",
+    "name": "대구 사야까 (동성로)",
+    "region": "대구",
+    "district": "중구",
+    "address": "대구광역시 중구 동성로1길 41",
+    "lat": 35.8662,
+    "lng": 128.5941,
+    "types": [
+      "shoyu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "한우 규코츠라멘",
+    "price": 11000,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "소"
+    ],
+    "tags": [
+      "동성로사야까",
+      "규코츠라멘",
+      "쇼유",
+      "쇼유라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "소육수",
+      "안매운라멘",
+      "한우 규코츠라멘",
+      "카라이 한우 규코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "한우 규코츠라멘",
+        "price": 11000,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (동성로사야까 · 규코츠라멘)"
+      },
+      {
+        "name": "카라이 한우 규코츠 라멘",
+        "price": 11500,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 13500,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "소"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.8,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "incheon-namdong-001",
+    "name": "인천 삼목라멘 (구월)",
+    "region": "인천",
+    "district": "남동구",
+    "address": "인천광역시 남동구 인하로507번길 14",
+    "lat": 37.4441,
+    "lng": 126.7021,
+    "types": [
+      "tsukemen"
+    ],
+    "brothStyle": "dipping",
+    "signature": "구월 츠케멘",
+    "price": 11000,
+    "body": 4,
+    "spiciness": 1,
+    "bases": [
+      "돼지",
+      "해산물"
+    ],
+    "tags": [
+      "구월동맛집",
+      "인천츠케멘",
+      "츠케멘",
+      "츠케멘라멘",
+      "츠케",
+      "농후츠케멘",
+      "돼지육수",
+      "돈코츠",
+      "해산물육수",
+      "해물라멘",
+      "구월 츠케멘",
+      "카라이 츠케멘",
+      "특제 차슈 츠케멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "구월 츠케멘",
+        "price": 11000,
+        "isSignature": true,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (구월동맛집 · 인천츠케멘)"
+      },
+      {
+        "name": "카라이 츠케멘",
+        "price": 11500,
+        "brothStyle": "dipping",
+        "spiciness": 2,
+        "description": "매콤한 다대기가 가미된 농후 츠케즙과 굵은 면발"
+      },
+      {
+        "name": "특제 차슈 츠케멘",
+        "price": 14000,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "gangwon-chuncheon-001",
+    "name": "춘천 라멘가와 (춘천)",
+    "region": "강원",
+    "district": "춘천시",
+    "address": "강원특별자치도 춘천시 서부대성로 241",
+    "lat": 37.8741,
+    "lng": 127.7382,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "춘천 돈코츠",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "강원대맛집",
+      "춘천라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "춘천 돈코츠",
+      "카라이 춘천 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "일요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "춘천 돈코츠",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (강원대맛집 · 춘천라멘)"
+      },
+      {
+        "name": "카라이 춘천 돈코츠 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "gyeongbuk-pohang-001",
+    "name": "포항 멘야세븐 (포항)",
+    "region": "경북",
+    "district": "포항시 북구",
+    "address": "경상북도 포항시 북구 중앙로298번길 9",
+    "lat": 36.0382,
+    "lng": 129.3641,
+    "types": [
+      "mazesoba"
+    ],
+    "brothStyle": "dry",
+    "signature": "포항 마제소바",
+    "price": 10500,
+    "body": 4,
+    "spiciness": 1,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "포항북구맛집",
+      "포항라멘",
+      "마제소바",
+      "마제소바라멘",
+      "비빔",
+      "돼지육수",
+      "돈코츠",
+      "포항 마제소바",
+      "카라이 마제소바",
+      "돼지껍데기 / 차슈 추가 소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "포항 마제소바",
+        "price": 10500,
+        "isSignature": true,
+        "brothStyle": "dry",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (포항북구맛집 · 포항라멘)"
+      },
+      {
+        "name": "카라이 마제소바",
+        "price": 11000,
+        "brothStyle": "dry",
+        "spiciness": 2,
+        "description": "특제 고추기름과 민찌 양념이 조화로운 비빔 소바"
+      },
+      {
+        "name": "돼지껍데기 / 차슈 추가 소바",
+        "price": 13000,
+        "brothStyle": "dry",
+        "spiciness": 1,
+        "description": "고소한 훈연 차슈 및 직화 토핑 추가 비빔 라멘"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9500-12500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "ulsan-namgu-001",
+    "name": "울산 멘야산토메 (삼산)",
+    "region": "울산",
+    "district": "남구",
+    "address": "울산광역시 남구 삼산중로74번길 12",
+    "lat": 35.5389,
+    "lng": 129.3341,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "삼산 돈코츠라멘",
+    "price": 10000,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "삼산동맛집",
+      "울산라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "삼산 돈코츠라멘",
+      "카라이 삼산 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "삼산 돈코츠라멘",
+        "price": 10000,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (삼산동맛집 · 울산라멘)"
+      },
+      {
+        "name": "카라이 삼산 돈코츠 라멘",
+        "price": 10500,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12500,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "jeonnam-yeosu-001",
+    "name": "여수 라멘키친 (여수)",
+    "region": "전남",
+    "district": "여수시",
+    "address": "전라남도 여수시 시청서1길 22",
+    "lat": 34.7582,
+    "lng": 127.6612,
+    "types": [
+      "shio"
+    ],
+    "brothStyle": "chintan",
+    "signature": "여수 시오라멘",
+    "price": 10000,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭",
+      "해산물"
+    ],
+    "tags": [
+      "여수맛집",
+      "여수라멘여행",
+      "시오",
+      "시오라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "해산물육수",
+      "해물라멘",
+      "안매운라멘",
+      "여수 시오라멘",
+      "특제 쇼유 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "수요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "여수 시오라멘",
+        "price": 10000,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (여수맛집 · 여수라멘여행)"
+      },
+      {
+        "name": "특제 쇼유 라멘",
+        "price": 10000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 12000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭",
+        "해산물"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "jeonnam-suncheon-001",
+    "name": "순천 멘야가와 (순천)",
+    "region": "전남",
+    "district": "순천시",
+    "address": "전라남도 순천시 신대2길 34",
+    "lat": 34.9312,
+    "lng": 127.5241,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "순천 돈코츠",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "순천신대지구",
+      "순천라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "순천 돈코츠",
+      "카라이 순천 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "순천 돈코츠",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (순천신대지구 · 순천라멘)"
+      },
+      {
+        "name": "카라이 순천 돈코츠 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "ulsan-junggu-001",
+    "name": "울산 멘야후지 (성남동)",
+    "region": "울산",
+    "district": "중구",
+    "address": "울산광역시 중구 성남옥교길 45",
+    "lat": 35.5541,
+    "lng": 129.3198,
+    "types": [
+      "jiro"
+    ],
+    "brothStyle": "paitan",
+    "signature": "성남동 지로라멘",
+    "price": 11000,
+    "body": 5,
+    "spiciness": 1,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "울산성남동",
+      "울산지로계",
+      "지로계",
+      "지로계라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "돈코츠",
+      "성남동 지로라멘",
+      "카라이 성남동 지로 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.8,
+    "hours": "11:30-20:30",
+    "closed": "화요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "성남동 지로라멘",
+        "price": 11000,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (울산성남동 · 울산지로계)"
+      },
+      {
+        "name": "카라이 성남동 지로 라멘",
+        "price": 11500,
+        "brothStyle": "paitan",
+        "spiciness": 3,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 13500,
+        "brothStyle": "paitan",
+        "spiciness": 1,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "heavy",
+      "oil_level": "high",
+      "spiciness": 1,
+      "noodle_type": "극후면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10000-13000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "스트레스",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.95,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "chungbuk-cheongju-001",
+    "name": "청주 멘야토모 (청주)",
+    "region": "충북",
+    "district": "청주시 상당구",
+    "address": "충청북도 청주시 상당구 상당로81번길 33",
+    "lat": 36.6341,
+    "lng": 127.4891,
+    "types": [
+      "shoyu"
+    ],
+    "brothStyle": "chintan",
+    "signature": "성안길 쇼유라멘",
+    "price": 10000,
+    "body": 2,
+    "spiciness": 0,
+    "bases": [
+      "닭"
+    ],
+    "tags": [
+      "성안길맛집",
+      "청주라멘",
+      "쇼유",
+      "쇼유라멘",
+      "청탕",
+      "맑은청탕",
+      "담백한국물",
+      "닭육수",
+      "토리파이탄",
+      "안매운라멘",
+      "성안길 쇼유라멘",
+      "특제 시오 라멘",
+      "특선 토핑 중화소바",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.7,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "성안길 쇼유라멘",
+        "price": 10000,
+        "isSignature": true,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (성안길맛집 · 청주라멘)"
+      },
+      {
+        "name": "특제 시오 라멘",
+        "price": 10000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
+      },
+      {
+        "name": "특선 토핑 중화소바",
+        "price": 12000,
+        "brothStyle": "chintan",
+        "spiciness": 0,
+        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "닭"
+      ],
+      "richness": "light",
+      "oil_level": "low",
+      "spiciness": 0,
+      "noodle_type": "자가제면 직면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "9000-12000",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "가성비",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "숙취",
+        "깔끔",
+        "데이트",
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.5,
+      "hangover_cure": 0.85,
+      "cleanse_palate": 0.95,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "chungnam-cheonan-001",
+    "name": "천안 라멘하우스 (천안)",
+    "region": "충남",
+    "district": "천안시 동남구",
+    "address": "충청남도 천안시 동남구 먹거리11길 25",
+    "lat": 36.8124,
+    "lng": 127.1482,
+    "types": [
+      "tonkotsu"
+    ],
+    "brothStyle": "paitan",
+    "signature": "신부동 돈코츠",
+    "price": 9500,
+    "body": 4,
+    "spiciness": 0,
+    "bases": [
+      "돼지"
+    ],
+    "tags": [
+      "천안터미널맛집",
+      "천안라멘",
+      "돈코츠",
+      "돈코츠라멘",
+      "백탕",
+      "진한백탕",
+      "뽀얀육수",
+      "돼지육수",
+      "안매운라멘",
+      "신부동 돈코츠",
+      "카라이 신부동 돈코츠 라멘",
+      "특제 차슈 추가 라멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.6,
+    "hours": "11:30-21:00",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "신부동 돈코츠",
+        "price": 9500,
+        "isSignature": true,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "매장 대표 한 그릇 (천안터미널맛집 · 천안라멘)"
+      },
+      {
+        "name": "카라이 신부동 돈코츠 라멘",
+        "price": 10000,
+        "brothStyle": "paitan",
+        "spiciness": 2,
+        "description": "화끈하고 칼칼한 매운맛 육수 버전"
+      },
+      {
+        "name": "특제 차슈 추가 라멘",
+        "price": 12000,
+        "brothStyle": "paitan",
+        "spiciness": 0,
+        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 0,
+      "noodle_type": "세면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "8500-11500",
+      "waiting": "medium",
+      "mood": [
+        "혼밥",
+        "가성비"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.7,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.7
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
+  },
+  {
+    "id": "jeju-jeju-002",
+    "name": "제주 멘야츠바사 (노형)",
+    "region": "제주",
+    "district": "제주시",
+    "address": "제주특별자치도 제주시 노형10길 12",
+    "lat": 33.4841,
+    "lng": 126.4789,
+    "types": [
+      "tsukemen"
+    ],
+    "brothStyle": "dipping",
+    "signature": "노형동 츠케멘",
+    "price": 11500,
+    "body": 4,
+    "spiciness": 1,
+    "bases": [
+      "돼지",
+      "해산물"
+    ],
+    "tags": [
+      "노형동맛집",
+      "제주츠케멘",
+      "츠케멘",
+      "츠케멘라멘",
+      "츠케",
+      "농후츠케멘",
+      "돼지육수",
+      "돈코츠",
+      "해산물육수",
+      "해물라멘",
+      "노형동 츠케멘",
+      "카라이 츠케멘",
+      "특제 차슈 츠케멘",
+      "수제라멘",
+      "자가제면",
+      "혼밥"
+    ],
+    "rating": 4.8,
+    "hours": "11:30-20:30",
+    "closed": "월요일",
+    "vegetarian": false,
+    "containsPork": true,
+    "menuList": [
+      {
+        "name": "노형동 츠케멘",
+        "price": 11500,
+        "isSignature": true,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "매장 대표 한 그릇 (노형동맛집 · 제주츠케멘)"
+      },
+      {
+        "name": "카라이 츠케멘",
+        "price": 12000,
+        "brothStyle": "dipping",
+        "spiciness": 2,
+        "description": "매콤한 다대기가 가미된 농후 츠케즙과 굵은 면발"
+      },
+      {
+        "name": "특제 차슈 츠케멘",
+        "price": 14500,
+        "brothStyle": "dipping",
+        "spiciness": 1,
+        "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
+      }
+    ],
+    "detailedTags": {
+      "broth": [
+        "돼지",
+        "해산물"
+      ],
+      "richness": "medium",
+      "oil_level": "medium",
+      "spiciness": 1,
+      "noodle_type": "극태면",
+      "topping_special": [
+        "차슈",
+        "아지타마고",
+        "멘마"
+      ],
+      "price_range": "10500-13500",
+      "waiting": "long",
+      "mood": [
+        "혼밥",
+        "감성",
+        "줄서먹는맛집"
+      ],
+      "recommend_for": [
+        "혼밥"
+      ]
+    },
+    "aiProfile": {
+      "stress_relief": 0.8,
+      "hangover_cure": 0.75,
+      "cleanse_palate": 0.3,
+      "spicy_challenge": 0,
+      "solo_friendly": 0.9,
+      "date_spot": 0.85
+    },
+    "dataStatus": "verified",
+    "verifiedAt": "2026-07"
   }
 ];

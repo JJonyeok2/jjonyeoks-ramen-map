@@ -14,8 +14,8 @@ RAMEN_SHOPS.forEach((shop, idx) => {
 
   // Check Address & GPS Coords
   if (!shop.address || shop.address.length < 5) issues.push(`Suspicious Address: ${shop.address}`);
-  if (shop.lat < 37.0 || shop.lat > 37.9 || shop.lng < 126.5 || shop.lng > 127.5) {
-    issues.push(`Out of Seoul/Gyeonggi GPS range: lat=${shop.lat}, lng=${shop.lng}`);
+  if (shop.lat < 33.0 || shop.lat > 38.8 || shop.lng < 126.0 || shop.lng > 130.5) {
+    issues.push(`Out of Korea GPS range: lat=${shop.lat}, lng=${shop.lng}`);
   }
 
   // Check Signature & BrothStyle
