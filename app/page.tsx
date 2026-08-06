@@ -32,6 +32,7 @@ import {
   type LocationFailureCode,
 } from "./geolocation";
 import { CommunitySubmitForm } from "./components/CommunitySubmitForm";
+import { IntroModal } from "./components/IntroModal";
 
 
 type GoogleNamespace = {
@@ -707,6 +708,7 @@ export default function Home() {
 
   return (
     <main className="app-shell">
+      <IntroModal />
       <header className="topbar">
         <a className="brand" href="#top" aria-label="라멘맵 홈">
           <span className="brand-bowl" aria-hidden="true">ら</span>
