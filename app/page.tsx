@@ -31,6 +31,8 @@ import {
   requestCurrentCoordinates,
   type LocationFailureCode,
 } from "./geolocation";
+import { CommunitySubmitForm } from "./components/CommunitySubmitForm";
+
 
 type GoogleNamespace = {
   maps: any;
@@ -304,6 +306,7 @@ function RamenCard({
 
 export default function Home() {
   const [verifiedShops, setVerifiedShops] = useState<RamenShop[]>([]);
+  const [communityShops, setCommunityShops] = useState<RamenShop[]>([]);
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState<(typeof ALL_REGIONS)[number]>("전국");
   const [selectedTypes, setSelectedTypes] = useState<RamenType[]>([]);
@@ -319,6 +322,7 @@ export default function Home() {
   const [mobileListOpen, setMobileListOpen] = useState(true);
   const [userLocation, setUserLocation] = useState<Coordinates | null>(null);
   const [locationStatus, setLocationStatus] = useState<LocationStatus>("idle");
+  const [submitOpen, setSubmitOpen] = useState(false);
 
   const mapElementRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<any>(null);
@@ -329,7 +333,7 @@ export default function Home() {
   const locationRequestRef = useRef<Promise<Coordinates | null> | null>(null);
   const pendingChatRef = useRef(false);
   const messageIdRef = useRef(2);
-  const shops = useMemo(() => [...verifiedShops, ...RAMEN_SHOPS], [verifiedShops]);
+  const shops = useMemo(() => [...verifiedShops, ...RAMEN_SHOPS, ...communityShops], [verifiedShops, communityShops]);
 
   useEffect(() => {
     let cancelled = false;
@@ -344,6 +348,16 @@ export default function Home() {
       .catch(() => {
         if (!cancelled) setVerifiedShops([]);
       });
+
+    fetch("/api/community", { cache: "no-store" })
+      .then(async (res) => {
+        if (res.ok) {
+          const data = await res.json();
+          if (!cancelled) setCommunityShops(data);
+        }
+      })
+      .catch(() => {});
+
     return () => { cancelled = true; };
   }, []);
 
@@ -706,6 +720,7 @@ export default function Home() {
           검증 {verifiedShops.length}곳 · 데모 {RAMEN_SHOPS.length}곳
         </div>
         <div className="header-actions">
+          <button className="verify-link" style={{ background: '#10b981', color: 'white' }} type="button" onClick={() => setSubmitOpen(true)}>+ 맛집 등록하기</button>
           <a className="verify-link" href="/verify">실데이터 검증</a>
           <button className="recommend-header" type="button" onClick={() => setChatOpen(true)}>
             <span aria-hidden="true">🍜</span>
@@ -713,6 +728,17 @@ export default function Home() {
           </button>
         </div>
       </header>
+      
+      {submitOpen && (
+        <CommunitySubmitForm 
+          onClose={() => setSubmitOpen(false)} 
+          onSubmitSuccess={(newShop) => {
+            setCommunityShops((prev) => [...prev, newShop]);
+            setSubmitOpen(false);
+            alert("맛집이 성공적으로 등록되었습니다!");
+          }}
+        />
+      )}
 
       <div className="workspace" id="top">
         <aside className={`sidebar${mobileListOpen ? " mobile-open" : ""}`} aria-label="라멘 검색과 결과">
