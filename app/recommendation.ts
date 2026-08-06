@@ -4,6 +4,7 @@ import {
   type BrothStyle,
   type RamenShop,
   type Region,
+  type BrothBase,
 } from "./ramen-data.ts";
 
 export type Coordinates = {
@@ -27,6 +28,12 @@ export type RecommendationIntent = {
   nearby: boolean;
   mentionedRegion: Region | null;
   detectedEmotion: EmotionType;
+  // Newly added for RAG Hybrid Search
+  preferredBases: BrothBase[];
+  preferredBody: "rich" | "light" | null;
+  vegetarian: boolean;
+  avoidPork: boolean;
+  dayOfWeek: string | null;
 };
 
 export type RecommendationStrategy = "karai" | "spicy" | "taste";
@@ -79,6 +86,16 @@ const RICH_BROTH_PATTERN =
   /(?:뽀얀|크리미(?:한|하게)?|농후(?:한|하게)?|진하고\s*뽀얀)\s*(?:국물|육수|라멘)/;
 const DRY_OR_DIPPING_PATTERN = /마제|비벼|비빔|츠케|찍어/;
 
+// Newly added for RAG Hybrid Search
+const SEAFOOD_PATTERN = /해산물|멸치|니보시|어패류|조개/;
+const CHICKEN_PATTERN = /닭|토리|치킨/;
+const PORK_PATTERN = /돼지|돈코츠|사골/;
+const RICH_BODY_PATTERN = /진한|꾸덕|묵직|찐한|진득/;
+const LIGHT_BODY_PATTERN = /깔끔|맑은|가벼운|개운|라이트/;
+const VEGETARIAN_PATTERN = /채식|비건|고기\s*없(?:는|이)|야채만/;
+const DAY_OF_WEEK_PATTERN = /(월|화|수|목|금|토|일)(?:요일)?(?:\s*(?:에|도))?(?:\s*(?:문\s*여는|여는|영업|가(?:능|려고|려|고)))/;
+const TODAY_TOMORROW_PATTERN = /(오늘|내일)(?:\s*(?:문\s*여는|여는|영업|가(?:능|려고|려|고)))/;
+
 export function normalizeText(value: string) {
   return value.trim().toLocaleLowerCase("ko-KR").replace(/\s+/g, " ");
 }
@@ -130,6 +147,31 @@ export function analyzeRecommendationIntent(prompt: string): RecommendationInten
     }
   }
 
+  const preferredBases: BrothBase[] = [];
+  if (SEAFOOD_PATTERN.test(input)) preferredBases.push("해산물");
+  if (CHICKEN_PATTERN.test(input)) preferredBases.push("닭");
+  if (PORK_PATTERN.test(input)) preferredBases.push("돼지");
+
+  let preferredBody: "rich" | "light" | null = null;
+  if (RICH_BODY_PATTERN.test(input)) preferredBody = "rich";
+  else if (LIGHT_BODY_PATTERN.test(input)) preferredBody = "light";
+
+  const vegetarian = VEGETARIAN_PATTERN.test(input);
+  const avoidPork = AVOID_PORK_PATTERN.test(input) || vegetarian;
+  
+  let dayOfWeek: string | null = null;
+  const dayMatch = input.match(DAY_OF_WEEK_PATTERN);
+  if (dayMatch && dayMatch[1]) {
+    dayOfWeek = dayMatch[1] + "요일";
+  } else if (TODAY_TOMORROW_PATTERN.test(input)) {
+    const today = new Date();
+    if (input.includes("내일")) {
+      today.setDate(today.getDate() + 1);
+    }
+    const days = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+    dayOfWeek = days[today.getDay()];
+  }
+
   return {
     stressRelief,
     hangoverCure,
@@ -145,6 +187,11 @@ export function analyzeRecommendationIntent(prompt: string): RecommendationInten
     mentionedRegion:
       REGIONS.find((region) => input.includes(normalizeText(region))) ?? null,
     detectedEmotion,
+    preferredBases,
+    preferredBody,
+    vegetarian,
+    avoidPork,
+    dayOfWeek,
   };
 }
 
