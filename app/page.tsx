@@ -623,7 +623,8 @@ export default function Home() {
           if (apiData.result) {
             if (apiData.result.recommendations) {
               result = apiData.result;
-            } else if (apiData.result.reply_text) {
+            }
+            if (apiData.result.reply_text) {
               replyMessageText = apiData.result.reply_text;
             }
           }
