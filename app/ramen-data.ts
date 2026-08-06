@@ -429,7 +429,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
   },
   {
     "id": "seoul-mapo-004",
-    "name": "멘타카무소 (상수)",
+    "name": "멘타카무쇼 (상수)",
     "region": "서울",
     "district": "마포구",
     "address": "서울특별시 마포구 와우산로13길 49-3",
@@ -8401,7 +8401,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
   },
   {
     "id": "seoul-mapo-024",
-    "name": "멘타카무소 (상수)",
+    "name": "멘타카무쇼 (상수)",
     "region": "서울",
     "district": "마포구",
     "address": "서울특별시 마포구 독막로3길 28-20",
@@ -8420,7 +8420,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "해산물"
     ],
     "tags": [
-      "멘타카무소",
+      "멘타카무쇼",
       "상수츠케멘",
       "농후츠케멘",
       "츠케멘",
@@ -8449,7 +8449,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
         "isSignature": true,
         "brothStyle": "dipping",
         "spiciness": 1,
-        "description": "매장 대표 한 그릇 (멘타카무소 · 상수츠케멘)"
+        "description": "매장 대표 한 그릇 (멘타카무쇼 · 상수츠케멘)"
       },
       {
         "name": "카라이 츠케멘",

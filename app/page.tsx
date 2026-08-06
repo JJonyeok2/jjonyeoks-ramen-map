@@ -174,10 +174,10 @@ function buildBotReply(result: RecommendationResult, locationUnavailable: boolea
   const count = result.recommendations.length;
 
   if (!count) {
-    if (result.intent.preferredBrothStyle === "chintan") {
+    if (result.intent.wantsChintan) {
       return `${result.targetRegion === "전국" ? "현재 조건" : result.targetRegion}에는 깔끔한 청탕 메뉴가 없어요. 지역을 넓혀 다시 찾아보세요.`;
     }
-    if (result.intent.preferredBrothStyle === "paitan") {
+    if (result.intent.wantsPaitan) {
       return `${result.targetRegion === "전국" ? "현재 조건" : result.targetRegion}에는 백탕 메뉴가 없어요. 지역을 넓혀 다시 찾아보세요.`;
     }
     return "조건에 맞는 매장을 찾지 못했어요. 지역이나 취향을 조금 넓혀 다시 말해 주세요.";
@@ -188,17 +188,29 @@ function buildBotReply(result: RecommendationResult, locationUnavailable: boolea
   if (result.intent.avoidSpicy) {
     return `${scope} 매운맛은 빼고 편안하게 즐길 ${count}곳을 골랐어요.`;
   }
-  if (result.intent.avoidRich && result.brothMatch === "chintan") {
+  if (result.intent.avoidRich && result.intent.wantsChintan) {
     return `${scope} 느끼함이 적고 끝맛이 깔끔한 청탕 메뉴 ${count}곳을 골랐어요.`;
   }
-  if (result.intent.avoidRich && result.brothMatch === "paitan") {
+  if (result.intent.avoidRich && result.intent.wantsPaitan) {
     return `${scope} 백탕 중 국물 농도가 비교적 가벼운 ${count}곳을 골랐어요.`;
   }
-  if (result.brothMatch === "chintan") {
+  if (result.intent.wantsChintan && result.intent.wantsTsukemen) {
+    return `${scope} 맑고 개운한 청탕 츠케멘 메뉴 ${count}곳을 골랐어요.`;
+  }
+  if (result.intent.wantsPaitan && result.intent.wantsTsukemen) {
+    return `${scope} 진하고 뽀얀 백탕 베이스의 츠케멘 메뉴 ${count}곳을 골랐어요.`;
+  }
+  if (result.intent.wantsChintan) {
     return `${scope} 맑고 개운한 청탕 메뉴 ${count}곳을 골랐어요.`;
   }
-  if (result.brothMatch === "paitan") {
+  if (result.intent.wantsPaitan) {
     return `${scope} 진하고 뽀얀 백탕 메뉴 ${count}곳을 골랐어요.`;
+  }
+  if (result.intent.wantsTsukemen) {
+    return `${scope} 쫄깃한 매력의 츠케멘 메뉴 ${count}곳을 골랐어요.`;
+  }
+  if (result.intent.wantsDry) {
+    return `${scope} 감칠맛이 폭발하는 마제소바/비빔라멘 ${count}곳을 골랐어요.`;
   }
   if (result.strategy === "karai") {
     return `${scope} 스트레스를 날릴 카라이 메뉴가 있는 ${count}곳을 골랐어요.`;

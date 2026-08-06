@@ -77,7 +77,7 @@ const REAL_RAMEN_SHOPS = [
   },
   {
     id: "seoul-mapo-004",
-    name: "멘타카무소 (상수)",
+    name: "멘타카무쇼 (상수)",
     region: "서울",
     district: "마포구",
     address: "서울특별시 마포구 와우산로13길 49-3",

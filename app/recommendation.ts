@@ -24,7 +24,10 @@ export type RecommendationIntent = {
   wantsKarai: boolean;
   avoidSpicy: boolean;
   avoidRich: boolean;
-  preferredBrothStyle: BrothStyle | null;
+  wantsChintan: boolean;
+  wantsPaitan: boolean;
+  wantsTsukemen: boolean;
+  wantsDry: boolean;
   nearby: boolean;
   mentionedRegion: Region | null;
   detectedEmotion: EmotionType;
@@ -127,22 +130,25 @@ export function analyzeRecommendationIntent(prompt: string): RecommendationInten
   const brothNeutral = BROTH_NEUTRAL_PATTERN.test(input);
   const positiveChintan = explicitChintan && !avoidChintan;
   const positivePaitan = explicitPaitan && !avoidPaitan;
-  let preferredBrothStyle: BrothStyle | null = null;
+  
+  let wantsChintan = false;
+  let wantsPaitan = false;
+  let wantsTsukemen = false;
+  let wantsDry = false;
+
+  if (/(마제|비벼|비빔|국물 없)/.test(input)) wantsDry = true;
+  if (/(츠케|찍어)/.test(input)) wantsTsukemen = true;
 
   if (!brothNeutral) {
-    if (positiveChintan && !positivePaitan) {
-      preferredBrothStyle = "chintan";
-    } else if (positivePaitan && !positiveChintan) {
-      preferredBrothStyle = "paitan";
-    } else if (
-      !positiveChintan &&
-      !positivePaitan &&
-      !DRY_OR_DIPPING_PATTERN.test(input)
-    ) {
+    if (positiveChintan) wantsChintan = true;
+    if (positivePaitan) wantsPaitan = true;
+    
+    // 명시적인 청탕/백탕 언급이 없을 때, 느낌표현으로 유추
+    if (!positiveChintan && !positivePaitan && !wantsDry) {
       if (avoidRich || CLEAN_BROTH_PATTERN.test(input)) {
-        preferredBrothStyle = "chintan";
+        wantsChintan = true;
       } else if (RICH_BROTH_PATTERN.test(input)) {
-        preferredBrothStyle = "paitan";
+        wantsPaitan = true;
       }
     }
   }
@@ -182,7 +188,10 @@ export function analyzeRecommendationIntent(prompt: string): RecommendationInten
     wantsKarai: spicy && (stressRelief || explicitKarai),
     avoidSpicy,
     avoidRich,
-    preferredBrothStyle,
+    wantsChintan,
+    wantsPaitan,
+    wantsTsukemen,
+    wantsDry,
     nearby: NEARBY_PATTERN.test(input),
     mentionedRegion:
       REGIONS.find((region) => input.includes(normalizeText(region))) ?? null,
@@ -275,15 +284,15 @@ export function getRecommendationReason(
 
   if (
     intent.avoidRich &&
-    intent.preferredBrothStyle === "paitan" &&
+    intent.wantsPaitan &&
     shop.brothStyle === "paitan"
   ) {
     reasons.push("백탕 중 비교적 가벼운 편");
   } else if (intent.avoidRich && shop.brothStyle === "chintan") {
     reasons.push("느끼함 적은 맑은 청탕");
-  } else if (intent.preferredBrothStyle === "chintan" && shop.brothStyle === "chintan") {
+  } else if (intent.wantsChintan && shop.brothStyle === "chintan") {
     reasons.push("맑고 깔끔한 청탕");
-  } else if (intent.preferredBrothStyle === "paitan" && shop.brothStyle === "paitan") {
+  } else if (intent.wantsPaitan && shop.brothStyle === "paitan") {
     reasons.push("진하고 뽀얀 백탕");
   }
   if (strategy === "karai" && hasKaraiMenu(shop)) {
@@ -358,11 +367,26 @@ export function recommendShops(
   }
 
   let brothMatch: BrothStyle | null = null;
-  if (intent.preferredBrothStyle) {
-    const matched = candidates.filter((shop) => shop.brothStyle === intent.preferredBrothStyle);
+  
+  if (intent.wantsTsukemen) {
+    const matched = candidates.filter((shop) => shop.types.includes("tsukemen"));
+    if (matched.length > 0) candidates = matched;
+  } else if (intent.wantsDry) {
+    const matched = candidates.filter((shop) => shop.types.includes("mazesoba"));
+    if (matched.length > 0) candidates = matched;
+  }
+
+  if (intent.wantsChintan) {
+    const matched = candidates.filter((shop) => shop.brothStyle === "chintan" || shop.types.includes("shoyu") || shop.types.includes("shio"));
     if (matched.length > 0) {
       candidates = matched;
-      brothMatch = intent.preferredBrothStyle;
+      brothMatch = "chintan";
+    }
+  } else if (intent.wantsPaitan) {
+    const matched = candidates.filter((shop) => shop.brothStyle === "paitan" || shop.types.includes("tonkotsu") || shop.types.includes("tori_paitan") || shop.types.includes("miso") || shop.types.includes("iekei"));
+    if (matched.length > 0) {
+      candidates = matched;
+      brothMatch = "paitan";
     }
   }
 
