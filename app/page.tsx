@@ -621,7 +621,10 @@ export default function Home() {
         if (response.ok) {
           const apiData = await response.json() as any;
           if (apiData.result) {
-            if (apiData.result.recommendations) {
+            // GPT 응답이 오면 로컬 추천 결과를 무시하고 덮어씀 (빈 배열이든, undefined든)
+            if (apiData.source === "rag-gpt-4o-mini") {
+              result.recommendations = apiData.result.recommendations || [];
+            } else if (apiData.result.recommendations) {
               result = apiData.result;
             }
             if (apiData.result.reply_text) {
@@ -640,10 +643,10 @@ export default function Home() {
           id: botId,
           role: "bot",
           text: replyMessageText,
-          recommendations: result.recommendations.map((recommendation) => ({
-            shopId: recommendation.shop.id,
+          recommendations: result.recommendations.map((recommendation: any) => ({
+            shopId: recommendation.shop?.id || recommendation.shopId,
             reason: recommendation.reason,
-            distanceKm: recommendation.distanceKm,
+            distanceKm: recommendation.distanceKm || null,
           })),
         },
       ]);
