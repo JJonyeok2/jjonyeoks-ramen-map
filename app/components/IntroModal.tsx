@@ -47,9 +47,9 @@ export function IntroModal() {
         <h2 style={{ fontSize: "24px", fontWeight: "bold", color: "#111827", marginBottom: "8px", margin: 0 }}>
           전국 한 그릇 지도에 오신 것을 환영합니다!
         </h2>
-        <p style={{ color: "#4b5563", marginBottom: "24px", fontSize: "14px", lineHeight: "1.5" }}>
-          이 지도는 단순한 프랜차이즈가 아닌, 개성 넘치고 정성 가득한 
-          <strong> 독립 수제 라멘 전문점</strong>들을 모아놓은 특별한 지도입니다.
+        <p style={{ color: "#4b5563", marginBottom: "24px", fontSize: "14px", lineHeight: "1.5", wordBreak: "keep-all" }}>
+          이 지도는 프랜차이즈를 제외한, 개성 넘치고 정성 가득한 
+          <strong> 라멘 전문점</strong>들을 모아놓은 특별한 지도입니다.
         </p>
 
         <div style={{
@@ -63,20 +63,24 @@ export function IntroModal() {
           padding: "20px",
           marginBottom: "24px",
           fontSize: "14px",
-          color: "#1f2937"
+          color: "#1f2937",
+          wordBreak: "keep-all"
         }}>
           <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
             <span style={{ color: "#f97316", fontSize: "20px" }}>🤖</span>
             <div>
               <strong style={{ display: "block" }}>라멘 사마 AI 활용하기</strong>
-              <p style={{ color: "#4b5563", marginTop: "4px", margin: 0 }}>우측 상단 챗봇에게 "스트레스 받아", "속이 안 좋아" 처럼 기분이나 취향을 말해보세요. 딱 맞는 라멘집을 찾아드립니다!</p>
+              <p style={{ color: "#4b5563", marginTop: "4px", margin: 0 }}>
+                우측 상단 챗봇에게 "스트레스 받아", "속이 안 좋아" 처럼<br />
+                기분이나 취향을 말해보세요. 딱 맞는 라멘집을 찾아드립니다!
+              </p>
             </div>
           </div>
           <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
             <span style={{ color: "#f97316", fontSize: "20px" }}>📍</span>
             <div>
               <strong style={{ display: "block" }}>내 주변 맛집 찾기</strong>
-              <p style={{ color: "#4b5563", marginTop: "4px", margin: 0 }}>위치 권한을 허용하시면 현재 계신 곳에서 가장 가까운 라멘집을 즉시 확인하실 수 있습니다.</p>
+              <p style={{ color: "#4b5563", marginTop: "4px", margin: 0 }}>위치 권한을 허용하시면 현재 계신 곳에서 가까운 라멘집을 즉시 확인하실 수 있습니다.</p>
             </div>
           </div>
           <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
