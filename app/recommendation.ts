@@ -383,7 +383,7 @@ export function recommendShops(
       brothMatch = "chintan";
     }
   } else if (intent.wantsPaitan) {
-    const matched = candidates.filter((shop) => shop.brothStyle === "paitan" || shop.types.includes("tonkotsu") || shop.types.includes("tori_paitan") || shop.types.includes("miso") || shop.types.includes("iekei"));
+    const matched = candidates.filter((shop) => shop.brothStyle === "paitan" || shop.types.includes("tonkotsu") || shop.types.includes("miso"));
     if (matched.length > 0) {
       candidates = matched;
       brothMatch = "paitan";
