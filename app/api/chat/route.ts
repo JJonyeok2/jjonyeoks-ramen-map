@@ -119,6 +119,12 @@ export async function POST(request: Request) {
              if (distKm < 3) boost += 0.1;
              else if (distKm < 10) boost += 0.05;
              else if (distKm > 50) boost -= 0.2; // penalty for far places
+
+             if (intent.nearby) {
+               if (distKm <= 5) boost += 1.5;
+               else if (distKm <= 10) boost += 0.5;
+               else boost -= 2.0; // 10km 밖은 강력한 페널티로 후보에서 제외 유도
+             }
           }
 
           return { shop, score: simScore + boost, distKm };
