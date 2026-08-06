@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { RAMEN_SHOPS } from "../../ramen-data";
 import { recommendShops, analyzeRecommendationIntent, distanceBetweenKm } from "../../recommendation";
-import fs from "fs";
-import path from "path";
+import embeddingsData from "../../embeddings.json";
 
 export const dynamic = "force-dynamic";
 
@@ -20,18 +19,8 @@ function cosineSimilarity(vecA: number[], vecB: number[]) {
   return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
 }
 
-let cachedEmbeddings: any[] | null = null;
 function getEmbeddings() {
-  if (cachedEmbeddings) return cachedEmbeddings;
-  try {
-    const filePath = path.join(process.cwd(), "app", "embeddings.json");
-    const data = fs.readFileSync(filePath, "utf-8");
-    cachedEmbeddings = JSON.parse(data);
-    return cachedEmbeddings;
-  } catch (err) {
-    console.error("Failed to load embeddings", err);
-    return [];
-  }
+  return embeddingsData as any[];
 }
 
 export async function POST(request: Request) {
