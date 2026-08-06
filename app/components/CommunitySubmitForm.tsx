@@ -40,65 +40,94 @@ export function CommunitySubmitForm({ onClose, onSubmitSuccess }: { onClose: () 
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-6 relative flex flex-col">
+    <div style={{
+      position: "fixed",
+      top: 0, left: 0, right: 0, bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 9999,
+      padding: "16px"
+    }}>
+      <div style={{
+        backgroundColor: "#ffffff",
+        borderRadius: "12px",
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+        width: "100%",
+        maxWidth: "400px",
+        padding: "24px",
+        position: "relative",
+        display: "flex",
+        flexDirection: "column"
+      }}>
         <button 
-          className="absolute top-4 right-4 text-gray-500 hover:text-black text-xl leading-none" 
+          style={{
+            position: "absolute",
+            top: "16px",
+            right: "16px",
+            color: "#6b7280",
+            fontSize: "24px",
+            lineHeight: 1,
+            background: "none",
+            border: "none",
+            cursor: "pointer"
+          }}
           onClick={onClose}
           aria-label="닫기"
         >
           ×
         </button>
-        <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+        <h2 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px", margin: "0 0 16px 0" }}>
           <span>🍜</span> 맛집 직접 등록하기
         </h2>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <label className="flex flex-col gap-1">
-            <span className="text-sm font-semibold text-gray-700">식당 이름</span>
+        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <label style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <span style={{ fontSize: "14px", fontWeight: "bold", color: "#374151" }}>식당 이름</span>
             <input 
               required 
               type="text" 
-              className="border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+              style={{ border: "1px solid #d1d5db", borderRadius: "4px", padding: "8px", fontSize: "14px", width: "100%", boxSizing: "border-box" }}
               placeholder="라멘집 이름"
               value={formData.name}
               onChange={e => setFormData({ ...formData, name: e.target.value })}
             />
           </label>
-          <label className="flex flex-col gap-1">
-            <span className="text-sm font-semibold text-gray-700">주소</span>
+          <label style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <span style={{ fontSize: "14px", fontWeight: "bold", color: "#374151" }}>주소</span>
             <input 
               required 
               type="text" 
-              className="border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+              style={{ border: "1px solid #d1d5db", borderRadius: "4px", padding: "8px", fontSize: "14px", width: "100%", boxSizing: "border-box" }}
               placeholder="도로명 주소 (예: 서울 마포구 동교로)"
               value={formData.address}
               onChange={e => setFormData({ ...formData, address: e.target.value })}
             />
           </label>
-          <label className="flex flex-col gap-1">
-            <span className="text-sm font-semibold text-gray-700">추천 메뉴 및 가격</span>
-            <div className="flex gap-2">
+          <label style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <span style={{ fontSize: "14px", fontWeight: "bold", color: "#374151" }}>추천 메뉴 및 가격</span>
+            <div style={{ display: "flex", gap: "8px" }}>
               <input 
                 required 
                 type="text" 
-                className="border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 flex-1"
+                style={{ border: "1px solid #d1d5db", borderRadius: "4px", padding: "8px", fontSize: "14px", flex: 1, boxSizing: "border-box" }}
                 placeholder="추천 메뉴 (예: 쇼유라멘)"
                 value={formData.signature}
                 onChange={e => setFormData({ ...formData, signature: e.target.value })}
               />
               <input 
                 type="number" 
-                className="border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 w-24"
+                style={{ border: "1px solid #d1d5db", borderRadius: "4px", padding: "8px", fontSize: "14px", width: "96px", boxSizing: "border-box" }}
                 placeholder="가격(원)"
                 value={formData.price}
                 onChange={e => setFormData({ ...formData, price: e.target.value })}
               />
             </div>
           </label>
-          <label className="flex flex-col gap-1">
-            <span className="text-sm font-semibold text-gray-700">라멘 스타일</span>
+          <label style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <span style={{ fontSize: "14px", fontWeight: "bold", color: "#374151" }}>라멘 스타일</span>
             <select 
-              className="border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+              style={{ border: "1px solid #d1d5db", borderRadius: "4px", padding: "8px", fontSize: "14px", width: "100%", boxSizing: "border-box", backgroundColor: "white" }}
               value={formData.brothStyle}
               onChange={e => setFormData({ ...formData, brothStyle: e.target.value })}
             >
@@ -108,27 +137,27 @@ export function CommunitySubmitForm({ onClose, onSubmitSuccess }: { onClose: () 
               <option value="dry">비빔/국물없음 (마제소바)</option>
             </select>
           </label>
-          <label className="flex flex-col gap-1">
-            <span className="text-sm font-semibold text-gray-700">한 줄 평</span>
+          <label style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <span style={{ fontSize: "14px", fontWeight: "bold", color: "#374151" }}>한 줄 평</span>
             <textarea 
-              className="border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none h-20"
+              style={{ border: "1px solid #d1d5db", borderRadius: "4px", padding: "8px", fontSize: "14px", width: "100%", boxSizing: "border-box", resize: "none", height: "80px" }}
               placeholder="이곳을 추천하는 이유는 무엇인가요?"
               value={formData.description}
               onChange={e => setFormData({ ...formData, description: e.target.value })}
             />
           </label>
-          <div className="mt-2 flex justify-end gap-2">
+          <div style={{ marginTop: "8px", display: "flex", justifyContent: "flex-end", gap: "8px" }}>
             <button 
               type="button" 
               onClick={onClose}
-              className="px-4 py-2 text-sm font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+              style={{ padding: "8px 16px", fontSize: "14px", fontWeight: "bold", color: "#4b5563", backgroundColor: "#f3f4f6", border: "none", borderRadius: "8px", cursor: "pointer" }}
             >
               취소
             </button>
             <button 
               type="submit" 
               disabled={loading}
-              className="px-4 py-2 text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-lg transition-colors disabled:opacity-50"
+              style={{ padding: "8px 16px", fontSize: "14px", fontWeight: "bold", color: "#ffffff", backgroundColor: "#f97316", border: "none", borderRadius: "8px", cursor: "pointer", opacity: loading ? 0.5 : 1 }}
             >
               {loading ? "등록 중..." : "지도에 추가하기"}
             </button>
