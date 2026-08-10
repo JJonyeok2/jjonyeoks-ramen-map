@@ -704,7 +704,7 @@ export default function Home() {
         ? "지도를 불러오는 중"
         : mapStatus === "error"
           ? "지도 연결 확인 필요"
-          : "데모 지도";
+          : "미검증 지도";
 
   return (
     <main className="app-shell">
@@ -719,7 +719,7 @@ export default function Home() {
         </a>
         <div className="header-center" aria-label="서비스 안내">
           <span className="live-dot" />
-          검증 {verifiedShops.length}곳 · 데모 {RAMEN_SHOPS.length}곳
+          검증 {verifiedShops.length}곳 · 미검증 {RAMEN_SHOPS.length}곳
         </div>
         <div className="header-actions">
           <button className="verify-link" style={{ background: '#10b981', color: 'white' }} type="button" onClick={() => setSubmitOpen(true)}>+ 맛집 등록하기</button>
@@ -848,7 +848,7 @@ export default function Home() {
               <strong>{region === "전국" ? "전국" : region} 라멘</strong>
               <span>{filteredShops.length}곳</span>
             </div>
-            <span className="demo-badge">DEMO DATA</span>
+            <span className="demo-badge">미검증</span>
           </div>
 
           <div className="results-list" data-testid="shop-list">
@@ -988,7 +988,7 @@ export default function Home() {
             <div className="map-notice" role="status">
               <span className="notice-icon" aria-hidden="true">G</span>
               <div>
-                <strong>{mapStatus === "error" ? "구글 맵 연결을 확인해 주세요" : "지금은 데모 지도로 보고 있어요"}</strong>
+                <strong>{mapStatus === "error" ? "구글 맵 연결을 확인해 주세요" : "지금은 미검증 지도로 보고 있어요"}</strong>
                 <p>Google Maps JavaScript API 키로 전국의 73개 수제 라멘집 위치를 시각화합니다.</p>
               </div>
               <a href="https://console.cloud.google.com/google/maps-apis" target="_blank" rel="noreferrer">
@@ -1171,7 +1171,7 @@ export default function Home() {
             </label>
             <button type="submit" aria-label="추천 요청 보내기" disabled={chatBusy}>↑</button>
           </form>
-          <p className="chat-disclaimer">창작 데모 매장 기준 · 위치는 저장하지 않으며 거리는 직선거리예요.</p>
+          <p className="chat-disclaimer">미검증 매장 기준 · 위치는 저장하지 않으며 거리는 직선거리예요.</p>
         </section>
       ) : (
         <div className="chat-launch-wrap">
