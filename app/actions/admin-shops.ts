@@ -6,7 +6,12 @@ import { eq, desc } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 const verifyPassword = (password: string) => {
-  const adminPassword = process.env.ADMIN_PASSWORD || "admin1234";
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  
+  if (!adminPassword) {
+    throw new Error("Admin password is not configured on the server.");
+  }
+  
   if (password !== adminPassword) {
     throw new Error("Unauthorized");
   }
