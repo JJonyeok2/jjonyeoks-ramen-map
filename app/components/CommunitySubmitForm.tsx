@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
+import { submitRamenShop } from "../actions/submit-shop";
 
 export function CommunitySubmitForm({ onClose, onSubmitSuccess }: { onClose: () => void, onSubmitSuccess: (shop: any) => void }) {
   const [loading, setLoading] = useState(false);
@@ -13,30 +14,37 @@ export function CommunitySubmitForm({ onClose, onSubmitSuccess }: { onClose: () 
     brothStyle: "chintan",
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const [isPending, startTransition] = useTransition();
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    try {
-      const types = formData.brothStyle === "chintan" ? ["shoyu"] : formData.brothStyle === "paitan" ? ["tonkotsu"] : ["tsukemen"];
-      
-      const response = await fetch("/api/community", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, types }),
-      });
-      
-      if (response.ok) {
-        const data = await response.json();
-        onSubmitSuccess(data.shop);
-      } else {
-        alert("저장에 실패했습니다.");
+    
+    startTransition(async () => {
+      setLoading(true);
+      try {
+        const data = new FormData();
+        data.append("name", formData.name);
+        data.append("address", formData.address);
+        data.append("signature", formData.signature);
+        data.append("price", formData.price);
+        data.append("description", formData.description);
+        data.append("brothStyle", formData.brothStyle);
+        
+        const result = await submitRamenShop(data);
+        
+        if (result.success) {
+          alert("제보해주셔서 감사합니다! 관리자 승인 후 지도에 반영됩니다.");
+          onClose();
+        } else {
+          alert(result.error || "저장에 실패했습니다.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("오류가 발생했습니다.");
+      } finally {
+        setLoading(false);
       }
-    } catch (err) {
-      console.error(err);
-      alert("오류가 발생했습니다.");
-    } finally {
-      setLoading(false);
-    }
+    });
   };
 
   return (
@@ -156,10 +164,10 @@ export function CommunitySubmitForm({ onClose, onSubmitSuccess }: { onClose: () 
             </button>
             <button 
               type="submit" 
-              disabled={loading}
-              style={{ padding: "8px 16px", fontSize: "14px", fontWeight: "bold", color: "#ffffff", backgroundColor: "#f97316", border: "none", borderRadius: "8px", cursor: "pointer", opacity: loading ? 0.5 : 1 }}
+              disabled={loading || isPending}
+              style={{ padding: "8px 16px", fontSize: "14px", fontWeight: "bold", color: "#ffffff", backgroundColor: "#f97316", border: "none", borderRadius: "8px", cursor: "pointer", opacity: (loading || isPending) ? 0.5 : 1 }}
             >
-              {loading ? "등록 중..." : "지도에 추가하기"}
+              {(loading || isPending) ? "등록 중..." : "지도에 추가하기"}
             </button>
           </div>
         </form>

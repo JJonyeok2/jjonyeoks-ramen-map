@@ -208,7 +208,7 @@ export default function VerificationPage() {
   return (
     <main className="verify-page">
       <header className="verify-hero">
-        <Link href="/" className="back-link">← RAMEN MAP</Link>
+        <Link href="/" className="back-link">← や！- 라멘 추천 맵</Link>
         <div>
           <span className="eyebrow">REAL DATA WORKBENCH</span>
           <h1>실데이터 검증실</h1>

@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const title = "RAMEN MAP | 전국 한 그릇 지도";
-const description =
-  "전국 라멘을 메뉴와 지역으로 탐색하고, 취향 추천봇에게 오늘의 한 그릇을 추천받아 보세요.";
+const title = "や！- 라멘 추천 맵";
+const description = "전국 라멘 지도로 숨은 맛집을 탐험하세요.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -22,21 +21,21 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(origin),
     title,
     description,
-    applicationName: "RAMEN MAP",
+    applicationName: "や！- 라멘 추천 맵",
     keywords: ["라멘", "라멘 지도", "쇼유", "시오", "츠케멘", "마제소바"],
     openGraph: {
       title,
       description,
       type: "website",
       locale: "ko_KR",
-      siteName: "RAMEN MAP",
+      siteName: "や！- 라멘 추천 맵",
       images: [{ url: socialImage, width: 1730, height: 909, alt: "RAMEN MAP 전국 한 그릇 지도" }],
     },
     manifest: "/manifest.json",
     appleWebApp: {
       capable: true,
       statusBarStyle: "black-translucent",
-      title: "RAMEN MAP",
+      title: "や！- 라멘 추천 맵",
     },
     twitter: {
       card: "summary_large_image",

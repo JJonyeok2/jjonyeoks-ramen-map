@@ -710,10 +710,10 @@ export default function Home() {
     <main className="app-shell">
       <IntroModal />
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="라멘맵 홈">
-          <span className="brand-bowl" aria-hidden="true">ら</span>
+        <a className="brand" href="#top" aria-label="라멘맵 홈" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <img src="/logo.png" alt="や! 로고" style={{ height: "40px", objectFit: "contain" }} />
           <span>
-            <strong>RAMEN MAP</strong>
+            <strong>や！- 라멘 추천 맵</strong>
             <small>전국 한 그릇 지도</small>
           </span>
         </a>
