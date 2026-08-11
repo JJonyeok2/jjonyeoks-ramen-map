@@ -1,57 +1,91 @@
-# RAMEN MAP
+# や！- 라멘 추천 맵 (Ya! Ramen Recommendation Map)
 
-전국 라멘을 지역과 메뉴로 탐색하고, 취향 추천봇에게 오늘의 한 그릇을 추천받는 지도 웹앱입니다.
+전국 477곳 이상의 독립 수제 라멘집을 지역, 메뉴, 스타일별로 탐색하고, **사용자 참여(제보)**를 통해 지도를 확장해 나가는 웹 애플리케이션입니다. AI 챗봇 '라멘 사마'에게 기분과 취향에 맞는 오늘의 한 그릇을 추천받을 수도 있습니다.
 
-## 주요 기능
+🔗 **[Live Demo (Vercel)](https://jjonyeoks-ramen-map.vercel.app)**
 
-- 카카오맵 JavaScript SDK 기반 전국 지도와 마커 클러스터
-- 가게명·대표 메뉴·태그 통합 검색
-- 쇼유, 시오, 미소, 돈코츠, 츠케멘, 마제소바 복수 필터
-- 대표 메뉴 기준 청탕, 백탕, 비빔, 츠케 스타일 분류와 복수 필터
-- 전국 17개 시·도 지역 필터
-- 화·스트레스는 카라이 메뉴로, `느끼한 건 싫어` 같은 취향은 맑고 깔끔한 청탕으로 연결하며 국물 농도·메뉴 유형·식단 제약도 반영하는 추천봇
-- 사용자가 직접 허용한 현재 위치를 기준으로 목록과 챗봇 추천을 가까운 순으로 정렬
-- 데스크톱 지도/목록 분할 화면과 모바일 바텀시트
-- 카카오맵 키가 없을 때도 기능을 둘러볼 수 있는 데모 지도
+---
 
-## 로컬 실행
+## 🍜 주요 기능
 
-Node.js 22.13 이상이 필요합니다.
+- **Google Maps 기반의 전국 라멘 지도**
+  - 전국 477곳의 수제 라멘 전문점 위치 시각화 (프랜차이즈 제외, 검증된 독립 매장 중심)
+- **강력한 필터링 및 검색 시스템**
+  - 메뉴 유형: 쇼유, 시오, 미소, 돈코츠, 츠케멘, 마제소바, 지로계 등
+  - 국물 스타일: 청탕, 백탕, 비빔, 츠케 등
+  - 지역별 필터링 및 매장명/메뉴명 텍스트 통합 검색
+- **사용자 참여형 맛집 제보 (Community Submission)**
+  - 사용자가 직접 지도에 없는 라멘집을 제보 가능
+  - 관리자 승인(Admin Approval) 후 지도에 실시간으로 반영
+- **AI 추천봇 '라멘 사마 (Ramen-sama)'**
+  - "스트레스 받아", "해장이 필요해" 등 사용자의 감정과 기분, 취향을 입력하면 OpenAI 임베딩을 기반으로 최적의 매장을 추천
+- **위치 기반 서비스**
+  - 내 위치 기반 가까운 순 정렬 및 추천 지원
 
+---
+
+## 🛠️ 기술 스택 (Tech Stack)
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: Vanilla CSS (커스텀 디자인 시스템 및 애니메이션)
+- **Database & ORM**: [Supabase](https://supabase.com/) (PostgreSQL), [Drizzle ORM](https://orm.drizzle.team/)
+- **Map & AI**: Google Maps JavaScript API, OpenAI API (gpt-4o-mini & text-embedding)
+- **Deployment**: [Vercel](https://vercel.com/)
+
+---
+
+## 🚀 로컬 환경 실행 방법 (Local Development)
+
+Node.js 20.x 이상의 환경이 필요합니다.
+
+### 1. 패키지 설치
 ```bash
 npm install
-cp .env.example .env.local
-npm run dev
 ```
 
-브라우저에서 `http://localhost:3000`을 엽니다.
-
-## 카카오맵 연결
-
-1. [카카오디벨로퍼스](https://developers.kakao.com/)에서 앱을 만듭니다.
-2. `카카오맵 > 사용 설정`을 켭니다.
-3. `플랫폼 키 > JavaScript 키`의 JavaScript SDK 도메인에 로컬 및 배포 도메인을 등록합니다.
-4. JavaScript 키를 `.env.local`에 넣습니다.
+### 2. 환경 변수 설정
+`.env.example` 파일을 복사하여 `.env.local` 파일을 생성하고 아래의 환경 변수들을 채워 넣습니다.
 
 ```dotenv
-NEXT_PUBLIC_KAKAO_MAP_KEY=YOUR_JAVASCRIPT_KEY
+# Supabase PostgreSQL 연결 주소 (필수)
+DATABASE_URL="postgresql://[USER]:[PASSWORD]@[HOST]:6543/postgres"
+
+# 관리자 페이지 로그인 비밀번호 (필수)
+ADMIN_PASSWORD="your_admin_password"
+
+# Google Maps API 키 (필수)
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY="AIza..."
+
+# OpenAI API 키 (라멘 사마 챗봇용, 필수)
+OPENAI_API_KEY="sk-..."
 ```
+> **주의:** `DATABASE_URL`에 들어가는 비밀번호에 특수문자가 포함된 경우 반드시 URL 인코딩(`%2F`, `%40` 등)을 거친 문자열을 사용해야 합니다.
 
-동적 로더는 `services,clusterer` 라이브러리와 `autoload=false`를 사용합니다. JavaScript 키는 REST API 키와 다릅니다.
-
-## 데이터 안내
-
-현재 포함된 24개 매장명, 주소, 메뉴, 가격, 평점, 영업시간은 UI와 추천 로직을 검증하기 위한 **창작 데모 데이터**이며 실제 매장 정보가 아닙니다. 청탕·백탕·비빔·츠케 표시는 각 매장의 대표 메뉴를 기준으로 한 데모 분류입니다. 카카오맵은 지도 표시와 위치 확인에 사용하고, 카카오가 제공하지 않는 세부 메뉴 분류는 프로젝트 데이터에서 관리합니다.
-
-현재 위치는 사용자가 `내 위치`를 눌렀을 때만 브라우저에 요청하며 서버나 브라우저 저장소에 보관하지 않습니다. 표시되는 거리는 길찾기 거리가 아닌 좌표 간 직선거리입니다. 위치 기능은 HTTPS 배포 주소 또는 localhost에서 사용할 수 있습니다.
-
-실서비스로 전환할 때는 `app/ramen-data.ts`를 검증된 자체 데이터나 백엔드 API로 교체하세요.
-
-## 명령어
-
+### 3. 데이터베이스 스키마 동기화 (선택)
+스키마 변경 사항이 있다면 Drizzle을 통해 Supabase에 푸시합니다.
 ```bash
-npm run dev    # 개발 서버
-npm run build  # 배포 빌드
-npm run test   # 추천·위치 로직과 렌더링 테스트
-npm run lint   # 정적 검사
+npx drizzle-kit push
 ```
+
+### 4. 개발 서버 실행
+```bash
+npm run dev
+```
+브라우저에서 `http://localhost:3000`에 접속하여 확인합니다.
+
+---
+
+## 👨‍💻 관리자 페이지 (Admin Dashboard)
+
+웹사이트에 사용자가 라멘집을 제보하면, 무분별한 데이터를 방지하기 위해 관리자의 승인을 거치게 됩니다.
+
+1. `/admin` 경로로 접속합니다. (예: `http://localhost:3000/admin`)
+2. `.env.local`에 설정한 `ADMIN_PASSWORD`를 입력하여 로그인합니다.
+3. 승인 대기 중(PENDING)인 매장 목록을 확인하고, **[승인]** 또는 **[거절]**을 클릭하여 데이터를 관리합니다. 승인된 매장은 즉시 메인 지도에 반영됩니다.
+
+---
+
+## 📜 데이터 및 라이선스 안내
+
+- 현재 기본으로 탑재된 **477곳의 매장 데이터**(`app/ramen-data.ts`)는 자체 구축한 정적 데이터베이스이며, '미검증' 표시를 통해 아직 추가 정보가 완전히 채워지지 않았음을 알립니다.
+- 사용자가 제보하여 관리자가 승인한 데이터는 Supabase DB에 저장되며 기존 정적 데이터와 병합되어 화면에 표시됩니다.
