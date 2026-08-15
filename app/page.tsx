@@ -334,7 +334,7 @@ export default function Home() {
   const locationRequestRef = useRef<Promise<Coordinates | null> | null>(null);
   const pendingChatRef = useRef(false);
   const messageIdRef = useRef(2);
-  const baseShops = useMemo(() => RAMEN_SHOPS.map((shop) => ({ ...shop, dataStatus: "unverified" as const })), []);
+  const baseShops = useMemo<RamenShop[]>(() => RAMEN_SHOPS.map((shop) => ({ ...shop, dataStatus: "unverified" })), []);
   const shops = useMemo(() => [...verifiedShops, ...communityShops, ...baseShops], [verifiedShops, communityShops, baseShops]);
 
   useEffect(() => {
