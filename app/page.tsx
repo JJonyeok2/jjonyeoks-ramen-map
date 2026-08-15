@@ -269,7 +269,7 @@ function RamenCard({
     >
       <span className="ramen-card-topline">
         <span className={`demo-kicker${shop.dataStatus === "verified" ? " verified-kicker" : ""}`}>
-          {shop.dataStatus === "verified" ? "VERIFIED" : "DEMO"}
+          {shop.dataStatus === "verified" ? "VERIFIED" : "UNVERIFIED"}
         </span>
         <span className="rating">
           {shop.dataStatus === "verified" ? "사용자 검증" : `★ ${shop.rating.toFixed(1)}`}
@@ -334,7 +334,8 @@ export default function Home() {
   const locationRequestRef = useRef<Promise<Coordinates | null> | null>(null);
   const pendingChatRef = useRef(false);
   const messageIdRef = useRef(2);
-  const shops = useMemo(() => [...verifiedShops, ...RAMEN_SHOPS, ...communityShops], [verifiedShops, communityShops]);
+  const baseShops = useMemo(() => RAMEN_SHOPS.map((shop) => ({ ...shop, dataStatus: "unverified" as const })), []);
+  const shops = useMemo(() => [...verifiedShops, ...communityShops, ...baseShops], [verifiedShops, communityShops, baseShops]);
 
   useEffect(() => {
     let cancelled = false;
@@ -719,7 +720,7 @@ export default function Home() {
         </a>
         <div className="header-center" aria-label="서비스 안내">
           <span className="live-dot" />
-          검증 {verifiedShops.length}곳 · 미검증 {RAMEN_SHOPS.length}곳
+          검증 {verifiedShops.length + communityShops.length}곳 · 미검증 {RAMEN_SHOPS.length}곳
         </div>
         <div className="header-actions">
           <button className="verify-link" style={{ background: '#10b981', color: 'white' }} type="button" onClick={() => setSubmitOpen(true)}>+ 맛집 등록하기</button>
