@@ -35,6 +35,9 @@ export async function POST(request: Request) {
     if (!prompt) {
       return NextResponse.json({ error: "프롬프트를 입력해 주세요." }, { status: 400 });
     }
+    if (prompt.length > 200) {
+      return NextResponse.json({ error: "질문은 200자 이내로 입력해 주세요." }, { status: 400 });
+    }
 
     const userLocation = body.userLocation || null;
     const activeRegion = (body.activeRegion || "전국") as any;

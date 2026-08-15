@@ -15,6 +15,10 @@ export async function submitRamenShop(formData: FormData) {
       return { success: false, error: "이름과 주소는 필수입니다." };
     }
 
+    if (name.length > 50 || address.length > 150) {
+      return { success: false, error: "상호명이나 주소가 너무 깁니다." };
+    }
+
     const price = priceStr ? parseInt(priceStr, 10) : null;
 
     // Use geocoding or just store address (since latitude/longitude require an API call).
