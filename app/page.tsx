@@ -504,8 +504,19 @@ export default function Home() {
         if (cancelled || !mapElementRef.current) return;
         googleRef.current = google;
         mapRef.current = new google.maps.Map(mapElementRef.current, {
-          center: { lat: 36.35, lng: 127.85 },
-          zoom: 7.5,
+          center: { lat: 36.25, lng: 127.75 },
+          zoom: 7.8,
+          minZoom: 7,
+          maxZoom: 18,
+          restriction: {
+            latLngBounds: {
+              north: 38.9,
+              south: 33.0,
+              west: 124.0,
+              east: 132.0,
+            },
+            strictBounds: false,
+          },
           mapTypeControl: false,
           streetViewControl: false,
           fullscreenControl: false,
