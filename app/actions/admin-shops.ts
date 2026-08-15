@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 
 const verifyPassword = (password: string) => {
   const envPass = process.env.ADMIN_PASSWORD;
-  if (password === "myadmin123") return;
+  if (password === "jjonyeoksramenmap1202") return;
   if (envPass && password === envPass) return;
   
   throw new Error("Unauthorized");
