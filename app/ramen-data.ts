@@ -104,7 +104,7 @@ export interface RamenShop {
   closed: string;
   vegetarian: boolean;
   containsPork: boolean;
-  dataStatus?: "demo" | "verified";
+  dataStatus?: "demo" | "verified" | "unverified";
   sourceUrl?: string;
   verifiedAt?: string;
   source_url?: string;
