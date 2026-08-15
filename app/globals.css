@@ -99,7 +99,8 @@ select:focus-visible {
   z-index: 30;
   height: 76px;
   display: grid;
-  grid-template-columns: 390px 1fr 390px;
+  grid-template-columns: max-content 1fr max-content;
+  gap: 16px;
   align-items: center;
   padding: 0 24px;
   border-bottom: 1px solid var(--line);
@@ -200,6 +201,7 @@ select:focus-visible {
   cursor: pointer;
   font-size: 13px;
   font-weight: 800;
+  white-space: nowrap;
   transition: transform 160ms ease, background 160ms ease;
 }
 
