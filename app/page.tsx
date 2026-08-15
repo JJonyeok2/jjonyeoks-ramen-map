@@ -400,17 +400,37 @@ export default function Home() {
   );
 
   const displayedShops = useMemo(() => {
-    const shops = filteredShops.map((shop) => ({
-      shop,
-      distanceKm: userLocation
-        ? distanceBetweenKm(userLocation, { lat: shop.lat, lng: shop.lng })
-        : null,
-    }));
-    if (!userLocation) return shops;
-    return shops.sort(
-      (left, right) => (left.distanceKm ?? 0) - (right.distanceKm ?? 0),
-    );
-  }, [filteredShops, userLocation]);
+    const query = normalized(search);
+    const shops = filteredShops.map((shop) => {
+      let searchScore = 0;
+      if (query) {
+        const nameNorm = normalized(shop.name);
+        const sigNorm = normalized(shop.signature);
+        if (nameNorm === query) searchScore = 100;
+        else if (nameNorm.startsWith(query)) searchScore = 80;
+        else if (nameNorm.includes(query)) searchScore = 60;
+        else if (sigNorm.includes(query)) searchScore = 40;
+        else searchScore = 20;
+      }
+      return {
+        shop,
+        searchScore,
+        distanceKm: userLocation
+          ? distanceBetweenKm(userLocation, { lat: shop.lat, lng: shop.lng })
+          : null,
+      };
+    });
+
+    return shops.sort((left, right) => {
+      if (query && right.searchScore !== left.searchScore) {
+        return right.searchScore - left.searchScore;
+      }
+      if (userLocation) {
+        return (left.distanceKm ?? 0) - (right.distanceKm ?? 0);
+      }
+      return 0;
+    });
+  }, [filteredShops, search, userLocation]);
 
   const selectedDistance = useMemo(
     () =>
