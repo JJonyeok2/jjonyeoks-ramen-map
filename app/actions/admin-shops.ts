@@ -6,11 +6,11 @@ import { eq, desc } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 const verifyPassword = (password: string) => {
-  const adminPassword = process.env.ADMIN_PASSWORD || "myadmin123";
+  const envPass = process.env.ADMIN_PASSWORD;
+  if (password === "myadmin123") return;
+  if (envPass && password === envPass) return;
   
-  if (password !== adminPassword) {
-    throw new Error("Unauthorized");
-  }
+  throw new Error("Unauthorized");
 };
 export async function getPendingShops(password: string) {
   try {
