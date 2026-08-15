@@ -12,6 +12,24 @@
   --shadow: 0 18px 48px rgba(64, 48, 27, 0.16);
   --font-display: "Arial Black", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   --font-body: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --topbar-bg: rgba(255, 253, 248, 0.96);
+  --modal-bg: rgba(255, 253, 248, 0.97);
+}
+
+html[data-theme="dark"] {
+  --paper: #121418;
+  --paper-deep: #1a1d24;
+  --panel: #1e222b;
+  --ink: #f0f2f5;
+  --muted: #9ca3af;
+  --line: #2e3542;
+  --red: #ff5c38;
+  --red-deep: #e03e1a;
+  --yellow: #f5b038;
+  --green: #52b788;
+  --shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+  --topbar-bg: rgba(26, 29, 36, 0.96);
+  --modal-bg: rgba(26, 29, 36, 0.97);
 }
 
 * {
@@ -85,7 +103,7 @@ select:focus-visible {
   align-items: center;
   padding: 0 24px;
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 253, 248, 0.96);
+  background: var(--topbar-bg);
   box-shadow: 0 5px 24px rgba(64, 48, 27, 0.06);
 }
 

@@ -143,6 +143,55 @@ function formatPrice(value: number) {
   return `${value.toLocaleString("ko-KR")}원`;
 }
 
+const LIGHT_MAP_STYLES = [
+  {
+    featureType: "poi",
+    elementType: "labels",
+    stylers: [{ visibility: "off" }],
+  },
+];
+
+const DARK_MAP_STYLES = [
+  { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+  { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+  { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+  {
+    featureType: "administrative.locality",
+    elementType: "labels.text.fill",
+    stylers: [{ color: "#d59563" }],
+  },
+  {
+    featureType: "poi",
+    elementType: "labels",
+    stylers: [{ visibility: "off" }],
+  },
+  {
+    featureType: "road",
+    elementType: "geometry",
+    stylers: [{ color: "#38414e" }],
+  },
+  {
+    featureType: "road",
+    elementType: "geometry.stroke",
+    stylers: [{ color: "#212a37" }],
+  },
+  {
+    featureType: "road",
+    elementType: "labels.text.fill",
+    stylers: [{ color: "#9ca5b3" }],
+  },
+  {
+    featureType: "water",
+    elementType: "geometry",
+    stylers: [{ color: "#17263c" }],
+  },
+  {
+    featureType: "water",
+    elementType: "labels.text.fill",
+    stylers: [{ color: "#515c6d" }],
+  },
+];
+
 function normalized(value: string) {
   return value.trim().toLocaleLowerCase("ko-KR").replace(/\s+/g, " ");
 }
@@ -323,7 +372,34 @@ export default function Home() {
   const [mobileListOpen, setMobileListOpen] = useState(true);
   const [userLocation, setUserLocation] = useState<Coordinates | null>(null);
   const [locationStatus, setLocationStatus] = useState<LocationStatus>("idle");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const [submitOpen, setSubmitOpen] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    if (savedTheme === "dark" || savedTheme === "light") {
+      setTheme(savedTheme);
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "light" ? "dark" : "light";
+    setTheme(nextTheme);
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    localStorage.setItem("theme", nextTheme);
+  };
+
+  useEffect(() => {
+    if (mapRef.current) {
+      mapRef.current.setOptions({
+        styles: theme === "dark" ? DARK_MAP_STYLES : LIGHT_MAP_STYLES,
+      });
+    }
+  }, [theme]);
 
   const mapElementRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<any>(null);
@@ -541,13 +617,7 @@ export default function Home() {
           streetViewControl: false,
           fullscreenControl: false,
           zoomControl: true,
-          styles: [
-            {
-              featureType: "poi",
-              elementType: "labels",
-              stylers: [{ visibility: "off" }],
-            },
-          ],
+          styles: theme === "dark" ? DARK_MAP_STYLES : LIGHT_MAP_STYLES,
         });
         setMapStatus("ready");
       })
@@ -754,6 +824,20 @@ export default function Home() {
           검증 {verifiedShops.length + communityShops.length}곳 · 미검증 {RAMEN_SHOPS.length}곳
         </div>
         <div className="header-actions">
+          <button
+            className="verify-link"
+            style={{
+              background: theme === "dark" ? "#374151" : "#f3f4f6",
+              color: theme === "dark" ? "#f9fafb" : "#1f2937",
+              border: "1px solid var(--line)",
+              cursor: "pointer",
+            }}
+            type="button"
+            onClick={toggleTheme}
+            aria-label="테마 전환"
+          >
+            {theme === "dark" ? "☀️ 라이트" : "🌙 다크"}
+          </button>
           <button className="verify-link" style={{ background: '#10b981', color: 'white' }} type="button" onClick={() => setSubmitOpen(true)}>+ 맛집 등록하기</button>
           <a className="verify-link" href="/verify">실데이터 검증</a>
           <button className="recommend-header" type="button" onClick={() => setChatOpen(true)}>
