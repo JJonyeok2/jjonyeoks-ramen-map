@@ -651,14 +651,14 @@ select:focus-visible {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  color: #1f231d;
+  color: var(--ink);
   font-size: 13px;
   font-weight: 750;
 }
 
 .ramen-card-menu strong {
   flex: 0 0 auto;
-  color: #b45309;
+  color: var(--yellow);
   font-size: 12px;
   font-weight: 800;
 }
