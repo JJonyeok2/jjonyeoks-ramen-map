@@ -841,8 +841,7 @@ export default function Home() {
           <button className="verify-link" style={{ background: '#10b981', color: 'white' }} type="button" onClick={() => setSubmitOpen(true)}>+ 맛집 등록하기</button>
           <a className="verify-link" href="/verify">실데이터 검증</a>
           <button className="recommend-header" type="button" onClick={() => setChatOpen(true)}>
-            <span aria-hidden="true">🤖</span>
-            AI 추천봇
+            AI 추천
           </button>
         </div>
       </header>
