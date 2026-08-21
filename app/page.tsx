@@ -949,7 +949,7 @@ export default function Home() {
               <div className="popular-section">
                 <div className="popular-title">
                   <span>🔥 실시간 인기 라멘집</span>
-                  <small>Redis 랭킹</small>
+                  <small>LIVE</small>
                 </div>
                 <div className="popular-chips">
                   {popularShops.map((shop, idx) => (
