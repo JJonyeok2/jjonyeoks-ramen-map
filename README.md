@@ -58,18 +58,18 @@ npm install
 # Supabase DB 커넥션 (필수)
 DATABASE_URL="postgresql://[USER]:[PASSWORD]@[HOST]:6543/postgres"
 
-# 관리자 로그인 비밀번호 (필수)
-ADMIN_PASSWORD="jjonyeoksramenmap1202"
+# 관리자 로그인 비밀번호 (서버 환경 변수로 설정, 필수)
+ADMIN_PASSWORD="your_admin_password"
 
 # Google Maps API 키 (필수)
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY="AIza..."
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY="your_google_maps_api_key"
 
 # Upstash Redis REST credentials (실시간 인기 랭킹용, 필수)
-UPSTASH_REDIS_REST_URL="https://[YOUR_INSTANCE].upstash.io"
-UPSTASH_REDIS_REST_TOKEN="[YOUR_TOKEN]"
+UPSTASH_REDIS_REST_URL="https://your-upstash-instance.upstash.io"
+UPSTASH_REDIS_REST_TOKEN="your_upstash_rest_token"
 
 # OpenAI API 키 (AI 추천봇용, 선택)
-OPENAI_API_KEY="sk-..."
+OPENAI_API_KEY="your_openai_api_key"
 ```
 
 ### 3. 개발 서버 실행

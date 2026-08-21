@@ -27,10 +27,12 @@ async function geocodeAddress(address: string): Promise<{ lat: number; lng: numb
 
 const verifyPassword = (password: string) => {
   const envPass = process.env.ADMIN_PASSWORD;
-  if (password === "jjonyeoksramenmap1202") return;
-  if (envPass && password === envPass) return;
-  
-  throw new Error("Unauthorized");
+  if (!envPass) {
+    throw new Error("Admin password is not configured on server.");
+  }
+  if (password !== envPass) {
+    throw new Error("Unauthorized");
+  }
 };
 
 export async function getPendingShops(password: string) {
