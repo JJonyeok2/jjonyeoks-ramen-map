@@ -2032,3 +2032,91 @@ select:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Redis Popular Shops Leaderboard Styles */
+.popular-section {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.popular-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.popular-title span {
+  font-size: 13px;
+  font-weight: 850;
+  color: var(--ink);
+}
+
+.popular-title small {
+  font-size: 10px;
+  font-weight: 750;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.popular-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.popular-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 9px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease;
+}
+
+.popular-chip:hover {
+  transform: translateY(-1px);
+  border-color: #f59e0b;
+}
+
+.popular-rank {
+  color: #f59e0b;
+  font-weight: 900;
+}
+
+.popular-name {
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.popular-count {
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.popular-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 7px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}

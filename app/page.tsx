@@ -301,11 +301,13 @@ function RamenCard({
   shop,
   selected,
   distanceKm,
+  popularRank,
   onSelect,
 }: {
   shop: RamenShop;
   selected: boolean;
   distanceKm: number | null;
+  popularRank?: number;
   onSelect: (shop: RamenShop) => void;
 }) {
   return (
@@ -317,9 +319,13 @@ function RamenCard({
       data-testid={`shop-${shop.id}`}
     >
       <span className="ramen-card-topline">
-        <span className={`demo-kicker${shop.dataStatus === "verified" ? " verified-kicker" : ""}`}>
-          {shop.dataStatus === "verified" ? "VERIFIED" : "UNVERIFIED"}
-        </span>
+        {popularRank ? (
+          <span className="popular-badge">🔥 TOP {popularRank}</span>
+        ) : (
+          <span className={`demo-kicker${shop.dataStatus === "verified" ? " verified-kicker" : ""}`}>
+            {shop.dataStatus === "verified" ? "VERIFIED" : "UNVERIFIED"}
+          </span>
+        )}
         <span className="rating">
           {shop.dataStatus === "verified" ? "사용자 검증" : `★ ${shop.rating.toFixed(1)}`}
         </span>
@@ -374,6 +380,24 @@ export default function Home() {
   const [locationStatus, setLocationStatus] = useState<LocationStatus>("idle");
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [submitOpen, setSubmitOpen] = useState(false);
+  const [popularShops, setPopularShops] = useState<any[]>([]);
+
+  const fetchPopular = useCallback(() => {
+    fetch("/api/popular", { cache: "no-store" })
+      .then(async (res) => {
+        if (res.ok) {
+          const data = await res.json();
+          if (data.success && Array.isArray(data.popular)) {
+            setPopularShops(data.popular);
+          }
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    fetchPopular();
+  }, [fetchPopular]);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
@@ -547,7 +571,22 @@ export default function Home() {
 
   const selectShop = useCallback((shop: RamenShop) => {
     setSelectedId(shop.id);
-  }, []);
+    fetch("/api/popular", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ shopId: shop.id }),
+    })
+      .then(() => fetchPopular())
+      .catch(() => {});
+  }, [fetchPopular]);
+
+  const popularRankMap = useMemo(() => {
+    const map = new Map<string, number>();
+    popularShops.forEach((p, idx) => {
+      if (p?.id) map.set(p.id, idx + 1);
+    });
+    return map;
+  }, [popularShops]);
 
   const requestUserLocation = useCallback(async () => {
     if (userLocation) return userLocation;
@@ -906,6 +945,29 @@ export default function Home() {
               </button>
             </div>
 
+            {popularShops.length > 0 && (
+              <div className="popular-section">
+                <div className="popular-title">
+                  <span>🔥 실시간 인기 라멘집</span>
+                  <small>Redis 랭킹</small>
+                </div>
+                <div className="popular-chips">
+                  {popularShops.map((shop, idx) => (
+                    <button
+                      key={shop.id}
+                      className="popular-chip"
+                      type="button"
+                      onClick={() => selectShop(shop)}
+                    >
+                      <span className="popular-rank">#{idx + 1}</span>
+                      <span className="popular-name">{shop.name}</span>
+                      {shop.clicks ? <span className="popular-count">{shop.clicks}회</span> : null}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="filter-groups">
               <div className="filter-group">
                 <div className="filter-heading">
@@ -974,6 +1036,7 @@ export default function Home() {
                   shop={shop}
                   selected={shop.id === selectedId}
                   distanceKm={distanceKm}
+                  popularRank={popularRankMap.get(shop.id)}
                   onSelect={selectShop}
                 />
               ))
