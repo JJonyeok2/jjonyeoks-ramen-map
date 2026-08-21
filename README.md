@@ -1,73 +1,78 @@
-# や！- 라멘 추천 맵 (Ya! Ramen Recommendation Map)
+# 🍜 야! - 라멘 추천 맵 (Ya! Ramen Map)
 
-전국 477곳 이상의 독립 수제 라멘집을 지역, 메뉴, 스타일별로 탐색하고, **사용자 참여(제보)**를 통해 지도를 확장해 나가는 웹 애플리케이션입니다. AI 챗봇 '라멘 사마'에게 기분과 취향에 맞는 오늘의 한 그릇을 추천받을 수도 있습니다.
+전국 **440곳 이상의 장인 수제 라멘집**을 지역, 메뉴, 육수 스타일별로 탐색하고, **Redis 기반 실시간 인기 랭킹**과 **AI 맞춤 추천**, **사용자 참여 제보**로 만들어 나가는 라멘 지도 서비스입니다.
 
-🔗 **[Live Demo (Vercel)](https://jjonyeoks-ramen-map.vercel.app)**
+🔗 **[Live Service 바로가기 (Vercel)](https://ya-ramen-map.vercel.app)**
 
 ---
 
-## 🍜 주요 기능
+## 🌟 주요 기능 (Key Features)
 
-- **Google Maps 기반의 전국 라멘 지도**
-  - 전국 477곳의 수제 라멘 전문점 위치 시각화 (프랜차이즈 제외, 검증된 독립 매장 중심)
-- **강력한 필터링 및 검색 시스템**
-  - 메뉴 유형: 쇼유, 시오, 미소, 돈코츠, 츠케멘, 마제소바, 지로계 등
-  - 국물 스타일: 청탕, 백탕, 비빔, 츠케 등
-  - 지역별 필터링 및 매장명/메뉴명 텍스트 통합 검색
-- **사용자 참여형 맛집 제보 (Community Submission)**
-  - 사용자가 직접 지도에 없는 라멘집을 제보 가능
-  - 관리자 승인(Admin Approval) 후 지도에 실시간으로 반영
-- **AI 추천봇 '라멘 사마 (Ramen-sama)'**
-  - "스트레스 받아", "해장이 필요해" 등 사용자의 감정과 기분, 취향을 입력하면 OpenAI 임베딩을 기반으로 최적의 매장을 추천
-- **위치 기반 서비스**
-  - 내 위치 기반 가까운 순 정렬 및 추천 지원
+- **🔴 Redis 기반 실시간 인기 라멘집 (Popular Leaderboard)**
+  - [Upstash Redis](https://upstash.com/)의 **Sorted Set**을 활용하여 탐색 및 클릭 수가 가장 많은 라멘집 TOP 5를 실시간으로 집계
+  - 인기 랭킹 매장에 **`🔥 TOP 1` ~ `🔥 TOP 5` 뱃지** 자동 부여 및 사이드바 `LIVE` 랭킹 칩 제공
+- **🗺️ Google Maps 대한민국 범위 한정 지능형 지도**
+  - 한국 영역(`33.0°N~38.9°N`, `124.0°E~132.0°E`) 경계 제한 및 줌 제한 적용으로 쾌적한 탐색 환경 제공
+  - 체인점 5개 이하의 독립 수제 라멘 전문점 중심 정제 데이터 (대형 기성 프랜차이즈 제외)
+- **☀️ 라이트 모드 & 🌙 다크 모드 (Dynamic Theme Toggle)**
+  - 테마 변경 시 Google Maps 베터 스타일도 어두운 다크 벡터 지도 스타일로 실시간 자동 전환
+- **🎯 초정밀 필터링 및 검색 시스템**
+  - 라멘 종류: 쇼유, 시오, 미소, 돈코츠, 츠케멘, 마제소바, 지로계 등
+  - 국물 스타일: 맑은 청탕, 진한 백탕, 비빔, 츠케 등
+  - 검색어 연관도(Relevance Score) 알고리즘으로 매장명/메뉴명 우대 검색
+- **🤖 AI 추천봇 (AI Assistant)**
+  - 기분, 상황, 해장, 혼밥 여부에 맞춘 스마트 라멘집 추천 (OpenAI 토큰 안전장치 포함)
+- **👥 커뮤니티 제보 & 자동 지오코딩 (Auto Geocoding)**
+  - 유저가 지도에 없는 신규 라멘집 주소를 제보하면 **자동으로 위도·경도 좌표로 변환(Geocoding)**하여 저장
+  - 관리자 Dashboard(`/admin`) 승인 후 메인 지도 및 인기 랭킹에 즉시 반영
 
 ---
 
 ## 🛠️ 기술 스택 (Tech Stack)
 
-- **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **Styling**: Vanilla CSS (커스텀 디자인 시스템 및 애니메이션)
-- **Database & ORM**: [Supabase](https://supabase.com/) (PostgreSQL), [Drizzle ORM](https://orm.drizzle.team/)
-- **Map & AI**: Google Maps JavaScript API, OpenAI API (gpt-4o-mini & text-embedding)
-- **Deployment**: [Vercel](https://vercel.com/)
+| 구분 | 기술 / 라이브러리 |
+| :--- | :--- |
+| **Framework** | [Next.js 16 (App Router)](https://nextjs.org/) |
+| **Styling** | Vanilla CSS (CSS Variables Theme System) |
+| **Database & ORM** | [Supabase](https://supabase.com/) (PostgreSQL), [Drizzle ORM](https://orm.drizzle.team/) |
+| **Caching & Ranking** | [Upstash Redis](https://upstash.com/) (`@upstash/redis` - Serverless REST Redis) |
+| **Maps & Geocoding** | Google Maps JavaScript API & Google Geocoding API |
+| **AI Assistant** | OpenAI API (`gpt-4o-mini`) |
+| **Deployment** | [Vercel](https://vercel.com/) |
 
 ---
 
-## 🚀 로컬 환경 실행 방법 (Local Development)
+## 🚀 로컬 환경 실행 방법 (Local Setup)
 
-Node.js 20.x 이상의 환경이 필요합니다.
+Node.js `v20.x` 이상 환경이 필요합니다.
 
 ### 1. 패키지 설치
 ```bash
 npm install
 ```
 
-### 2. 환경 변수 설정
-`.env.example` 파일을 복사하여 `.env.local` 파일을 생성하고 아래의 환경 변수들을 채워 넣습니다.
+### 2. 환경 변수 설정 (`.env.local`)
+`.env.local` 파일에 아래 환경 변수들을 설정합니다.
 
 ```dotenv
-# Supabase PostgreSQL 연결 주소 (필수)
+# Supabase DB 커넥션 (필수)
 DATABASE_URL="postgresql://[USER]:[PASSWORD]@[HOST]:6543/postgres"
 
-# 관리자 페이지 로그인 비밀번호 (필수)
-ADMIN_PASSWORD="your_admin_password"
+# 관리자 로그인 비밀번호 (필수)
+ADMIN_PASSWORD="jjonyeoksramenmap1202"
 
 # Google Maps API 키 (필수)
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY="AIza..."
 
-# OpenAI API 키 (라멘 사마 챗봇용, 필수)
+# Upstash Redis REST credentials (실시간 인기 랭킹용, 필수)
+UPSTASH_REDIS_REST_URL="https://[YOUR_INSTANCE].upstash.io"
+UPSTASH_REDIS_REST_TOKEN="[YOUR_TOKEN]"
+
+# OpenAI API 키 (AI 추천봇용, 선택)
 OPENAI_API_KEY="sk-..."
 ```
-> **주의:** `DATABASE_URL`에 들어가는 비밀번호에 특수문자가 포함된 경우 반드시 URL 인코딩(`%2F`, `%40` 등)을 거친 문자열을 사용해야 합니다.
 
-### 3. 데이터베이스 스키마 동기화 (선택)
-스키마 변경 사항이 있다면 Drizzle을 통해 Supabase에 푸시합니다.
-```bash
-npx drizzle-kit push
-```
-
-### 4. 개발 서버 실행
+### 3. 개발 서버 실행
 ```bash
 npm run dev
 ```
@@ -75,17 +80,18 @@ npm run dev
 
 ---
 
-## 👨‍💻 관리자 페이지 (Admin Dashboard)
+## 👨‍💻 관리자 기능 (Admin Dashboard)
 
-웹사이트에 사용자가 라멘집을 제보하면, 무분별한 데이터를 방지하기 위해 관리자의 승인을 거치게 됩니다.
+유저가 맛집을 직접 등록하면 데이터의 신뢰성을 지키기 위해 관리자 승인 절차를 거칩니다.
 
-1. `/admin` 경로로 접속합니다. (예: `http://localhost:3000/admin`)
-2. `.env.local`에 설정한 `ADMIN_PASSWORD`를 입력하여 로그인합니다.
-3. 승인 대기 중(PENDING)인 매장 목록을 확인하고, **[승인]** 또는 **[거절]**을 클릭하여 데이터를 관리합니다. 승인된 매장은 즉시 메인 지도에 반영됩니다.
+1. `/admin` 경로로 접속합니다. (`http://localhost:3000/admin`)
+2. 설정된 관리자 비밀번호를 입력하여 로그인합니다.
+3. 승인 대기 중(PENDING)인 매장 제보를 확인하고 **[승인]** 또는 **[거절]**을 처리합니다.
+4. 승인된 매장은 즉시 메인 지도와 카테고리, 검색 목록에 통합 표시됩니다.
 
 ---
 
-## 📜 데이터 및 라이선스 안내
+## 📜 데이터 가이드라인
 
-- 현재 기본으로 탑재된 **477곳의 매장 데이터**(`app/ramen-data.ts`)는 자체 구축한 정적 데이터베이스이며, '미검증' 표시를 통해 아직 추가 정보가 완전히 채워지지 않았음을 알립니다.
-- 사용자가 제보하여 관리자가 승인한 데이터는 Supabase DB에 저장되며 기존 정적 데이터와 병합되어 화면에 표시됩니다.
+- **독립 수제 매장 검증 원칙**: 체인점 5개 초과 기성 대형 프랜차이즈는 데이터베이스에서 상시 정제하여 제외합니다.
+- 사용자가 제보하여 승인된 매장은 Supabase DB에 실시간 저장되며 정적 데이터베이스와 유기적으로 병합됩니다.
