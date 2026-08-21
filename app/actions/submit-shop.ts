@@ -3,6 +3,26 @@
 import { db } from "../../db/drizzle";
 import { ramenShops } from "../../db/drizzle-schema";
 
+async function geocodeAddress(address: string): Promise<{ lat: number; lng: number } | null> {
+  try {
+    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+    if (!apiKey) return null;
+
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}&language=ko`;
+    const res = await fetch(url);
+    if (!res.ok) return null;
+
+    const data = await res.json();
+    if (data.status === "OK" && data.results && data.results[0]) {
+      const location = data.results[0].geometry.location;
+      return { lat: location.lat, lng: location.lng };
+    }
+  } catch (error) {
+    console.error("Geocoding failed:", error);
+  }
+  return null;
+}
+
 export async function submitRamenShop(formData: FormData) {
   try {
     const name = formData.get("name")?.toString();
@@ -21,12 +41,14 @@ export async function submitRamenShop(formData: FormData) {
 
     const price = priceStr ? parseInt(priceStr, 10) : null;
 
-    // Use geocoding or just store address (since latitude/longitude require an API call).
-    // The user's schema supports latitude/longitude, but the current prototype form only asks for address.
-    
+    // Auto Geocode address to fetch exact lat/lng
+    const coords = await geocodeAddress(address);
+
     await db.insert(ramenShops).values({
       name,
       address,
+      latitude: coords ? coords.lat.toString() : null,
+      longitude: coords ? coords.lng.toString() : null,
       menu_type: signature,
       broth_style: brothStyle,
       price,
