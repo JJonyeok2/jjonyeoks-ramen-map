@@ -20,7 +20,7 @@ export default function AdminPage() {
       setIsAuthenticated(true);
       setShops(res.data || []);
     } else {
-      setError("비밀번호가 틀렸거나 권한이 없습니다.");
+      setError(res.error || "비밀번호가 틀렸거나 권한이 없습니다.");
     }
   };
 
