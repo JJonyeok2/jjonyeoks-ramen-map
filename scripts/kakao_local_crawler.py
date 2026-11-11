@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+import os
 import requests
 import json
 import time
 
-KAKAO_API_KEY = "dc4f207854aa616db4b19febdebda41e"
+KAKAO_API_KEY = os.environ["KAKAO_REST_API_KEY"]
 HEADERS = {"Authorization": f"KakaoAK {KAKAO_API_KEY}"}
 
 QUERIES = [

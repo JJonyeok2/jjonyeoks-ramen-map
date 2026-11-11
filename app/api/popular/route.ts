@@ -1,9 +1,12 @@
 import { NextResponse } from "next/server";
-import { redis } from "@/lib/redis";
+import { redis, isRedisConfigured } from "@/lib/redis";
 import { RAMEN_SHOPS } from "@/app/ramen-data";
 import { db } from "../../../db/drizzle";
 import { ramenShops } from "../../../db/drizzle-schema";
 import { eq } from "drizzle-orm";
+
+// 집계는 요청마다 달라지므로 정적 캐시 대상이 되지 않게 고정한다.
+export const dynamic = "force-dynamic";
 
 function parseRegionAndDistrict(address: string) {
   if (!address) return { region: "서울", district: "" };
@@ -38,7 +41,7 @@ function parseRegionAndDistrict(address: string) {
 
 export async function GET() {
   try {
-    const rawResult = await redis.zrevrange("popular_shops", 0, 4, { withScores: true });
+    const rawResult = await redis.zrange("popular_shops", 0, 4, { rev: true, withScores: true });
     
     const popularList: { id: string; clicks: number }[] = [];
 
@@ -94,7 +97,10 @@ export async function GET() {
       })
       .filter(Boolean);
 
-    return NextResponse.json({ success: true, popular: results });
+    return NextResponse.json(
+      { success: true, popular: results, persistent: isRedisConfigured },
+      { headers: { "Cache-Control": "no-store" } },
+    );
   } catch (error: any) {
     console.error("Failed to fetch popular shops from Redis:", error);
     return NextResponse.json({ success: false, popular: [] }, { status: 500 });

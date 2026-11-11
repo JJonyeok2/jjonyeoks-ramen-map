@@ -113,12 +113,12 @@ export interface RamenShop {
 export const RAMEN_SHOPS: RamenShop[] = [
   {
     "id": "seoul-mapo-002",
-    "name": "멘야준 (합정)",
+    "name": "멘야준 (서교)",
     "region": "서울",
     "district": "마포구",
-    "address": "서울특별시 마포구 월드컵로1길 14",
-    "lat": 37.5492,
-    "lng": 126.9135,
+    "address": "서울특별시 마포구 동교로 128",
+    "lat": 37.5549096,
+    "lng": 126.9164276,
     "types": [
       "shoyu",
       "shio"
@@ -219,7 +219,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.85
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "seoul-mapo-003",
@@ -227,8 +227,8 @@ export const RAMEN_SHOPS: RamenShop[] = [
     "region": "서울",
     "district": "마포구",
     "address": "서울특별시 마포구 독막로19길 43",
-    "lat": 37.5476,
-    "lng": 126.9231,
+    "lat": 37.5489264,
+    "lng": 126.923757,
     "types": [
       "tonkotsu"
     ],
@@ -319,16 +319,16 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.7
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "seoul-mapo-004",
     "name": "멘타카무쇼 (상수)",
     "region": "서울",
     "district": "마포구",
-    "address": "서울특별시 마포구 와우산로13길 49-3",
-    "lat": 37.5488,
-    "lng": 126.9248,
+    "address": "서울특별시 마포구 와우산로13길 49-10",
+    "lat": 37.5482511,
+    "lng": 126.9210981,
     "types": [
       "tsukemen"
     ],
@@ -423,16 +423,16 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.85
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "seoul-mapo-005",
     "name": "칸다소바 홍대점",
     "region": "서울",
     "district": "마포구",
-    "address": "서울특별시 마포구 와우산로13길 40",
-    "lat": 37.5495,
-    "lng": 126.9242,
+    "address": "서울특별시 마포구 와우산로 51-6",
+    "lat": 37.5492894,
+    "lng": 126.9226809,
     "types": [
       "mazesoba"
     ],
@@ -526,7 +526,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.7
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "seoul-mapo-006",
@@ -534,8 +534,8 @@ export const RAMEN_SHOPS: RamenShop[] = [
     "region": "서울",
     "district": "마포구",
     "address": "서울특별시 마포구 독막로14길 31",
-    "lat": 37.5481,
-    "lng": 126.9239,
+    "lat": 37.5474827,
+    "lng": 126.9225986,
     "types": [
       "tonkotsu",
       "shoyu"
@@ -635,7 +635,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.85
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "seoul-mapo-007",
@@ -745,8 +745,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-009",
@@ -856,8 +855,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-010",
@@ -957,8 +955,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-011",
@@ -1065,8 +1062,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-012",
@@ -1173,8 +1169,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-013",
@@ -1275,8 +1270,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-014",
@@ -1385,8 +1379,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-015",
@@ -1488,8 +1481,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-016",
@@ -1591,8 +1583,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-017",
@@ -1694,8 +1685,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-018",
@@ -1793,8 +1783,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-019",
@@ -1905,8 +1894,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-seodaemun-001",
@@ -2005,8 +1993,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-seodaemun-002",
@@ -2104,8 +2091,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-seodaemun-003",
@@ -2213,8 +2199,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-eunpyeong-001",
@@ -2318,8 +2303,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-jongno-001",
@@ -2419,8 +2403,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-yongsan-001",
@@ -2529,8 +2512,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-junggu-001",
@@ -2632,17 +2614,16 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gangnam-001",
     "name": "왓쇼이켄 (강남역)",
     "region": "서울",
     "district": "강남구",
-    "address": "서울특별시 강남구 강남대로84길 15",
-    "lat": 37.4967,
-    "lng": 127.0298,
+    "address": "서울특별시 강남구 테헤란로4길 46 B1층",
+    "lat": 37.4951086,
+    "lng": 127.0303115,
     "types": [
       "tonkotsu",
       "tsukemen"
@@ -2734,16 +2715,16 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.85
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "seoul-gangnam-002",
     "name": "멘야시노기 (논현)",
     "region": "서울",
-    "district": "강남구",
-    "address": "서울특별시 강남구 강남대로110길 16",
-    "lat": 37.5052,
-    "lng": 127.0251,
+    "district": "서초구",
+    "address": "서울특별시 서초구 주흥길 3",
+    "lat": 37.5037267,
+    "lng": 127.0207918,
     "types": [
       "tsukemen",
       "tonkotsu"
@@ -2839,7 +2820,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.85
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "seoul-gangnam-004",
@@ -2948,8 +2929,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gangnam-005",
@@ -3046,8 +3026,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gangnam-006",
@@ -3150,8 +3129,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-seocho-001",
@@ -3253,8 +3231,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-songpa-001",
@@ -3352,112 +3329,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
-  },
-  {
-    "id": "seoul-songpa-003",
-    "name": "라멘 카도 (잠실)",
-    "region": "서울",
-    "district": "송파구",
-    "address": "서울특별시 송파구 올림픽로32길 22",
-    "lat": 37.5145,
-    "lng": 127.1098,
-    "types": [
-      "tonkotsu",
-      "shoyu"
-    ],
-    "brothStyle": "paitan",
-    "signature": "돈코츠 쇼유",
-    "price": 10000,
-    "body": 4,
-    "spiciness": 0,
-    "bases": [
-      "돼지"
-    ],
-    "tags": [
-      "방이동먹자골목",
-      "잠실라멘",
-      "돈코츠",
-      "돈코츠라멘",
-      "쇼유",
-      "쇼유라멘",
-      "백탕",
-      "진한백탕",
-      "뽀얀육수",
-      "돼지육수",
-      "안매운라멘",
-      "돈코츠 쇼유",
-      "카라이 돈코츠 쇼유 라멘",
-      "특제 차슈 추가 라멘",
-      "수제라멘",
-      "자가제면",
-      "혼밥"
-    ],
-    "rating": 4.6,
-    "hours": "11:30-21:30",
-    "closed": "연중무휴",
-    "vegetarian": false,
-    "containsPork": true,
-    "menuList": [
-      {
-        "name": "돈코츠 쇼유",
-        "price": 10000,
-        "isSignature": true,
-        "brothStyle": "paitan",
-        "spiciness": 0,
-        "description": "매장 대표 한 그릇 (방이동먹자골목 · 잠실라멘)"
-      },
-      {
-        "name": "카라이 돈코츠 쇼유 라멘",
-        "price": 10500,
-        "brothStyle": "paitan",
-        "spiciness": 2,
-        "description": "화끈하고 칼칼한 매운맛 육수 버전"
-      },
-      {
-        "name": "특제 차슈 추가 라멘",
-        "price": 12500,
-        "brothStyle": "paitan",
-        "spiciness": 0,
-        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
-      }
-    ],
-    "detailedTags": {
-      "broth": [
-        "돼지"
-      ],
-      "richness": "medium",
-      "oil_level": "medium",
-      "spiciness": 0,
-      "noodle_type": "자가제면 직면",
-      "topping_special": [
-        "차슈",
-        "아지타마고",
-        "멘마"
-      ],
-      "price_range": "9000-12000",
-      "waiting": "medium",
-      "mood": [
-        "혼밥",
-        "가성비",
-        "감성"
-      ],
-      "recommend_for": [
-        "데이트",
-        "혼밥"
-      ]
-    },
-    "aiProfile": {
-      "stress_relief": 0.7,
-      "hangover_cure": 0.75,
-      "cleanse_palate": 0.8,
-      "spicy_challenge": 0,
-      "solo_friendly": 0.9,
-      "date_spot": 0.85
-    },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gangdong-001",
@@ -3465,8 +3337,8 @@ export const RAMEN_SHOPS: RamenShop[] = [
     "region": "서울",
     "district": "강동구",
     "address": "서울특별시 강동구 진황도로47길 67",
-    "lat": 37.5361,
-    "lng": 127.1424,
+    "lat": 37.5364101,
+    "lng": 127.1422899,
     "types": [
       "mazesoba"
     ],
@@ -3558,7 +3430,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.7
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "seoul-gangdong-002",
@@ -3656,8 +3528,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gwanak-001",
@@ -3758,8 +3629,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-dongjak-001",
@@ -3855,107 +3725,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
-  },
-  {
-    "id": "seoul-guro-001",
-    "name": "구로 멘야시노기 구로점",
-    "region": "서울",
-    "district": "구로구",
-    "address": "서울특별시 구로구 디지털로32길 97",
-    "lat": 37.4851,
-    "lng": 126.8974,
-    "types": [
-      "tsukemen",
-      "tonkotsu"
-    ],
-    "brothStyle": "dipping",
-    "signature": "츠케멘",
-    "price": 10500,
-    "body": 4,
-    "spiciness": 1,
-    "bases": [
-      "돼지"
-    ],
-    "tags": [
-      "구로디지털단지",
-      "구디맛집",
-      "츠케멘",
-      "츠케멘라멘",
-      "돈코츠",
-      "돈코츠라멘",
-      "츠케",
-      "농후츠케멘",
-      "돼지육수",
-      "카라이 츠케멘",
-      "특제 차슈 츠케멘",
-      "수제라멘",
-      "자가제면",
-      "혼밥"
-    ],
-    "rating": 4.6,
-    "hours": "11:00-21:00",
-    "closed": "토,일요일",
-    "vegetarian": false,
-    "containsPork": true,
-    "menuList": [
-      {
-        "name": "츠케멘",
-        "price": 10500,
-        "isSignature": true,
-        "brothStyle": "dipping",
-        "spiciness": 1,
-        "description": "매장 대표 한 그릇 (구로디지털단지 · 구디맛집)"
-      },
-      {
-        "name": "카라이 츠케멘",
-        "price": 11000,
-        "brothStyle": "dipping",
-        "spiciness": 2,
-        "description": "매콤한 다대기가 가미된 농후 츠케즙과 굵은 면발"
-      },
-      {
-        "name": "특제 차슈 츠케멘",
-        "price": 13500,
-        "brothStyle": "dipping",
-        "spiciness": 1,
-        "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
-      }
-    ],
-    "detailedTags": {
-      "broth": [
-        "돼지"
-      ],
-      "richness": "medium",
-      "oil_level": "medium",
-      "spiciness": 1,
-      "noodle_type": "극태면",
-      "topping_special": [
-        "차슈",
-        "아지타마고",
-        "멘마"
-      ],
-      "price_range": "9500-12500",
-      "waiting": "medium",
-      "mood": [
-        "혼밥",
-        "감성"
-      ],
-      "recommend_for": [
-        "혼밥"
-      ]
-    },
-    "aiProfile": {
-      "stress_relief": 0.8,
-      "hangover_cure": 0.75,
-      "cleanse_palate": 0.3,
-      "spicy_challenge": 0,
-      "solo_friendly": 0.9,
-      "date_spot": 0.85
-    },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-seongdong-002",
@@ -4065,8 +3835,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-seongdong-003",
@@ -4164,8 +3933,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gwangjin-001",
@@ -4263,8 +4031,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-dongdaemun-001",
@@ -4366,8 +4133,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-nowon-001",
@@ -4467,8 +4233,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-suwon-001",
@@ -4569,8 +4334,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-suwon-002",
@@ -4680,8 +4444,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-suwon-003",
@@ -4779,8 +4542,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-suwon-004",
@@ -4875,8 +4637,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-suwon-005",
@@ -4977,8 +4738,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-seongnam-001",
@@ -4986,8 +4746,8 @@ export const RAMEN_SHOPS: RamenShop[] = [
     "region": "경기",
     "district": "성남시 분당구",
     "address": "경기도 성남시 분당구 황새울로335번길 8",
-    "lat": 37.3855,
-    "lng": 127.1234,
+    "lat": 37.3866233,
+    "lng": 127.1222792,
     "types": [
       "tonkotsu",
       "shoyu"
@@ -5082,7 +4842,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.85
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "gyeonggi-seongnam-002",
@@ -5183,8 +4943,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-seongnam-003",
@@ -5294,8 +5053,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-seongnam-004",
@@ -5393,8 +5151,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-seongnam-005",
@@ -5488,8 +5245,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-goyang-001",
@@ -5588,8 +5344,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-goyang-003",
@@ -5694,8 +5449,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-anyang-001",
@@ -5703,8 +5457,8 @@ export const RAMEN_SHOPS: RamenShop[] = [
     "region": "경기",
     "district": "안양시 동안구",
     "address": "경기도 안양시 동안구 호성로 20",
-    "lat": 37.3698,
-    "lng": 126.9612,
+    "lat": 37.3637671,
+    "lng": 126.9638413,
     "types": [
       "shoyu",
       "shio"
@@ -5815,7 +5569,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.85
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "gyeonggi-uiwang-001",
@@ -5823,8 +5577,8 @@ export const RAMEN_SHOPS: RamenShop[] = [
     "region": "경기",
     "district": "의왕시",
     "address": "경기도 의왕시 계원대학로 28 112호",
-    "lat": 37.3821,
-    "lng": 126.9741,
+    "lat": 37.3791205,
+    "lng": 126.9744332,
     "types": [
       "tonkotsu",
       "shoyu"
@@ -5933,7 +5687,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.85
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "gyeonggi-anyang-003",
@@ -6270,8 +6024,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-bucheon-001",
@@ -6366,8 +6119,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-hwaseong-001",
@@ -6465,8 +6217,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-namyangju-001",
@@ -6571,8 +6322,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-uijeongbu-001",
@@ -6669,8 +6419,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-gwangmyeong-001",
@@ -6765,17 +6514,16 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-020",
     "name": "담택 (합정본점)",
     "region": "서울",
     "district": "마포구",
-    "address": "서울특별시 마포구 월드컵로1길 14 1층",
-    "lat": 37.5489,
-    "lng": 126.9142,
+    "address": "서울특별시 마포구 동교로12안길 51 1층",
+    "lat": 37.5544873,
+    "lng": 126.9151284,
     "types": [
       "shio",
       "shoyu"
@@ -6876,7 +6624,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.85
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "seoul-mapo-021",
@@ -6987,8 +6735,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-022",
@@ -7099,8 +6846,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-023",
@@ -7202,111 +6948,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
-  },
-  {
-    "id": "seoul-mapo-024",
-    "name": "멘타카무쇼 (상수)",
-    "region": "서울",
-    "district": "마포구",
-    "address": "서울특별시 마포구 독막로3길 28-20",
-    "lat": 37.5492,
-    "lng": 126.9189,
-    "types": [
-      "tsukemen"
-    ],
-    "brothStyle": "dipping",
-    "signature": "농후 츠케멘",
-    "price": 12000,
-    "body": 5,
-    "spiciness": 1,
-    "bases": [
-      "돼지",
-      "해산물"
-    ],
-    "tags": [
-      "멘타카무쇼",
-      "상수츠케멘",
-      "농후츠케멘",
-      "츠케멘",
-      "츠케멘라멘",
-      "츠케",
-      "돼지육수",
-      "돈코츠",
-      "해산물육수",
-      "해물라멘",
-      "농후 츠케멘",
-      "카라이 츠케멘",
-      "특제 차슈 츠케멘",
-      "수제라멘",
-      "자가제면",
-      "혼밥"
-    ],
-    "rating": 4.9,
-    "hours": "11:30-20:30",
-    "closed": "연중무휴",
-    "vegetarian": false,
-    "containsPork": true,
-    "menuList": [
-      {
-        "name": "농후 츠케멘",
-        "price": 12000,
-        "isSignature": true,
-        "brothStyle": "dipping",
-        "spiciness": 1,
-        "description": "매장 대표 한 그릇 (멘타카무쇼 · 상수츠케멘)"
-      },
-      {
-        "name": "카라이 츠케멘",
-        "price": 12500,
-        "brothStyle": "dipping",
-        "spiciness": 2,
-        "description": "매콤한 다대기가 가미된 농후 츠케즙과 굵은 면발"
-      },
-      {
-        "name": "특제 차슈 츠케멘",
-        "price": 15000,
-        "brothStyle": "dipping",
-        "spiciness": 1,
-        "description": "직화 차슈와 김, 계란 토핑이 푸짐한 츠케멘"
-      }
-    ],
-    "detailedTags": {
-      "broth": [
-        "돼지",
-        "해산물"
-      ],
-      "richness": "heavy",
-      "oil_level": "high",
-      "spiciness": 1,
-      "noodle_type": "극태면",
-      "topping_special": [
-        "차슈",
-        "아지타마고",
-        "멘마"
-      ],
-      "price_range": "11000-14000",
-      "waiting": "long",
-      "mood": [
-        "혼밥",
-        "감성",
-        "줄서먹는맛집"
-      ],
-      "recommend_for": [
-        "혼밥"
-      ]
-    },
-    "aiProfile": {
-      "stress_relief": 0.8,
-      "hangover_cure": 0.75,
-      "cleanse_palate": 0.3,
-      "spicy_challenge": 0,
-      "solo_friendly": 0.9,
-      "date_spot": 0.85
-    },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-025",
@@ -7410,217 +7052,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
-  },
-  {
-    "id": "seoul-mapo-026",
-    "name": "하카타분코 (상수)",
-    "region": "서울",
-    "district": "마포구",
-    "address": "서울특별시 마포구 독막로19길 43",
-    "lat": 37.5478,
-    "lng": 126.9241,
-    "types": [
-      "tonkotsu"
-    ],
-    "brothStyle": "paitan",
-    "signature": "인라멘 (하카타 톤코츠)",
-    "price": 10000,
-    "body": 5,
-    "spiciness": 0,
-    "bases": [
-      "돼지"
-    ],
-    "tags": [
-      "하카타분코",
-      "상수원조돈코츠",
-      "수제라멘성지",
-      "돈코츠",
-      "돈코츠라멘",
-      "백탕",
-      "진한백탕",
-      "뽀얀육수",
-      "돼지육수",
-      "안매운라멘",
-      "인라멘 (하카타 톤코츠)",
-      "카라이 인라멘 (하카타 톤코츠) 라멘",
-      "특제 차슈 추가 라멘",
-      "수제라멘",
-      "자가제면",
-      "혼밥"
-    ],
-    "rating": 4.7,
-    "hours": "11:30-03:00",
-    "closed": "연중무휴",
-    "vegetarian": false,
-    "containsPork": true,
-    "menuList": [
-      {
-        "name": "인라멘 (하카타 톤코츠)",
-        "price": 10000,
-        "isSignature": true,
-        "brothStyle": "paitan",
-        "spiciness": 0,
-        "description": "매장 대표 한 그릇 (하카타분코 · 상수원조돈코츠)"
-      },
-      {
-        "name": "카라이 인라멘 (하카타 톤코츠) 라멘",
-        "price": 10500,
-        "brothStyle": "paitan",
-        "spiciness": 2,
-        "description": "화끈하고 칼칼한 매운맛 육수 버전"
-      },
-      {
-        "name": "특제 차슈 추가 라멘",
-        "price": 12500,
-        "brothStyle": "paitan",
-        "spiciness": 0,
-        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
-      }
-    ],
-    "detailedTags": {
-      "broth": [
-        "돼지"
-      ],
-      "richness": "heavy",
-      "oil_level": "high",
-      "spiciness": 0,
-      "noodle_type": "세면",
-      "topping_special": [
-        "차슈",
-        "아지타마고",
-        "멘마"
-      ],
-      "price_range": "9000-12000",
-      "waiting": "long",
-      "mood": [
-        "혼밥",
-        "가성비",
-        "줄서먹는맛집"
-      ],
-      "recommend_for": [
-        "혼밥"
-      ]
-    },
-    "aiProfile": {
-      "stress_relief": 0.7,
-      "hangover_cure": 0.75,
-      "cleanse_palate": 0.3,
-      "spicy_challenge": 0,
-      "solo_friendly": 0.9,
-      "date_spot": 0.7
-    },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
-  },
-  {
-    "id": "seoul-mapo-027",
-    "name": "멘야준 (서교)",
-    "region": "서울",
-    "district": "마포구",
-    "address": "서울특별시 마포구 월드컵북로6길 60",
-    "lat": 37.5578,
-    "lng": 126.9205,
-    "types": [
-      "shio",
-      "shoyu"
-    ],
-    "brothStyle": "chintan",
-    "signature": "특선 시오라멘",
-    "price": 11000,
-    "body": 2,
-    "spiciness": 0,
-    "bases": [
-      "닭"
-    ],
-    "tags": [
-      "멘야준",
-      "서교동맛집",
-      "자가제면청탕",
-      "시오",
-      "시오라멘",
-      "쇼유",
-      "쇼유라멘",
-      "청탕",
-      "맑은청탕",
-      "담백한국물",
-      "닭육수",
-      "토리파이탄",
-      "안매운라멘",
-      "특선 시오라멘",
-      "특제 시오 라멘",
-      "특선 토핑 중화소바",
-      "수제라멘",
-      "자가제면",
-      "혼밥"
-    ],
-    "rating": 4.8,
-    "hours": "11:00-20:00",
-    "closed": "연중무휴",
-    "vegetarian": false,
-    "containsPork": true,
-    "menuList": [
-      {
-        "name": "특선 시오라멘",
-        "price": 11000,
-        "isSignature": true,
-        "brothStyle": "chintan",
-        "spiciness": 0,
-        "description": "매장 대표 한 그릇 (멘야준 · 서교동맛집)"
-      },
-      {
-        "name": "특제 시오 라멘",
-        "price": 11000,
-        "brothStyle": "chintan",
-        "spiciness": 0,
-        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
-      },
-      {
-        "name": "특선 토핑 중화소바",
-        "price": 13000,
-        "brothStyle": "chintan",
-        "spiciness": 0,
-        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
-      }
-    ],
-    "detailedTags": {
-      "broth": [
-        "닭"
-      ],
-      "richness": "light",
-      "oil_level": "low",
-      "spiciness": 0,
-      "noodle_type": "자가제면 직면",
-      "topping_special": [
-        "차슈",
-        "아지타마고",
-        "멘마"
-      ],
-      "price_range": "10000-13000",
-      "waiting": "long",
-      "mood": [
-        "혼밥",
-        "감성",
-        "줄서먹는맛집"
-      ],
-      "recommend_for": [
-        "숙취",
-        "깔끔",
-        "데이트",
-        "혼밥"
-      ]
-    },
-    "aiProfile": {
-      "stress_relief": 0.5,
-      "hangover_cure": 0.85,
-      "cleanse_palate": 0.95,
-      "spicy_challenge": 0,
-      "solo_friendly": 0.9,
-      "date_spot": 0.85
-    },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-028",
@@ -7728,8 +7160,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-029",
@@ -7828,8 +7259,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-seongdong-004",
@@ -7936,8 +7366,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gangdong-003",
@@ -8042,8 +7471,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-seongbuk-002",
@@ -8147,8 +7575,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-seongbuk-003",
@@ -8249,11 +7676,10 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
-    "id": "seoul-seodaemun-001",
+    "id": "seoul-seodaemun-004",
     "name": "멘야 무테키 (신촌)",
     "region": "서울",
     "district": "서대문구",
@@ -8348,11 +7774,10 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
-    "id": "seoul-eunpyeong-001",
+    "id": "seoul-eunpyeong-003",
     "name": "라멘 호타루 (연신내)",
     "region": "서울",
     "district": "은평구",
@@ -8460,8 +7885,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-eunpyeong-002",
@@ -8559,8 +7983,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gangnam-007",
@@ -8666,8 +8089,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gangnam-008",
@@ -8769,8 +8191,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gwanak-002",
@@ -8869,8 +8290,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gwanak-003",
@@ -8971,8 +8391,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-ansan-001",
@@ -9076,8 +8495,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-gunpo-001",
@@ -9178,8 +8596,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-suwon-006",
@@ -9277,8 +8694,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-hwaseong-002",
@@ -9382,8 +8798,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-seongnam-006",
@@ -9481,17 +8896,16 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "busan-busanjin-001",
     "name": "멘즈키 (전포 본점)",
     "region": "부산",
     "district": "부산진구",
-    "address": "부산광역시 부산진구 동성로25번길 29",
-    "lat": 35.1541,
-    "lng": 129.0658,
+    "address": "부산광역시 부산진구 동성로49번길 34",
+    "lat": 35.1550375,
+    "lng": 129.0665068,
     "types": [
       "tsukemen",
       "shoyu",
@@ -9594,16 +9008,16 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.85
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "busan-busanjin-002",
     "name": "나의피는라멘으로되어있어 (전포)",
     "region": "부산",
     "district": "부산진구",
-    "address": "부산광역시 부산진구 전포대로210번길 45",
-    "lat": 35.1562,
-    "lng": 129.0671,
+    "address": "부산광역시 부산진구 동성로 23-2 1층",
+    "lat": 35.1525601,
+    "lng": 129.0682697,
     "types": [
       "jiro",
       "tonkotsu"
@@ -9697,7 +9111,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.7
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "busan-busanjin-003",
@@ -9799,8 +9213,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "busan-busanjin-004",
@@ -9911,8 +9324,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "busan-geumjeong-001",
@@ -10020,8 +9432,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "busan-busanjin-005",
@@ -10126,17 +9537,16 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "busan-haeundae-001",
     "name": "류센소 본점 (해운대)",
     "region": "부산",
     "district": "해운대구",
-    "address": "부산광역시 해운대구 구남로8번길 52",
-    "lat": 35.1631,
-    "lng": 129.1582,
+    "address": "부산광역시 해운대구 구남로8번길 62",
+    "lat": 35.161517,
+    "lng": 129.1563215,
     "types": [
       "tonkotsu",
       "shio"
@@ -10237,7 +9647,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "date_spot": 0.85
     },
     "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "verifiedAt": "2026-11"
   },
   {
     "id": "seoul-mapo-030",
@@ -10348,8 +9758,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-031",
@@ -10453,8 +9862,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-mapo-032",
@@ -10561,107 +9969,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
-  },
-  {
-    "id": "seoul-songpa-003",
-    "name": "삼전니쿠 (삼전동)",
-    "region": "서울",
-    "district": "송파구",
-    "address": "서울특별시 송파구 삼전로13길 19",
-    "lat": 37.5028,
-    "lng": 127.0861,
-    "types": [
-      "tonkotsu"
-    ],
-    "brothStyle": "paitan",
-    "signature": "삼전 돈코츠",
-    "price": 9500,
-    "body": 4,
-    "spiciness": 0,
-    "bases": [
-      "돼지"
-    ],
-    "tags": [
-      "삼전역맛집",
-      "송파돈코츠",
-      "돈코츠",
-      "돈코츠라멘",
-      "백탕",
-      "진한백탕",
-      "뽀얀육수",
-      "돼지육수",
-      "안매운라멘",
-      "삼전 돈코츠",
-      "카라이 삼전 돈코츠 라멘",
-      "특제 차슈 추가 라멘",
-      "수제라멘",
-      "자가제면",
-      "혼밥"
-    ],
-    "rating": 4.6,
-    "hours": "11:30-21:00",
-    "closed": "월요일",
-    "vegetarian": false,
-    "containsPork": true,
-    "menuList": [
-      {
-        "name": "삼전 돈코츠",
-        "price": 9500,
-        "isSignature": true,
-        "brothStyle": "paitan",
-        "spiciness": 0,
-        "description": "매장 대표 한 그릇 (삼전역맛집 · 송파돈코츠)"
-      },
-      {
-        "name": "카라이 삼전 돈코츠 라멘",
-        "price": 10000,
-        "brothStyle": "paitan",
-        "spiciness": 2,
-        "description": "화끈하고 칼칼한 매운맛 육수 버전"
-      },
-      {
-        "name": "특제 차슈 추가 라멘",
-        "price": 12000,
-        "brothStyle": "paitan",
-        "spiciness": 0,
-        "description": "수제 삼겹 차슈와 아지타마고 토핑 강화 버전"
-      }
-    ],
-    "detailedTags": {
-      "broth": [
-        "돼지"
-      ],
-      "richness": "medium",
-      "oil_level": "medium",
-      "spiciness": 0,
-      "noodle_type": "세면",
-      "topping_special": [
-        "차슈",
-        "아지타마고",
-        "멘마"
-      ],
-      "price_range": "8500-11500",
-      "waiting": "medium",
-      "mood": [
-        "혼밥",
-        "가성비"
-      ],
-      "recommend_for": [
-        "혼밥"
-      ]
-    },
-    "aiProfile": {
-      "stress_relief": 0.7,
-      "hangover_cure": 0.75,
-      "cleanse_palate": 0.3,
-      "spicy_challenge": 0,
-      "solo_friendly": 0.9,
-      "date_spot": 0.7
-    },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-songpa-004",
@@ -10760,115 +10068,10 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
-    "id": "seoul-gangnam-009",
-    "name": "라멘쿠라토 (역삼)",
-    "region": "서울",
-    "district": "강남구",
-    "address": "서울특별시 강남구 테헤란로25길 42",
-    "lat": 37.5032,
-    "lng": 127.0361,
-    "types": [
-      "shoyu"
-    ],
-    "brothStyle": "chintan",
-    "signature": "쿠라토 쇼유",
-    "price": 10500,
-    "body": 2,
-    "spiciness": 0,
-    "bases": [
-      "닭"
-    ],
-    "tags": [
-      "역삼역맛집",
-      "직장인혼밥",
-      "쇼유",
-      "쇼유라멘",
-      "청탕",
-      "맑은청탕",
-      "담백한국물",
-      "닭육수",
-      "토리파이탄",
-      "안매운라멘",
-      "쿠라토 쇼유",
-      "특제 시오 라멘",
-      "특선 토핑 중화소바",
-      "수제라멘",
-      "자가제면",
-      "혼밥"
-    ],
-    "rating": 4.7,
-    "hours": "11:00-20:30",
-    "closed": "토요일, 일요일",
-    "vegetarian": false,
-    "containsPork": true,
-    "menuList": [
-      {
-        "name": "쿠라토 쇼유",
-        "price": 10500,
-        "isSignature": true,
-        "brothStyle": "chintan",
-        "spiciness": 0,
-        "description": "매장 대표 한 그릇 (역삼역맛집 · 직장인혼밥)"
-      },
-      {
-        "name": "특제 시오 라멘",
-        "price": 10500,
-        "brothStyle": "chintan",
-        "spiciness": 0,
-        "description": "맑고 깔끔한 청탕 스타일의 깊은 감칠맛 국물"
-      },
-      {
-        "name": "특선 토핑 중화소바",
-        "price": 12500,
-        "brothStyle": "chintan",
-        "spiciness": 0,
-        "description": "자가제면과 정성으로 끓여낸 특선 청탕"
-      }
-    ],
-    "detailedTags": {
-      "broth": [
-        "닭"
-      ],
-      "richness": "light",
-      "oil_level": "low",
-      "spiciness": 0,
-      "noodle_type": "자가제면 직면",
-      "topping_special": [
-        "차슈",
-        "아지타마고",
-        "멘마"
-      ],
-      "price_range": "9500-12500",
-      "waiting": "long",
-      "mood": [
-        "혼밥",
-        "감성",
-        "줄서먹는맛집"
-      ],
-      "recommend_for": [
-        "숙취",
-        "깔끔",
-        "데이트",
-        "혼밥"
-      ]
-    },
-    "aiProfile": {
-      "stress_relief": 0.5,
-      "hangover_cure": 0.85,
-      "cleanse_palate": 0.95,
-      "spicy_challenge": 0,
-      "solo_friendly": 0.9,
-      "date_spot": 0.85
-    },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
-  },
-  {
-    "id": "seoul-yongsan-001",
+    "id": "seoul-yongsan-003",
     "name": "멘야타쿠 (이태원)",
     "region": "서울",
     "district": "용산구",
@@ -10966,8 +10169,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-yongsan-002",
@@ -11065,11 +10267,10 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
-    "id": "seoul-seodaemun-002",
+    "id": "seoul-seodaemun-005",
     "name": "라멘 무라 (신촌)",
     "region": "서울",
     "district": "서대문구",
@@ -11166,11 +10367,10 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
-    "id": "seoul-seodaemun-003",
+    "id": "seoul-seodaemun-006",
     "name": "멘야 카이 (신촌)",
     "region": "서울",
     "district": "서대문구",
@@ -11269,8 +10469,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gangnam-010",
@@ -11376,8 +10575,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-gangnam-011",
@@ -11475,8 +10673,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-seocho-003",
@@ -11578,8 +10775,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-seocho-004",
@@ -11685,8 +10881,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-dongjak-002",
@@ -11784,8 +10979,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-guro-001",
@@ -11883,8 +11077,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-geumcheon-001",
@@ -11981,8 +11174,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-yeongdeungpo-002",
@@ -12085,8 +11277,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-yeongdeungpo-003",
@@ -12193,8 +11384,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "seoul-yangcheon-001",
@@ -12292,8 +11482,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-bucheon-002",
@@ -12391,8 +11580,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-yongin-002",
@@ -12494,8 +11682,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-hanam-001",
@@ -12598,8 +11785,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-namyangju-002",
@@ -12697,8 +11883,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-guri-001",
@@ -12796,8 +11981,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-uijeongbu-002",
@@ -12895,8 +12079,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-paju-002",
@@ -12992,8 +12175,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-goyang-004",
@@ -13097,8 +12279,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeonggi-pyeongtaek-001",
@@ -13196,8 +12377,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "busan-busanjin-006",
@@ -13295,8 +12475,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "daegu-jung-004",
@@ -13396,8 +12575,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "incheon-namdong-001",
@@ -13499,8 +12677,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gangwon-chuncheon-001",
@@ -13598,8 +12775,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "gyeongbuk-pohang-001",
@@ -13695,8 +12871,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "ulsan-namgu-001",
@@ -13795,8 +12970,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "jeonnam-yeosu-001",
@@ -13904,8 +13078,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "jeonnam-suncheon-001",
@@ -14003,8 +13176,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "ulsan-junggu-001",
@@ -14103,8 +13275,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "chungbuk-cheongju-001",
@@ -14208,8 +13379,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "chungnam-cheonan-001",
@@ -14307,8 +13477,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.7
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "jeju-jeju-002",
@@ -14410,8 +13579,7 @@ export const RAMEN_SHOPS: RamenShop[] = [
       "solo_friendly": 0.9,
       "date_spot": 0.85
     },
-    "dataStatus": "verified",
-    "verifiedAt": "2026-07"
+    "dataStatus": "unverified"
   },
   {
     "id": "crawled-서울-0002",
