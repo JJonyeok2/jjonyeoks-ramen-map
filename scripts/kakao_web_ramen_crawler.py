@@ -3,12 +3,13 @@
 카카오 검색 API (Web/Blog) 기반 전국 라멘 전문점 크롤러
 """
 
+import os
 import requests
 import json
 import re
 import time
 
-KAKAO_API_KEY = "e3648ffb9d5d72ff0ae1d65a046a2aaa"
+KAKAO_API_KEY = os.environ["KAKAO_REST_API_KEY"]
 HEADERS = {"Authorization": f"KakaoAK {KAKAO_API_KEY}"}
 
 SEARCH_TARGETS = [

@@ -8,7 +8,7 @@ import json
 import time
 import os
 
-KAKAO_API_KEY = "e3648ffb9d5d72ff0ae1d65a046a2aaa"
+KAKAO_API_KEY = os.environ["KAKAO_REST_API_KEY"]
 OUTPUT_FILE = "kakao_raw_ramen.json"
 CATEGORY_GROUP_CODE = "FD6"  # 음식점
 DELAY = 0.25  # 요청 간격 (초)
